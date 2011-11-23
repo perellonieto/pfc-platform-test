@@ -9,11 +9,15 @@ Aquesta plataforma comptarà amb tot lo necesari per ser arrencada desde LiveCD 
 
 = Details =
 
-*disseny_laboratori*
-*implementacio_laboratori*
-*guia_laboratori*
-*guia_live_cd*
-*bibliografia*
+==Disseny_laboratori==
+
+==Implementacio_laboratori==
+
+==Guia_laboratori==
+
+==Guia_live_cd==
+
+==Bibliografia==
 
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
