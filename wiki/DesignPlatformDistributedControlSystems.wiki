@@ -16,7 +16,7 @@ Aquesta plataforma comptarà amb tot lo necesari per ser arrencada desde LiveCD 
 ==Guia_laboratori==
 
 ==Guia_live_cd==
-
+[http://code.google.com/p/pfc-platform-test/wiki/Guia_live_cd]
 ==Bibliografia==
 
 Add your content here.  Format your content with:
