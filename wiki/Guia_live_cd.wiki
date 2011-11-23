@@ -1,0 +1,13 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+En aquesta guia s'indica quin ha de ser l'entorn per una bona execució del LiveCD així com  una descripció del necessari per deixar preparat un entorn equivalent.
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
