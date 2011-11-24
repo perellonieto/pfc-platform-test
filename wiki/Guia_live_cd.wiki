@@ -108,7 +108,7 @@ Un cop seleccionat, ens preguntarà quint tipus de projecte volem crear. En el n
 
 {{{
 Categories : Microchip Embedded
-Projects:	Prebuilt (Hex, Loadable image) Project
+Projects:    Prebuilt (Hex, Loadable image) Project
 }}}
 
 http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_01.png
