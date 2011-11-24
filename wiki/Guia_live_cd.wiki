@@ -7,6 +7,8 @@ En aquesta guia s'indica quin ha de ser l'entorn per una bona execució del Live
 
 = Details =
 
+http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_02.png
+
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
   * Headings, paragraphs, and lists
