@@ -15,13 +15,17 @@ Primer de tot haurem d'obrir el programa Eclipse, que és un IDE de programació
 
 Un cop obert el programa crearem un nou projecte
 
+{{{
 File -> New -> Project...
+}}}
 
 http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_02.png
 
 Seleccionarem el tipus de projecte que apareix a la llista:
 
+{{{
 Evidence -> RT-Druid Oil and C/C++ Project
+}}}
 
 http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_03.png
 
@@ -36,7 +40,9 @@ Marquem la caixeta _"Create a project using one of these templates"_ i seleccion
 http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_05.png
 
 I aquí dintre seleccionem un dels templates, en aquest cas:
+{{{
 pic30 -> 11sdcDI -> Standard Control
+}}}
 
 (per aquesta prova es necessita tenir un adaptador per RS232 per tal de comunicar al ordinador totes les estadístiques del microcontrolador.)
 
@@ -48,13 +54,17 @@ http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclip
 
 En cas de tenir activada la opcio _"Build Automatically"_ es compilarà per primer cop sense haver de realitzar cap acció, però de totes maneres ens interessa desactivar-ho. Per tant mirem que _"Build Automatically"_ estigui desmarcat:
 
+{{{
 Project -> Build Automatically
+}}}
 
 http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_08.png
 
 Amb tot això ja podríem modificar el codi i programar el que es necessiti. Un cop tinguem el codi desitjat per compilar-lo hauríem de *primer de tot Guardar el projecte* (si no guardem estarem compilant una versió anterior), y un cop guardat anem a:
 
+{{{
 Project -> Clean
+}}}
 
 Fent el clean ens assegurem que el codi que es compila sigui realment la versió que acabem de programar, i podem deixar les opcions que hi ha per defecte (que netejaran tots els projectes que tinguem oberts i els compilaran), o seleccionar _"Clean projects selected below"_ i _"Build only the selected projects"_ per tal de netejar i compilar només el projecte que seleccionem.
 
@@ -66,14 +76,18 @@ http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclip
 
 Podria ser que al compilar no trobés la ruta al compilador, per comprobar aixó anem a :
 
+{{{
 Window -> Preferences
+}}}
 
 http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_10.png
 
 I comprobem que la ruta es correcte (vigileu que la versió de mplab pot ser diferent, pero de totes maneres en una instalació per defecte hauría de ser de la forma:
 
+{{{
 Gcc path _/opt/microchip/mplabc30/X.XXy_
 Asm path _/opt/microchip/mplabx/asm30_
+}}}
 
 http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_11.png
 
@@ -84,21 +98,27 @@ Un cop hem generat el fitxer _.elf_ procedim a obrir MplabX. Amb aquest programa
 
 Així que obrim el programa i anem a crear un nou projecte:
 
+{{{
 File -> New Project...
+}}}
 
 http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_00.png
 
 Un cop seleccionat, ens preguntarà quint tipus de projecte volem crear. En el nostre cas com ja hem precompilat en Eclipse li indiquem que utilitzi el nostre fitxer _.elf_
 
+{{{
 Categories : Microchip Embedded
 Projects:	Prebuilt (Hex, Loadable image) Project
+}}}
 
 http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_01.png
 
 A la següent secció ens demanarà que li indiquem el path del fitxer, així que anem fins a ell i el seleccionem.
 Si hem seguit la guia fins aquest punt hauria de ser en el path següent:
 
-`/home/student/workspace/NECS_11sdcDI/Debug/pic30.elf`
+{{{
+/home/student/workspace/NECS_11sdcDI/Debug/pic30.elf
+}}}
 
 (Aixo depen de on hagueu creat el vostre workspace i el nom que li hagueu donat al projecte)
 
@@ -107,7 +127,8 @@ http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx
 Aqui seleccionem quin microcontrolador ens disposem a programar, en el nostre cas es:
 {{{
 Family: DSPIC33
-Device: dsPIC33FJ256MC710}}}
+Device: dsPIC33FJ256MC710
+}}}
 
 http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_04.png
 
