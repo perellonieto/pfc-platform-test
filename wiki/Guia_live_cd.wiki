@@ -1,11 +1,13 @@
 #summary One-sentence summary of this page.
 
-= Introduction =
+= Introducció =
 
 En aquesta guia s'indica quin ha de ser l'entorn per una bona execució del LiveCD així com  una descripció del necessari per deixar preparat un entorn equivalent.
 
 
-= Details =
+= Guia Pas a Pas =
+
+== Entorn Eclipse ==
 
 Aquests son els passos necessaris per crear un nou projecte a partir d'una plantilla del laboratori, compilar-la i gravar-la en el microcontrolador.
 
@@ -61,3 +63,16 @@ http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclip
 Un cop acabi de compilar ho indicarà a la Consola inferior amb el missatge _"Compilation terminated successfully!"_.
 
 http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_12.png
+
+Podria ser que al compilar no trobés la ruta al compilador, per comprobar aixó anem a :
+
+Window -> Preferences
+
+http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_10.png
+
+I comprobem que la ruta es correcte (vigileu que la versió de mplab pot ser diferent, pero de totes maneres en una instalació per defecte hauría de ser de la forma:
+
+Gcc path _/opt/microchip/mplabc30/X.XXy_
+Asm path _/opt/microchip/mplabx/asm30
+
+http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_11.png
