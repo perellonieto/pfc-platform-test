@@ -7,9 +7,9 @@ En aquesta guia s'indica quin ha de ser l'entorn per una bona execució del Live
 
 = Guia Pas a Pas =
 
-== Entorn Eclipse ==
-
 Aquests son els passos necessaris per crear un nou projecte a partir d'una plantilla del laboratori, compilar-la i gravar-la en el microcontrolador.
+
+== Entorn Eclipse ==
 
 Primer de tot haurem d'obrir el programa Eclipse, que és un IDE de programació, en aquest cas porta un plugin RT-Druid de Evidence que ens permetrà programar el RTOS Erika.
 
@@ -60,7 +60,7 @@ Fent el clean ens assegurem que el codi que es compila sigui realment la versió
 
 http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_09.png
 
-Un cop acabi de compilar ho indicarà a la Consola inferior amb el missatge _"Compilation terminated successfully!"_.
+Un cop acabi de compilar ho indicarà a la Consola inferior amb el missatge _"Compilation terminated successfully!"_ aixó haurà creat un fitxer nou anomenat pic30.elf, que serà el que més endevant utilitzarem en Mplab per grabar al microcontrolador.
 
 http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_12.png
 
@@ -73,6 +73,44 @@ http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclip
 I comprobem que la ruta es correcte (vigileu que la versió de mplab pot ser diferent, pero de totes maneres en una instalació per defecte hauría de ser de la forma:
 
 Gcc path _/opt/microchip/mplabc30/X.XXy_
-Asm path _/opt/microchip/mplabx/asm30
+Asm path _/opt/microchip/mplabx/asm30_
 
 http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_11.png
+
+
+== Entorn MplabX ==
+
+Un cop hem generat el fitxer _.elf_ procedim a obrir MplabX. Amb aquest programa podrem finalment grabar el pic.
+
+Així que obrim el programa i anem a crear un nou projecte:
+
+File -> New Project...
+
+http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_00.png
+
+Un cop seleccionat, ens preguntarà quint tipus de projecte volem crear. En el nostre cas com ja hem precompilat en Eclipse li indiquem que utilitzi el nostre fitxer _.elf_
+
+Categories : Microchip Embedded
+Projects:	Prebuilt (Hex, Loadable image) Project
+
+http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_01.png
+
+A la següent secció ens demanarà que li indiquem el path del fitxer, així que anem fins a ell i el seleccionem.
+Si hem seguit la guia fins aquest punt hauria de ser en el path següent:
+
+/home/student/workspace/NECS_11sdcDI/Debug/pic30.elf
+
+(Aixo depen de on hagueu creat el vostre workspace i el nom que li hagueu donat al projecte)
+
+http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_03.png
+
+Aqui seleccionem quin microcontrolador ens disposem a programar, en el nostre cas es:
+
+Family: DSPIC33
+Device: dsPIC33FJ256MC710
+
+http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_04.png
+
+
+
+
