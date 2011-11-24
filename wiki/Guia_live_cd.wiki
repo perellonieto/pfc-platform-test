@@ -7,7 +7,7 @@ En aquesta guia s'indica quin ha de ser l'entorn per una bona execució del Live
 
 = Details =
 
-Aquests son els passos necesaris per crear un nou projecte a partir d'una plantilla del laboratori, compilar-la i grabar-la en el microcontrolador.
+Aquests son els passos necessaris per crear un nou projecte a partir d'una plantilla del laboratori, compilar-la i gravar-la en el microcontrolador.
 
 Primer de tot haurem d'obrir el programa Eclipse, que és un IDE de programació, en aquest cas porta un plugin RT-Druid de Evidence que ens permetrà programar el RTOS Erika.
 
@@ -23,11 +23,11 @@ Evidence -> RT-Druid Oil and C/C++ Project
 
 http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_03.png
 
-Ara li posarem un nom de projecte i deixarem les altres opcions per defecte (si volem podem cambiar el directori on volem crear-lo, pero en principi volem tenir tots els projectes junts).
+Ara li posarem un nom de projecte i deixarem les altres opcions per defecte (si volem podem canviar el directori on volem crear-lo, però en principi volem tenir tots els projectes junts).
 
 http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_04.png
 
-En aquest punt es quan podem seleccionar una plantilla per començar el projecte, així no haurém de programar les coses básiques. Per tant fem el següent:
+En aquest punt es quan podem seleccionar una plantilla per començar el projecte, així no haurem de programar les coses bàsiques. Per tant fem el següent:
 
 Marquem la caixeta _"Create a project using one of these templates"_ i seleccionem _"pic30"_ (en el nostre cas, ja que estem programant un dsPIC33FJXXXMCXX.
 
@@ -36,7 +36,7 @@ http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclip
 I aquí dintre seleccionem un dels templates, en aquest cas:
 pic30 -> 11sdcDI -> Standard Control
 
-(per aquesta prova es necesita tenir un adaptador per RS232 per tal de comunicar al ordinador totes les estadistiques del microcontrolador.)
+(per aquesta prova es necessita tenir un adaptador per RS232 per tal de comunicar al ordinador totes les estadístiques del microcontrolador.)
 
 http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_06.png
 
@@ -44,20 +44,20 @@ Un cop li donem a _Finish_ ja tindrem carregat l'entorn per programar.
 
 http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_07.png
 
-En cas de tenir activada la opcio _"Build Automatically"_ es compilarà per primer cop sense haber de realitzar cap acció, pero de totes maneres ens interessa desactivar-ho. Per tant mirem que _"Build Automatically"_ estigui desmarcat:
+En cas de tenir activada la opcio _"Build Automatically"_ es compilarà per primer cop sense haver de realitzar cap acció, però de totes maneres ens interessa desactivar-ho. Per tant mirem que _"Build Automatically"_ estigui desmarcat:
 
 Project -> Build Automatically
 
 http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_08.png
 
-Amb tot aixó ja podriem modificar el codi i programar el que es necesiti. Un cop tinguem el codi desitjat per compilar-lo hauriem de *primer de tot Guardar el projecte* (si no guardem estarem compilant una versió anterior), y un cop guardat anem a:
+Amb tot això ja podríem modificar el codi i programar el que es necessiti. Un cop tinguem el codi desitjat per compilar-lo hauríem de *primer de tot Guardar el projecte* (si no guardem estarem compilant una versió anterior), y un cop guardat anem a:
 
 Project -> Clean
 
-Fent el clean ens assegurem que el codi que es compila sigui realment la versió que acabem de programar, i podem deixar les opcions que hi ha per defecte (que netejaran tots els projectes que tinguem oberts i els compilaran), o seleccionar _"Clean projects selected below"_ i _"Build only the selected projects"_ per tal de natejar i compilar només el projecte que seleccionem.
+Fent el clean ens assegurem que el codi que es compila sigui realment la versió que acabem de programar, i podem deixar les opcions que hi ha per defecte (que netejaran tots els projectes que tinguem oberts i els compilaran), o seleccionar _"Clean projects selected below"_ i _"Build only the selected projects"_ per tal de netejar i compilar només el projecte que seleccionem.
 
 http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_09.png
 
-Un cop acabi de compilar ho indicará a la Consola inferior amb el missatge _"Compilation terminated successfully!"_.
+Un cop acabi de compilar ho indicarà a la Consola inferior amb el missatge _"Compilation terminated successfully!"_.
 
 http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_12.png
