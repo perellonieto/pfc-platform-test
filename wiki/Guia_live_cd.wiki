@@ -2,8 +2,21 @@
 
 = Introducció =
 
-En aquesta guia s'indica quin ha de ser l'entorn per una bona execució del LiveCD així com  una descripció del necessari per deixar preparat un entorn equivalent.
+El laboratori que s'ha diseñat pot ser executat sense haber de preparar tot un entorn de compilació i muntatge gracies a aquest Live CD.
+	
+	Tot l'entorn está preparat perque es pugui engegar el Live CD desde l'arranc del ordinador i ja es pugui treballar en ell.
+	
+	Cal dir que la velocitat de resposta d'aquest entorn es algo inferior a la que podria donar un sistema instalat, pero aquest sistema ens dona una portabilitat i una velocitat en la preparació del entorn.
+	
+	De totes maneres el mateix Live CD compta amb la opció de fer una instalació en el disc, compartint-lo amb un altre sistema operatiu si es necessari i podent arrancar desde qualsevol dels instalats.
+==Requisits mínims==
 
+		Per tal d'iniciar el Live CD del laboratori, el nostre ordinador hauria de tenir els següents requisits mínims:
+			# Procesador: Intel x86 o compatible, amb 200MHz
+			# Memoria RAM: 256 MiB.
+			# Unitat lectora de DVD.
+			# BIOS: ha de ser capaç d'arrencar desde DVD.
+			# Targeta gràfica: estándart, compatible amb SVGA.
 
 = Guia Pas a Pas =
 
