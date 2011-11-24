@@ -145,4 +145,31 @@ Device: dsPIC33FJ256MC710
 
 http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_04.png
 
+Ara s'ha d'indicar quin es el programador que es vol utilitzar, en el nostre cas programarem les plaques Flex amb el ICD3.
+En el cas que es trii una altra eina per programar-los s'ha de tenir en compte els colors en els que apareixen els diferents dispositius:
+
+Verd : Indica que aquest programador ha estat totalment testejat i certificat per l'us general. Per tant es possible seleccionar-lo.
+
+Groc : Idica que el programador ha estat minimament provat i només hauria de ser utilitzat per primeres proves. En aquest cas també ens permeten seleccionar-lo.
+
+Vermell : Indica que el programador no es actualment suportat. En aquest cas no podrem seleccionar-lo.
+
+http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_05.png
+
+Ara només queda posar-li un nom al projecte, i *sobretot vigilar de cambiar el directori del projecte* i treure'l del directory Debug. Si el deixesiu en aquest directory al fer qualsevol Clean al programa Eclipse podrieu tenir problemes en el projecte creat al Mplab.
+
+Per tant us poso tal com apareix:
+
+http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_06.png
+
+I de la forma que hauría de quedar per tal de que no hi hagi posteriors problemes.
+
+http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_07.png
+
+Finalment apareixeran els detalls del projecte que estem a punt de crear.
+
+http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_08.png
+
+
+
 
