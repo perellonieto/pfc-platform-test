@@ -99,6 +99,11 @@ Finalment ens avisará que hauriem de reiniciar eclipse perque els canvis tingui
 Per poder instal·lar MplabX es necessari tenir instal·lat Java, en molts casos ja ve preinstal·lat (com en el nostre cas si treballem amb Ubuntu), però en cas de necessitar-lo instal·lar visiteu la seva pagina oficial des de on es pot descarregar:
 	http://www.java.com/es/
 
+En Ubuntu el podeu instalar directament desde els repositoris amb la comanda:
+{{{
+sudo apt-get install default-jre
+}}}
+
 Un cop tingueu instal·lat Java, accediu a la pagina de Mplab X de Michrochip i seleccioneu:
 
  * MPLAB IDE X Beta
