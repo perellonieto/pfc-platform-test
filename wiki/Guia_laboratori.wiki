@@ -37,25 +37,59 @@ Matplotlib
 
 == Instalació d'Eclipse ==
 
+En aquest cas instal·lem seguint les instruccions que ens indica a la seva pàgina oficial:
+http://www.eclipse.org/
+En linux el trobem en els repositoris. Així que en Ubuntu faríem el següent :
+
+{{{
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install eclipse
+}}}
+
 == Instalació del pluguin RT-Druid per Eclipse ==
+
+Un cop tinguem Eclipse instal·lat hauríem d'afegir a aquest el paquet corresponent a RT-Druid, per fer això obrirem l'Eclipse i farem els següents passos:
+
+Anem a Help->Install new Software...
 
 	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_00.png
 
+Afegirm una entrada nova amb Add...
+
 	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_01.png
+
+En el camp Name poseu un nom significatiu per vosaltres com RT-Druid
+En el camp Location introduir l'adreça següent:
+http://download.tuxfamily.org/erika/webdownload/rtdruid_160_nb/
 
 	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_02.png
 
+Tot seguit haurien d'apareixer els paquets que ha trobat en l'adreça que li hem indicat, els marquem tots i proseguim.
+
 	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_03.png
+	
+Aquí ens farà un desglos de tot el que anem a instalar:
 
 	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_04.png
+	
+Acceptem els termes de la llicencia.
 
 	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_05.png
 
+I començarà la instalació.
+
 	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_06.png
 
+Vigileu que en algún moment la instalació s'aturará i a la part de darrera de la finestra amb la barra de progrés podreu veure que ha saltat un avís referent a la confiança del lloc de descarrega d'alguns paquets.
+
 	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_07.png
+	
+Seleccioneu RT-druid i continueu.
 
 	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_08.png
+
+Finalment ens avisará que hauriem de reiniciar eclipse perque els canvis tinguin efecte, així que digueuli que sí volem reiniciar.
 
 	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_09.png
 
