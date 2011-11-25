@@ -7,8 +7,8 @@ Add your content here.
 == Preparant entorn de desenvolupament ==
 	Per tal de programar les plaques Flex per la realització del laboratori es necessita tenir l'entorn de desenvolupament preparat amb els següents programes:
 		
-	# Eclipse (EE\_160) : entorn de programació, reanomenat Erika Enterprise (EE) RT-Druid.
-	# Mplab (mplabx\_ide\_beta\_7) : entorn per descarregar els binaris al dsPIC.
+	# Eclipse (EE_160) : entorn de programació, reanomenat Erika Enterprise (EE) RT-Druid.
+	# Mplab (mplabx_ide_beta_7) : entorn per descarregar els binaris al dsPIC.
 	# Matlab (matlab 7.8) : entorn per la comunicació entre el PC i el dsPIC.
 	# Python (Python 2.7) : interpret de programes en python.
 		# PySerial : modul per comunicació serie.
@@ -30,9 +30,9 @@ Matplotlib
 		
 == Instalació de les Llibreries Python ==
 {{{
-	$sudo apt-get install gnuplot
-	$sudo apt-get install python-matplotlib
-	$sudo apt-get install python-scitools
+$sudo apt-get install gnuplot
+$sudo apt-get install python-matplotlib
+$sudo apt-get install python-scitools
 }}}
 
 == Instalació d'Eclipse ==
