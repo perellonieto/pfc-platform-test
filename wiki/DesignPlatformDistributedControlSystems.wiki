@@ -6,6 +6,7 @@
 Aquest projecte procura diseñar una plataforma mitjançant la qual es podrà apendre a utilitzar certs sistemes distribuits de control, els problemes amb els que aquests entorns es troben i poder aplicar-hi les solucions oportunes.
 Aquesta plataforma comptarà amb tot lo necesari per ser arrencada desde LiveCD perque pugui ser portable i facilment distribuible.
 
+<wiki:toc max_depth="3" />
 
 = Details =
 
