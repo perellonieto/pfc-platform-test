@@ -98,8 +98,8 @@ Window -> Preferences
 I comprobem que la ruta es correcte (vigileu que la versió de mplab pot ser diferent, pero de totes maneres en una instalació per defecte hauría de ser de la forma:
 
 {{{
-Gcc path _/opt/microchip/mplabc30/X.XXy_
-Asm path _/opt/microchip/mplabx/asm30_
+Gcc path /opt/microchip/mplabc30/X.XXy
+Asm path /opt/microchip/mplabx/asm30
 }}}
 
 	http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_11.png

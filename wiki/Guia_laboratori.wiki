@@ -47,7 +47,7 @@ sudo apt-get upgrade
 sudo apt-get install eclipse
 }}}
 
-== Instalació del pluguin RT-Druid per Eclipse ==
+== Instal·lació del pluguin RT-Druid per Eclipse ==
 
 Un cop tinguem Eclipse instal·lat hauríem d'afegir a aquest el paquet corresponent a RT-Druid, per fer això obrirem l'Eclipse i farem els següents passos:
 
@@ -60,6 +60,7 @@ Afegirm una entrada nova amb Add...
 	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_01.png
 
 En el camp Name poseu un nom significatiu per vosaltres com RT-Druid
+
 En el camp Location introduir l'adreça següent:
 http://download.tuxfamily.org/erika/webdownload/rtdruid_160_nb/
 
@@ -81,7 +82,7 @@ I començarà la instalació.
 
 	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_06.png
 
-Vigileu que en algún moment la instalació s'aturará i a la part de darrera de la finestra amb la barra de progrés podreu veure que ha saltat un avís referent a la confiança del lloc de descarrega d'alguns paquets.
+Vigileu que en algun moment la instal·lació s'aturarà i a la part de darrera de la finestra amb la barra de progrés podreu veure que ha saltat un avís referent a la confiança del lloc de descarrega d'alguns paquets.
 
 	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_07.png
 	
@@ -95,7 +96,43 @@ Finalment ens avisará que hauriem de reiniciar eclipse perque els canvis tingui
 
 == Instalació de Mplab ==
 
+Per poder instal·lar MplabX es necessari tenir instal·lat Java, en molts casos ja ve preinstal·lat (com en el nostre cas si treballem amb Ubuntu), però en cas de necessitar-lo instal·lar visiteu la seva pagina oficial des de on es pot descarregar:
+	http://www.java.com/es/
+
+Un cop tingueu instal·lat Java, accediu a la pagina de Mplab X de Michrochip i seleccioneu:
+
+* MPLAB IDE X Beta
+* MPLAB C30 Lite Compiler for dsPIC DSCs and PIC24 MCUs
+
+	http://ww1.microchip.com/downloads/mplab/X_Beta/installer.html
+	
+Un cop tinguem descarregats els dos fitxers els hem de donar permis d'execució així que obriu una terminal.
+
 	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_00.png
+	
+Accediu al directori on s'hagin descarregat els fitxers:
+{{{
+cd ~/Downloads/
+}}}
+
+podeu comprovar que els fitxers estan en aquest directori
+{{{
+ls
+}}}
+
+I ara doneu-los permis d'execució:
+{{{
+chmod u+x mplab*.run
+}}}
+
+Un cop tenen permis d'execució executem primer el mplabx-ide:
+{{{
+$sudo ./mplabx-ide-beta7.12-linux-installer.run
+}}}
+
+Tot seguit només haurem d'acceptar totes les condicions d'us i indicar-li el directori d'instal·lació, el qual podem deixar per defecte a `/opt/microchip/mplabx`.
+
+Deixo les 5 imatges del proces.
 
 	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_01.png
 
@@ -109,7 +146,16 @@ Finalment ens avisará que hauriem de reiniciar eclipse perque els canvis tingui
 
 	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_06.png
 
+Ens dirà que hem de reiniciar perque els canvis tinguin efecte. Pero de totes maneres no reiniciarem fins que haguem instalat el següent paquet.
+
 	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_07.png
+
+Un cop hem acabat d'instal·lar el IDE de Mplab X procedim a instal·lar el paquet per programar els dsPIC:
+{{{
+$sudo ./mplabc30-v3.30c-linux-installer.run
+}}}
+
+I igual que en el cas anterior només haurem de acceptar les condicions i deixar el lidrectori d'instalació per defecte `/opt/microchip/mplabc30/v3.30c`
 
 	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_08.png
 
