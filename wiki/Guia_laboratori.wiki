@@ -2,7 +2,7 @@
 
 = Introducció =
 
-Add your content here.
+<wiki:toc max_depth="3" />
 
 == Preparant entorn de desenvolupament ==
 	Per tal de programar les plaques Flex per la realització del laboratori es necessita tenir l'entorn de desenvolupament preparat amb els següents programes:
