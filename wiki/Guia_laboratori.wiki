@@ -101,15 +101,18 @@ Per poder instal·lar MplabX es necessari tenir instal·lat Java, en molts casos
 
 Un cop tingueu instal·lat Java, accediu a la pagina de Mplab X de Michrochip i seleccioneu:
 
-* MPLAB IDE X Beta
-* MPLAB C30 Lite Compiler for dsPIC DSCs and PIC24 MCUs
+ * MPLAB IDE X Beta
+ * MPLAB C30 Lite Compiler for dsPIC DSCs and PIC24 MCUs
 
 	http://ww1.microchip.com/downloads/mplab/X_Beta/installer.html
 	
-Un cop tinguem descarregats els dos fitxers els hem de donar permis d'execució així que obriu una terminal.
-
 	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_00.png
 	
+	
+Un cop tinguem descarregats els dos fitxers els hem de donar permis d'execució així que obriu una terminal.
+
+	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_01.png
+
 Accediu al directori on s'hagin descarregat els fitxers:
 {{{
 cd ~/Downloads/
@@ -130,13 +133,11 @@ Un cop tenen permis d'execució executem primer el mplabx-ide:
 $sudo ./mplabx-ide-beta7.12-linux-installer.run
 }}}
 
+	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_02.png
+
 Tot seguit només haurem d'acceptar totes les condicions d'us i indicar-li el directori d'instal·lació, el qual podem deixar per defecte a `/opt/microchip/mplabx`.
 
 Deixo les 5 imatges del proces.
-
-	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_01.png
-
-	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_02.png
 
 	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_03.png
 
@@ -149,6 +150,8 @@ Deixo les 5 imatges del proces.
 Ens dirà que hem de reiniciar perque els canvis tinguin efecte. Pero de totes maneres no reiniciarem fins que haguem instalat el següent paquet.
 
 	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_07.png
+	
+	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_08.png
 
 Un cop hem acabat d'instal·lar el IDE de Mplab X procedim a instal·lar el paquet per programar els dsPIC:
 {{{
@@ -156,8 +159,6 @@ $sudo ./mplabc30-v3.30c-linux-installer.run
 }}}
 
 I igual que en el cas anterior només haurem de acceptar les condicions i deixar el lidrectori d'instalació per defecte `/opt/microchip/mplabc30/v3.30c`
-
-	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_08.png
 
 	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_09.png
 
