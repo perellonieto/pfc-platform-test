@@ -9,6 +9,9 @@ El laboratori que s'ha diseñat pot ser executat sense haber de preparar tot un 
 	Cal dir que la velocitat de resposta d'aquest entorn es algo inferior a la que podria donar un sistema instalat, pero aquest sistema ens dona una portabilitat i una velocitat en la preparació del entorn.
 	
 	De totes maneres el mateix Live CD compta amb la opció de fer una instalació en el disc, compartint-lo amb un altre sistema operatiu si es necessari i podent arrancar desde qualsevol dels instalats.
+
+<wiki:toc max_depth="3" />
+
 ==Requisits mínims==
 
 		Per tal d'iniciar el Live CD del laboratori, el nostre ordinador hauria de tenir els següents requisits mínims:
@@ -171,7 +174,5 @@ I de la forma que hauría de quedar per tal de que no hi hagi posteriors problem
 Finalment apareixeran els detalls del projecte que estem a punt de crear.
 
 	http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_08.png
-
-
 
 
