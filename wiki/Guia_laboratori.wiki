@@ -1,0 +1,88 @@
+#summary One-sentence summary of this page.
+
+= Introducció =
+
+Add your content here.
+
+== Preparant entorn de desenvolupament ==
+	Per tal de programar les plaques Flex per la realització del laboratori es necessita tenir l'entorn de desenvolupament preparat amb els següents programes:
+		
+	# Eclipse (EE\_160) : entorn de programació, reanomenat Erika Enterprise (EE) RT-Druid.
+	# Mplab (mplabx\_ide\_beta\_7) : entorn per descarregar els binaris al dsPIC.
+	# Matlab (matlab 7.8) : entorn per la comunicació entre el PC i el dsPIC.
+	# Python (Python 2.7) : interpret de programes en python.
+		# PySerial : modul per comunicació serie.
+		# Matplotlib : modul per la interpretació de les dades rebudes del dsPIC.
+		
+	Tots aquests programes són de lliure distribució (excepte el Matlab), i aquests es poden aconseguir de les seves pagines oficials:
+		
+Eclipse
+	http://erika.tuxfamily.org/erika-for-multiple-devices.html
+Mplabx
+	http://ww1.microchip.com/downloads/mplab/X_Beta/installer.html
+Python
+	http://www.python.org/download/
+PySerial
+	http://pypi.python.org/pypi/pyserial
+Matplotlib
+	http://matplotlib.sourceforge.net/users/installing.html
+
+		
+== Instalació de les Llibreries Python ==
+{{{
+	$sudo apt-get install gnuplot
+	$sudo apt-get install python-matplotlib
+	$sudo apt-get install python-scitools
+}}}
+
+== Instalació d'Eclipse ==
+
+== Instalació del pluguin RT-Druid per Eclipse ==
+
+	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_00.png
+
+	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_01.png
+
+	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_02.png
+
+	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_03.png
+
+	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_04.png
+
+	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_05.png
+
+	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_06.png
+
+	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_07.png
+
+	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_08.png
+
+	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_09.png
+
+== Instalació de Mplab ==
+
+	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_00.png
+
+	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_01.png
+
+	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_02.png
+
+	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_03.png
+
+	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_04.png
+
+	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_05.png
+
+	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_06.png
+
+	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_07.png
+
+	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_08.png
+
+	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_09.png
+
+	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_10.png
+
+	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_11.png
+
+	http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_12.png
