@@ -135,12 +135,12 @@ A la següent secció ens demanarà que li indiquem el path del fitxer, així qu
 Si hem seguit la guia fins aquest punt hauria de ser en el path següent:
 
 {{{
-/home/student/workspace/NECS_11sdcDI/Debug/pic30.elf
+/home/student/workspace/flex_blink/Debug/pic30.elf
 }}}
 
 (Aixo depen de on hagueu creat el vostre workspace i el nom que li hagueu donat al projecte)
 
-	http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_03.png
+	http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_02.png
 
 Aqui seleccionem quin microcontrolador ens disposem a programar, en el nostre cas es:
 {{{
@@ -151,6 +151,10 @@ Device: dsPIC33FJ256MC710
 	http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_04.png
 
 Ara s'ha d'indicar quin es el programador que es vol utilitzar, en el nostre cas programarem les plaques Flex amb el ICD3.
+La connexió de la placa Flex i el programador hauria de estar ara mateix així:
+
+	http://pfc-platform-test.googlecode.com/svn/wiki/images/fotos/DSC_0224.jpg
+
 En el cas que es trii una altra eina per programar-los s'ha de tenir en compte els colors en els que apareixen els diferents dispositius:
 
 Verd : Indica que aquest programador ha estat totalment testejat i certificat per l'us general. Per tant es possible seleccionar-lo.
@@ -172,7 +176,11 @@ I de la forma que hauría de quedar per tal de que no hi hagi posteriors problem
 	http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_07.png
 
 Finalment apareixeran els detalls del projecte que estem a punt de crear.
+Acceptem i ens deixará el projecte en l'entorn de treball.
+Alhora de programar la placa, clicarem al botó (Make and Program Device) adal a la dreta.
 
 	http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_08.png
 
+Un cop programat hauría de començar a parpellejar el primer led taronja començant per l'esquerra (després dels tres leds verds que indiquen alimentació):
 
+	http://pfc-platform-test.googlecode.com/svn/wiki/images/fotos/DSC_0231.jpg
