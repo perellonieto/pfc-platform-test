@@ -27,6 +27,8 @@ Aquests son els passos necessaris per crear un nou projecte a partir d'una plant
 
 == Entorn Eclipse ==
 
+*Vigilar que algunes imatges del proces encara fan referencia a un projecte antic, on es veu "NECS_11sdcDI" hauria de posar "flex_blink"*
+
 Primer de tot haurem d'obrir el programa Eclipse, que és un IDE de programació, en aquest cas porta un plugin RT-Druid de Evidence que ens permetrà programar el RTOS Erika.
 
 Un cop obert el programa crearem un nou projecte
@@ -51,16 +53,14 @@ Ara li posarem un nom de projecte i deixarem les altres opcions per defecte (si 
 
 En aquest punt es quan podem seleccionar una plantilla per començar el projecte, així no haurem de programar les coses bàsiques. Per tant fem el següent:
 
-Marquem la caixeta _"Create a project using one of these templates"_ i seleccionem _"pic30"_ (en el nostre cas, ja que estem programant un dsPIC33FJXXXMCXX.
+Marquem la caixeta _"Create a project using one of these templates"_ i seleccionem _"pic30"_ (en el nostre cas, ja que estem programant un dsPIC33XXX.
 
 	http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_05.png
 
 I aquí dintre seleccionem un dels templates, en aquest cas:
 {{{
-pic30 -> 11sdcDI -> Standard Control
+pic30 -> FLEX -> EDF: Periodic task with period
 }}}
-
-(per aquesta prova es necessita tenir un adaptador per RS232 per tal de comunicar al ordinador totes les estadístiques del microcontrolador.)
 
 	http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_06.png
 
