@@ -1,13 +1,13 @@
 #There are links to video examples
 
-= Introduction =
+= Introducció =
 
-
+En aquesta secció es penjaran els enllaços a vídeos que es vagin creant, per mostrar el funcionament de les aplicacions que en el projecte es realitzin.
 
 = Live CD =
 
-  * First version of the live CD 
+  * Primer versió del live CD amb tot el sistema a punt en 10 minuts
     http://youtu.be/PD1wraeIPPQ
 
-  * Second version of the live CD
+  * Segona versió del live CD amb tot el sistema a punt en 6 minuts
     http://youtu.be/vE_-NILqxns
