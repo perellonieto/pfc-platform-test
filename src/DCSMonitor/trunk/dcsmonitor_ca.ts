@@ -235,7 +235,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Networked and Embedded Control Systems:</source>
-        <translation>Sistemes de Control Encastats i en Xarxa:</translation>
+        <translation>Sistemes de Control Empotrats i en Xarxa:</translation>
     </message>
     <message>
         <source>Timestamp</source>
@@ -275,11 +275,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>First Int.</source>
-        <translation>Prim. Int.</translation>
+        <translation>1ª Int.</translation>
     </message>
     <message>
         <source>Second Int.</source>
-        <translation>Seg. Int.</translation>
+        <translation>2ª Int.</translation>
     </message>
     <message>
         <source>TOTAL Links</source>

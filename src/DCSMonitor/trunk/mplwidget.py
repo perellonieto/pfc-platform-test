@@ -1,3 +1,18 @@
+#******************************************************************************
+#  FILE          : mplwidget.py
+#  DESCRIPTION   : main program
+#  CPU TYPE      : 
+#  AUTHOR        : Miquel Perello Nieto
+#  PROJECT       : 
+#  COMPANY       : Automatic Control Department,
+#                 Technical University of Catalonia
+#
+#     REVISION HISTORY:
+#              VERSION: 1
+#               AUTHOR: Miquel Perello Nieto
+#                 DATE: December 2011
+#             COMMENTS: 
+# *****************************************************************************/
 # Python Qt4 bindings for GUI objects
 from PyQt4 import QtGui
 

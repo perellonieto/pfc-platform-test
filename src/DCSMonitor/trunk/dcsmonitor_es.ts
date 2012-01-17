@@ -279,11 +279,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>First Int.</source>
-        <translation>Primera Int.</translation>
+        <translation>1ª Int.</translation>
     </message>
     <message>
         <source>Second Int.</source>
-        <translation>Segunda Int.</translation>
+        <translation>2ª Int.</translation>
     </message>
     <message>
         <source>t (s)</source>

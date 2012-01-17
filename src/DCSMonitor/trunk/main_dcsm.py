@@ -3,18 +3,28 @@
 # ================================================= #
 #    Distributed Control Systems Monitor Main        #
 # ================================================= #
+#******************************************************************************
+#  FILE          : main_dcsm.py
+#  DESCRIPTION   : main program
+#  CPU TYPE      : 
+#  AUTHOR        : Miquel Perello Nieto
+#  PROJECT       : 
+#  COMPANY       : Automatic Control Department,
+#                 Technical University of Catalonia
+#
+#     REVISION HISTORY:
+#              VERSION: 1
+#               AUTHOR: Miquel Perello Nieto
+#                 DATE: December 2011
+#             COMMENTS: Dynamical graphics was addapted from Yassine Benabbas in 
+# http://knol.google.com/k/yassine-benabbas/cr%C3%A9er-un-graphe-dynamique-avec-pyplot/31z31ug7b5vz5/26#Code_source
+# *****************************************************************************/
 
 # used to parse files more easily
 from __future__ import with_statement
 
-# Numpy module
-import numpy as np
-
 # for command-line arguments
 import sys
-
-# to generate random numbers
-import random
 
 # for communicate with pic
 import serial

@@ -12,6 +12,13 @@
  *     		  AUTHOR: Antonio Camacho Santiago
  * 				DATE: April 2010
  * 			COMMENTS: Adapted from Microchip CE127_ECAN_Crosswire demo
+ *
+ *
+ *  REVISION HISTORY:
+ *			 VERSION: 0.2
+ *     		  AUTHOR: Miquel Perello Nieto
+ * 				DATE: January 2012
+ * 			COMMENTS:
  *****************************************************************************/
 
 #include "ee.h"

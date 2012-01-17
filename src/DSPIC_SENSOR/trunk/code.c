@@ -12,6 +12,12 @@
  *     		  AUTHOR: Antonio Camacho Santiago
  * 				DATE: April 2010
  * 			COMMENTS:
+ *
+ *  REVISION HISTORY:
+ *			 VERSION: 0.2
+ *     		  AUTHOR: Miquel Perello Nieto
+ * 				DATE: January 2012
+ * 			COMMENTS:
  *****************************************************************************/
 
 /******************************************************************************

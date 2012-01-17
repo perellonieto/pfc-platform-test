@@ -39,7 +39,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Reference</source>
-        <translation>de référence</translation>
+        <translation>Reference</translation>
     </message>
     <message>
         <source>Input Value</source>
@@ -243,27 +243,27 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Input</source>
-        <translation>Entrée</translation>
+        <translation>Entree</translation>
     </message>
     <message>
         <source>First Int.</source>
-        <translation>Première Int.</translation>
+        <translation>1ª Int.</translation>
     </message>
     <message>
         <source>Second Int.</source>
-        <translation>Deuxième Int.</translation>
+        <translation>2ª Int.</translation>
     </message>
     <message>
         <source>Double Integrator</source>
-        <translation>Intégrateur double</translation>
+        <translation>Integrateur double</translation>
     </message>
     <message>
         <source>Networked and Embedded Control Systems:</source>
-        <translation>Systèmes en Réseau et Intégrés:</translation>
+        <translation>Systemes en Reseau et Integres:</translation>
     </message>
     <message>
         <source>t (s)</source>
-        <translation>temps (s)</translation>
+        <translation>Temps (s)</translation>
     </message>
     <message>
         <source>Voltage (V)</source>

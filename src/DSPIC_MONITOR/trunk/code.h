@@ -13,10 +13,10 @@
  * 				DATE: April 2010
  * 			COMMENTS:
  *
- *   REVISION HISTORY:
+ *  REVISION HISTORY:
  *			 VERSION: 0.2
- *     		  AUTHOR: Miquel Perelló Nieto
- * 				DATE: October 2011
+ *     		  AUTHOR: Miquel Perello Nieto
+ * 				DATE: January 2012
  * 			COMMENTS:
  *****************************************************************************/
 
