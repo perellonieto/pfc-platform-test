@@ -1,0 +1,362 @@
+%%==================================================================%%
+%% Author : Perelló Nieto, Miquel                                   %%
+%% Version: 1.0, 04/11/2011                                         %%
+%%                                                                  %%
+%% Memoria del Projecte de Final de Carrera                         %%
+%% Disseny del laboratori                                           %%
+%%==================================================================%%
+
+\chapter{Guia del Live CD}\label{cap:cd_gui}
+
+
+% the code below specifies where the figures are stored
+\ifpdf
+    \graphicspath{{6_live_cd_guide/figures/PNG/}{6_live_cd_guide/figures/PDF/}{6_live_cd_guide/figures/}}
+\else
+    \graphicspath{{6_live_cd_guide/figures/EPS/}{6_live_cd_guide/figures/}}
+\fi
+
+
+% ----------------------- contents from here ------------------------
+
+El laboratori que s'ha dissenyat pot ser executat sense haver de preparar tot un entorn de compilació i muntatge gracies a aquest Live CD.
+	
+Tot l'entorn està preparat perquè es pugui engegar el Live CD des de l'arranc del ordinador i ja es pugui treballar en ell.
+	
+Cal dir que la velocitat de resposta d'aquest entorn es algo inferior a la que podria donar un sistema instal·lat, però aquest sistema ens dona una portabilitat i una velocitat en la preparació del entorn.
+	
+De totes maneres el mateix Live CD compta amb l'opció de fer una instal·lació en el disc, compartint-lo amb un altre sistema operatiu si es necessari i podent arrancar des de qualsevol dels instal·lats.
+\section{Requisits mínims}
+Per tal d'iniciar el Live CD del laboratori, el nostre ordinador hauria de tenir els següents requisits mínims:
+\begin{itemize}
+	\item Procesador: Intel x86 o compatible, amb $\geq$ 200MHz
+	\item Memoria RAM: 256 MB.
+	\item Unitat lectora de DVD.
+	\item BIOS: ha de ser capaç d'arrencar des de DVD.
+	\item Targeta gràfica: estàndard, compatible amb SVGA.
+\end{itemize}
+
+
+
+%====================================================================================%
+% Arrencant el \LiveCD
+%====================================================================================%
+\section{Arrencant el \LiveCD}\label{cap:gui:cd:boot}
+
+Abans de tot per arrencar un \LiveCD s'ha de configurar en la BIOS que abans d'arrencar des de el disc dur, provi d'arrencar desde el CD/DVD. Aixó en molts ordinadors s'aconsegueix apretant la tecla \emph{F2}, o \emph{Sup} varis cops només arrencar l'ordinador (aixó pot variar segons la màquina). Un cop estém en la BIOS normalment sol existir un apartat de \emph{Boot} en el que podem escollir el primer lloc des de on arrencar, per tant primer de tot seleccionar com a primera opció la unitat de CD/DVD, i deixar com a segona opció el disc dur intern.
+
+Un cop hem configurat això podem introduir el \LiveCD al lector i reiniciar l'ordinador guardant els canvis.
+
+Quan arrencqui el \LiveCD apareixerà el següent text (figura \ref{live_cd_00}), cal esperar una mica abans de que aparegui el següent menú.
+\figuremacroW{live_cd_00}{Arrencant Live CD}{}{1}
+
+En aquest menú es pot arrencar el Live CD directament (primera opció), instal·lar la imatge al disc (tercera opció)..
+\figuremacroW{live_cd_01}{Menu Live CD}{}{0.5}
+
+Si volem arrencar desde el disc seguim a la secció Guia pas a pas del Live CD \ref{cap:gui:cd:pas}.
+
+Si el que volem es instalar el sistema en el nostre ordinador seleccionem la tercera opció i seguim els passos de la secció Instal·lant \ref{cap:gui:cd:inst}
+
+\section{Guia pas a pas del Live CD}\label{cap:gui:cd:pas}
+
+Al escollir arrancar el \LiveCD apareixerà el logotip d'\Ubuntu carregant.
+\figuremacroW{live_cd_02}{Logotip de càrrega d'\Ubuntu}{}{0.3}
+
+I al final el prompt d'usuari i contrasenya.
+
+\begin{center}
+	\begin{tabular}{l | l}
+		Usuari & student \\
+		\hline
+		Contrasenya & student \\
+		\hline
+	\end{tabular}
+	\captionof{table}{Usuari i contrasenya \LiveCD}
+	\label{tab:gui:cd:usr:pass}
+\end{center}
+\figuremacroW{live_cd_03}{Prompt d'usuari i contrasenya}{}{0.3}
+
+
+%====================================================================================%
+% Estructura del LiveCD
+%====================================================================================%
+\subsection{Estructura del \LiveCD}\label{cap:gui:cd:struct}
+
+Un cop logejats, estarem en un escriptori típic d'\Ubuntu (figura \ref{live_cd_04}), amb els següents elements d'interès:
+
+\begin{center}
+	\begin{tabularx}{\linewidth}{l | X}
+		MPLAB X IDE beta7.12 &  Accés directe al programa \MplabX, el farem servir per programar la placa \FLEX\\
+		\hline
+		Eclipse & Accés directe al programa \Eclipse, el farem servir per compilar els programes per la placa \FLEX\\
+		\hline
+		Programs & Carpeta amb un recull del codi font de tots els programes utilitzats al laboratori  \\
+	\end{tabularx}
+	\captionof{table}{Elements de l'escriptori}
+	\label{tab:gui:cd:desk}
+\end{center}
+
+\figuremacroW{live_cd_04}{Escriptori del \LiveCD}{}{0.5}
+
+Ara si entrem al directori $/home/student/workspace/Programs/$ ens trobarem amb tots els codis necessaris per executar el laboratori comprimits en .zip (figura \ref{live_cd_05}).
+
+\begin{center}
+	\begin{tabularx}{\linewidth}{l | X}
+		DCSMonitor & Aquest és el programa que s'executa a l'ordinador per veure el control que s'està realitzant. Necessita comunicarse via RS232 amb una placa \FLEX amb el programa DSPIC\_SENSOR instal·lat.\\
+		\hline
+		DSPIC\_SENSOR & Aquest és el programa per la placa \FLEX que actua sobre el doble integrador, representa un dispositiu \SensorActuador. Ja que obté els valors de sortida del doble integrador (feina de \Sensor), i també assigna el valor d'entrada (feina d'\Actuador).\\
+		\hline
+		DSPIC\_CONTROLLER & Aquest és el programa per la placa \FLEX que fa els càlculs del control per el doble integrador, aquests càlculs els envia pel bus CAN cap al \SensorActuador. \\
+		\hline
+		DSPIC\_MONITOR & Aquest és el programa per la placa \FLEX que monitoritza tot el bus CAN.  \\
+	\end{tabularx}
+	\captionof{table}{Elements del directori $\sim/workspace/Programs/$}
+	\label{tab:gui:cd:workspace}
+\end{center}
+
+Descomprimir els que ens calguin per començar a compilar i executar els diferents codis.
+\figuremacroW{live_cd_07}{Codis comprimits dels programes del laboratori}{}{1}
+
+%====================================================================================%
+% Compilant amb Eclipse el DSPIC_SENSOR
+%====================================================================================%
+\subsection{Compilant amb Eclipse el DSPIC\_SENSOR}\label{cap:gui:cd:comp:ecl:sensor}
+
+Un cop tenim l'estructura dels directoris que hi ha ben clara, procedim a obrir el programa de l'escriptori \Eclipse.
+Al obrir-lo per primer cop, ens preguntarà quin es el directori per defecte dels nostres projectes, així que deixeu per defecte el que ens apareix (Podeu marcar la casella inferior esquerra perquè no torni a aparèixer el missatge) (figura \ref{live_cd_08}).
+\figuremacroW{live_cd_08}{Indicant espai de treball a \Eclipse}{}{0.7}
+
+Ja en la pantalla principal d'\Eclipse, anem a crear un nou projecte \RTDruid, per fer això anem a $File->New->New Project$, i a la finestra que apareix, seleccionem $Evidence->RT-Druid Oil and C/C++ Project$ (figura \ref{live_cd_09}).
+\figuremacroW{live_cd_09}{Seleccionant RT-Druid project a \Eclipse}{}{0.7}
+
+Despres desmarquem la casella \emph{Use default location}, i anem a buscar el codi del \Sensor al workspace :
+$/home/student/workspace/Programs/DSPIC_SENSOR/trunk$
+I tot seguit li posem un nom al projecte (figura \ref{live_cd_11}).
+\figuremacroW{live_cd_11}{Seleccionant directori del projecte a \Eclipse}{}{0.7}
+
+Un cop ens ha creat el nou projecte, el compilem amb clicant a $Project->Clean$, amb aquesta opció netejarem el directori d'antigues compilacions (això es útil per estar segurs que el que compila es tot nou) i marcarem la opció \emph{Start build immediately} perquè un cop netejat compili el codi (figura \ref{live_cd_13}).
+\figuremacroW{live_cd_13}{Netejant i compilant a \Eclipse}{}{0.7}
+
+Començarà a compilar i un cop acabat a la Consola (finestra de text de la part inferior del programa) ha d'aparèixer el següent missatge:
+
+\emph{Compilation terminated successfully!}
+
+
+%====================================================================================%
+% Gravant amb MPLABX el DSPIC_SENSOR
+%====================================================================================%
+\subsection{Gravant amb \MplabX  el DSPIC\_SENSOR}\label{cap:gui:cd:sav:sensor}
+
+Un cop compilat el programa, obrim \MplabX (figura \ref{live_cd_15})
+\figuremacroW{live_cd_15}{Logo carregant \MplabX}{}{0.5}
+
+I creem un nou projecte important el .elf que ens ha generat \Eclipse:
+
+$File->Import Hex (Prebuilt) Project$
+
+I introduïm el directori on ens ha generat el fitxer .elf (figura \ref{live_cd_17}):
+
+\emph{/home/student/workspace/Programs/DSPIC\_SENSOR/trunk/Debug/pic30.elf}
+\figuremacroW{live_cd_17}{Seleccionant fitxer precompilat \MplabX}{}{1}
+
+
+Aquí seleccionem quin microcontrolador ens disposem a programar (Figura \ref{live_cd_18}), en el nostre cas es:
+
+\begin{itemize}
+	\item Family: DSPIC33
+	\item Device: dsPIC33FJ256MC710
+\end{itemize}
+
+\figuremacroW{live_cd_18}{Seleccionant microcontrolador a gravar en \MplabX}{}{0.8}
+
+Ara s'ha d'indicar quin és el programador que es vol utilitzar, en el nostre cas programarem les plaques Flex amb el ICD3 (Figura \ref{live_cd_20}).
+La connexió de la placa Flex i el programador hauria de estar ara mateix com la fotografia (Figura \ref{DSC_0224}):
+
+\figuremacroW{DSC_0224}{Connexió del programador ICD3 i placa \FLEX}{}{0.5}
+\figuremacroW{live_cd_20}{Seleccionant programador en \MplabX}{}{0.8}
+
+En el cas que es trii una altra eina per programar-los s'ha de tenir en compte els colors en els que apareixen els diferents programadors:
+
+\input{5_laboratory_guide/mplab_colors.tex}
+
+Ara només queda posar-li un nom al projecte (Figura \ref{live_cd_21}), i \emph{sobretot vigilar de canviar el directori del projecte} i treure'l del directori \emph{Debug} (Figura \ref{live_cd_22}). Si el deixesiu en aquest directori al fer qualsevol \emph{Clean} al programa Eclipse podríeu tenir problemes en el projecte creat al \MplabX.
+
+
+\figuremacroW{live_cd_21}{Canviant el directori del projecte a \MplabX}{S'ha de treure del direcotri \emph{/Debug}}{1}
+
+\figuremacroW{live_cd_22}{Directori del projecte ven posat a \MplabX}{}{1}
+
+Finalment apareixeran els detalls del projecte que estem a punt de crear.
+Acceptem i ens deixarà el projecte en l'entorn de treball.
+A l'hora de programar la placa, clicarem al botó \emph{Make and Program Device} a dalt a la dreta, i si tot funciona hauria d'apareixer a la part inferior del programa el següent text (Figura \ref {live_cd_25}).
+
+\figuremacroW{live_cd_25}{Microcontrolador programat correctament a \MplabX}{}{0.5}
+
+\clearpage
+
+%====================================================================================%
+% Compilanr i gravar la resta
+%====================================================================================%
+\subsection{Resum per gravar la resta}\label{cap:gui:cd:comp:save:all}
+
+Els passos per compilar i gravar la resta de programes que ens interessin (DSPIC\_CONTROLLER i/o DSPIC\_MONITOR) són exactament els mateixos que hem fet per programar el DSPIC\_SENSOR.
+Es possa aquesta secció per fer un resum de tots els passos a seguir a mode de recordatori:
+
+\begin{enumerate}
+	\item Descomprimim els codis de la carpeta $/home/student/workspace/Programs/$
+	\item Obrim el programa \Eclipse
+	\begin{enumerate}
+		\item Creem un nou projecte RT-Druid
+		\item Seleccionem el directori on es troba el projecte, i li posem un nom.
+		\item Creem el projecte
+		\item Natejem l'entorn i compilem
+	\end{enumerate}
+	\item Obrim el programa \MplabX
+	\begin{enumerate}
+		\item Creem un nou projecte amb el codi precompilat
+		\item Busquem el fitxer .elf (dintre del directori del projecte creat amb Eclipse i dintre de Debug)
+		\item Seleccionem el microcontrolador DSPIC33 i dsPIC33FJ256MC710
+		\item Endollem el programador ICD3 al ordinador per USB
+		\item Seleccionem dintre del programador ICD3 el numero de serie que ens aparegui.
+		\item Posem un nom al projecte i \textbf{eliminem la part \\Debug} de la localitzacio
+		\item Acceptem i programem.
+	\end{enumerate}
+\end{enumerate}
+
+%====================================================================================%
+% DCSMonitor
+%====================================================================================%
+\subsection{DCSMonitor}\label{cap:gui:cd:dcsmonitor}
+
+El programa \DCSMonitor ens permet comprobar si el control dels dispositius s'está executant correctament. Per poder executar el programa aneu al directori \emph{/home/student/Desktop/Programs/DCSMonitor} i executeu el programa \emph{main\_dcsm.py} (figura \ref{live_cd_28})
+\figuremacroW{live_cd_28}{Directori amb el codi de \DCSMonitor}{}{1}
+
+Os demanarà si voleu executar-lo en una terminal o directament executar-lo. Agafeu la opció que preferiu.
+
+Un cop obert tindreu davant un programa amb l'aspecte del de la figura \ref{live_cd_30}. En aquest programa podreu veure el control dels vostres dispositius en la part central esquerra en una gràfica. A la part dreta tindreu el botó per connectar el port serie. Just a sota els llaços de control que hi hagi connectats (en cas que tingueu un dispositiu \Monitor connectat al bus CAN), sota d'aixó podeu seleccionar quins són els plots que voleu que apareguin en la gràfica, després un botó per començar a rebre les dades del llaç de control, un botó per netejar el text, i valors estadístics.
+
+\figuremacroW{live_cd_30}{Pantalla principal de \DCSMonitor}{}{0.5}
+
+Abans de res podeu anar a les Preferencies del programa per poder escollir l'idioma i si connectareu el programa amb un dispositiu \Monitor, o amb un dispositiu \SensorActuador (figura \ref{live_cd_preferencies}).
+
+\figuremacroW{live_cd_preferencies}{Preferencies}{}{0.3}
+
+Un cop hem seleccionat l'idioma i a quin dispositiu estem connectats mitjançant el port RS232, pode clicar en el botó \emph{Conectar}, i si tot va bé hauría de pintar-se de verd i indicar que està connectat com a la figura \ref{live_cd_32}.
+
+\figuremacroW{live_cd_32}{Connectant el port serie a \DCSMonitor}{}{0.3}
+
+Tot seguit si esteu connectats a un dispositiu \Monitor salteu a la secció Connectat a un dispositiu \Monitor \ref{cap:gui:cd:dcsmonitor:monitor}.
+
+Si en canvi esteu connectats a un dispositiu \SensorActuador seguiu en la següent secció Connectat a un dispositiu \SensorActuador \ref{cap:gui:cd:dcsmonitor:sensor}.
+
+%====================================================================================%
+% Connectat a un dispositiu \SensorActuador
+%====================================================================================%
+\subsubsection{Connectat a un dispositiu \SensorActuador}\label{cap:gui:cd:dcsmonitor:sensor}
+
+En aquest mode d'execució només està habilitada la opció de monitoritzar, netejar el text i exportar la gràfica per tant si cliqueu en \emph{Monitoritzar} i teniu els dispositius correctament programats i connectats hauria de començar a aparèixer text en la part inferior de l'espai de la gràfica, indicant les lectures de l'estat del control, i també hauria d'aparèixer una gràfica en temps real, tal com surt en la figura \ref{live_cd_33}.
+Si volem exportar la gràfica podem fer-ho un cop hem deixat de monitoritzar (veure en la secció \ref{cap:gui:cd:dcsmonitor:image}).
+
+\figuremacroW{live_cd_33}{Programa \DCSMonitor connectat a un \SensorActuador}{Al monitoritzar ha de dibuixar una gràfica en temps real i escriure els valors de l'estat}{0.8}
+
+\clearpage
+
+%====================================================================================%
+% Connectat a un dispositiu \Monitor
+%====================================================================================%
+\subsubsection{Connectat a un dispositiu \Monitor}\label{cap:gui:cd:dcsmonitor:monitor}
+
+En el mode d'execució del \Monitor estan totes les opcions habilitades. Primer de tot si cliquem en el botó \emph{Llistar Dispositius} ens apareixerà una llista de tots els llaços de control que hi hagi connectats al bus CAN (exemple en la imatge \ref{llista}).
+
+\figuremacroW{llista}{Demanant un llistat de dispositius a \DCSMonitor}{}{0.3}
+
+Un cop tenim la llista dels llaços de control, podem deixar d'actualitzar-la tornant a clicar el botó, per tal de baixar la carrega de l'ordinador i del dispositiu \Monitor.
+
+Despres seleccionem un llaç de control de la llista i donem al botó \emph{Monitoritzar} per començar a rebre el seu estat. Hauria d'aparèixer una gràfica en moviment i els diferents valors de lectura en la part inferior (figura \ref{live_cd_40}).
+I si volem que no es mostri algun dels plots de la gràfica només hem de desseleccionar-lo a la llista que apareix en les \emph{Opcions} (veure figura \ref{live_cd_41}).
+
+\figuremacroW{live_cd_40}{Gràfica amb tots els plots}{}{0.8}
+\figuremacroW{live_cd_41}{Gràfica amb plot de referència i segona integral}{}{0.8}
+
+Una altra opció que tenim al estar connectats al \Monitor es enviar-li un senyal per que comenci a generar carrega al bus CAN, per fer això només hem de desplaçar la barra \emph{Saturació} (figura \ref{barra_carrega}) fins al punt que ens interessi i d'aquesta manera el dispositiu \Monitor passarà a enviar missatges amb màxima prioritat al bus CAN.
+
+\figuremacroW{barra_carrega}{Barra lliscant per augmentar la carrega del bus}{}{0.8}
+
+\clearpage
+
+%====================================================================================%
+% Exportant gràfica generada
+%====================================================================================%
+\subsubsection{Exportant gràfica generada}\label{cap:gui:cd:dcsmonitor:image}
+
+En qualsevol dels modes d'execució del programa podem capturar un dels moments de la gràfica, per fer això només hem d'aturar la monitorització en l'instant que ho desitgem, seleccionem els plots que vulguem que apareguin i li donem al botó \emph{Guardar imatge} just a la dreta de la barra de carrega. Un cop haguem clicat apareixerà una finestra nova (figura \ref{live_cd_35}) on hem d'indicar-li el lloc on guardar la imatge i el nom amb l'extensió suportada que preferim (.pdf, .eps, .ps, .png, entre d'altres) (exemple d'imatge creada en l'escriptori en la figura \ref{live_cd_36}).
+
+\figuremacroW{live_cd_35}{Posant un nom a la gràfica a exportar}{}{0.5}
+
+\figuremacroW{live_cd_36}{Exemple havent exportat una gràfica}{}{0.5}
+
+\section{Instal·lant}\label{cap:gui:cd:inst}
+
+Com hem indicat el sistema pot ser instal·lat a l'ordinador, compartint l'espai amb un altres sistema operatiu, o instalant-lo completament sol a l'ordinador. Fer una instal·lació d'un sistema operatiu malament podria comportar esborrar informació important del vostre ordinador, per tant feu això només si esteu segurs del que féu.
+
+També existeix la opció de crear una maquina virtual (com pot ser amb VirtualBox o VMWare) i d'aquesta manera treballar desde el nostre sistema operatiu actual, i corrent una maquina virtual amb el laboratori.
+
+Tot seguit es podrà veure una guia pas a pas de com instal·lar aquest live CD.
+
+En el menú principal del CD (figura \ref{installing_livecd_00}), seleccionar la tercera opció \emph{Install}.
+
+\figuremacroW{installing_livecd_00}{Menú principal LiveCD, instalant}{}{0.8}
+
+Un cop hem seleccionat instal·lar apareixerà el logotip d'\Ubuntu (figura \ref{installing_livecd_01}) i començarà a carregar l'entorn d'instal·lació.
+
+\figuremacroW{installing_livecd_01}{Logotip d'\Ubuntu carregant}{}{0.2}
+
+Un cop l'entorn hagi carregat, el primer que ens sortirà serà que seleccionem l'idioma de la instal·lació, així que seleccioneu l'idioma desitjat i cliqueu endavant.
+
+Després os farà escollir la vostre franja horària per poder sincronitzar el rellotge, i tot seguit el tipus de teclat que tingueu.
+
+Fins aquí no hi ha cap problema, ara ve quan hem d'escollir on instal·lar el \LiveCD. 
+
+En aquesta pantalla ens demana com volem instal·lar el sistema operatiu del \LiveCD (figura \ref{installing_livecd_05}).
+
+Aquí tenim varies opcions :
+
+\begin{itemize}
+	\item Instalar el \LiveCD adjacent al sistema operatiu que tinguem instalat (opció recomenada).
+	\item Instalar el \LiveCD esborrant l'actual sistema operatiu.
+	\item Instalar el \LiveCD especificant les particions manualment (avançat).
+\end{itemize}
+
+Si no volem complicar-nos seleccionem la primera opció, i escollim l'espai que volem assignar a cada un dels sistemes operatius que hi ha a l'ordinador.
+
+\figuremacroW{installing_livecd_05}{Preparant particions del disc pel LiveCD}{}{0.7}
+
+Quan esteu acceptant os saltarà un avís indicant que aquests canvis s'efectuarà al disc dur i per tant aquest pas podrà no ser reversible, per tant accepteu si sabeu el que esteu fent.
+
+Ara tocarà esperar una estona mentre fa les particions que li hàgim indicat. Un cop particionat el disc ens demanara que li indiquem un usuari, contrasenya i nom de la màquina (figura \ref{installing_livecd_08}). Aquest \LiveCD ha estat creat perquè només crei l'usuari i contrasenyes predefinits \emph{student} i \emph{student}, per tant posar aquestes dades, ja que de totes maneres al arrencar des del disc dur intern l'usuari i contrasenya seran \emph{student}.
+
+\figuremacroW{installing_livecd_08}{Configurant usuari i contrasenya}{Deixar com a usuari i contrasenya la paraula \emph{student}}{0.7}
+
+Un cop totes les opcions estiguin omplertes continuarem, i apareixerà un resum de tot el que es desitja realitzar. Acceptar en aquest punt i començarà la instal·lació (això pot trigar varis minuts segons la màquina).
+
+Quan la barra arribi al 100\% apareixerá un avis d'instalació completada, i demanara que es reinicii l'ordinador, així que doneu-li a \emph{Reiniciar Ara}, i quan os ho demani treieu el disc i doneu-li a l'intro.
+
+Quan engegueu de nou l'ordinador seleccioneu el sistema operatiu instal·lat (ubuntu)
+i després de carregar apareixerà el prompt per introduir usuari i contrasenya (figura \ref{installing_livecd_13}).
+Així que introduïu l'usuari i contrasenya \emph{student}, i ja tindreu l'entorn del laboratori instal·lat i preparat per provar els diferents codis (escriptori del \LiveCD un cop instal·lat \ref{installing_livecd_14}).
+\figuremacroW{installing_livecd_13}{Prompt de login}{}{0.3}
+
+
+\figuremacroW{installing_livecd_14}{Escriptori del \LiveCD recent instal·lat}{}{0.7}
+
+Si s'instal·la en una màquina virtual de VirtualBox podem instal·lar un paquet anomenat \emph{Guest Additions}. Aquest paquet ens permet una interacció més amigable amb la màquina virtual. Per instal·lar això hem d'engegar primerament la màquina virtual, i un cop estem en l'escriptori seleccionar a la finestra de la part superior $Dispositivos->Instalar Guest Additions$, amb això apareixerà un CD nou a l'escriptori de la màquina virtual, així que obriu-lo i seguiu les seves instruccions.
+
+
+Si la màquina amfitrió resulta ser una maquina \Ubuntu, pot ser que despres d'instal·lar els Guest Additions la màquina virtual no canvia la resolució al re-dimensionar la finestra. Això és un error conegut per aquesta versió d'\Ubuntu ja que no reconeix el XSERVER. Per solucionar aquest problema s'ha de fer el següent en la màquina virtual:
+
+\begin{enumerate}
+	\item sudo apt-get update
+	\item sudo apt-get install build-essential linux-headers-\$\(uname -r\)
+	\item sudo apt-get install virtualbox-ose-guest-x11
+\end{enumerate}
+

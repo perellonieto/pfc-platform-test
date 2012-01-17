@@ -1,0 +1,80 @@
+entrar a home/student/workspace/programs/
+descomprimir tots els fitxers
+
+obrir eclipse
+crear un nou projecte en el directori
+/home/student/workspace/programs/DSPIC_SENSOR/trunk
+
+compilar
+
+mplabx obrir:
+/home/student/workspace/Programs/DSPIC_SENSOR/trunk/Debug/pic30.elf
+
+
+escollim ICD3
+Screenshot-16.png
+
+Si connectes el programador, apareix
+Screenshot-17.png
+
+eliminar debug i posar un nom
+Screenshot-18.png
+
+resultat
+Screenshot-19.png
+
+conectar a la placa flex sensora
+foto
+
+programar amb el boto
+Screenshot-21.png
+
+acaba de programar
+Screenshot-22.png
+
+
+Fem exactament el mateix pero en comptes de el SENSOR amb el CONTROLADOR
+
+compilat al eclipse
+Screenshot-23.png
+
+programat am mplabx
+Screenshot-24.png
+
+Entrar en Programs
+Screenshot-25.png
+
+un cop obert apareix
+Screenshot-26.png
+
+Seleccionar l'idioma i Sensor/Actuador
+Screenshot-28.png
+
+connectar
+Screenshot-29.png
+
+monitoritzar
+Screenshot-30.png
+
+desconectar
+Screenshot-31.png
+
+pots guardar una imatge
+Screenshot-32.png
+
+pots fer el mateix amb el codi del monitor, i si connectes el monitor tens altres opcions
+compilat al eclipse
+Screenshot-34.png
+
+programat am mplabx
+Screenshot-35.png
+
+amb el monitor, seleccionar la preferencia monitor
+es pot llistar els llaços de control
+Screenshot-36.png
+
+Si en seleccionem un podem monitoritzar-lo.
+Screenshot-37.png
+
+igual que abanç podem guardar imatges i el que volguem
+Screenshot-38.png

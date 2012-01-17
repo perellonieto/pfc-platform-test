@@ -1,0 +1,178 @@
+\select@language {catalan}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Principi del Gantt, esquerre}}{10}{figure.caption.8}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Principi del Gantt, dreta}}{11}{figure.caption.9}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Final del Gantt, esquerre}}{12}{figure.caption.10}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Final del Gantt, dreta}}{13}{figure.caption.11}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Logotip de la companyia Evidence}}{16}{figure.caption.12}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces FLEX: placa de avaluaci\IeC {\'o} de dsPIC de \emph {Microchip} }}{17}{figure.caption.13}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Fotografia d'un dsPIC33FJ256MC710}}{18}{figure.caption.14}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces MCP2551}}{19}{figure.caption.15}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Fotografia d'un programador ICD2}}{19}{figure.caption.16}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Connector RJ-11}}{19}{figure.caption.17}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Logotip d'Eclipse}}{20}{figure.caption.18}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Logotip del pluguin d'\emph {Eclipse} RT-Druid}}{20}{figure.caption.19}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Logotip del pluguin d'\emph {Eclipse} PyDev}}{21}{figure.caption.20}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Logotip de MPLAB\textsuperscript {\textregistered } X }}{21}{figure.caption.21}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Logotip de QtCreator}}{22}{figure.caption.22}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Logotip de QtLing\IeC {\@umlaut u}ist}}{22}{figure.caption.23}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Logotip Erika Enterprise}}{22}{figure.caption.24}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Connector per port serie RS232}}{25}{figure.caption.25}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Topologia en bus}}{27}{figure.caption.27}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Microprecessor-based control}}{30}{figure.caption.28}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Network-based control}}{30}{figure.caption.29}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Periferics per les plaques \emph {FLEX} .\relax }}{31}{figure.caption.30}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Doble Integrador}}}{31}{subfigure.3.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Transceptor CAN}}}{31}{subfigure.3.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Modul RS232}}}{31}{subfigure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Lla\IeC {\c c} de control}}{32}{figure.caption.31}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Diagrama general dels elements del laboratori}}{33}{figure.caption.32}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Esquema de la interf\IeC {\'\i }cie del programa \textbf {DCSMonitor} }}{36}{figure.caption.33}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Codificaci\IeC {\'o} de bits dels identificadors CAN per tipus de missatges}}{38}{figure.caption.34}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Control message}}}{38}{subfigure.7.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Granted sensor messages}}}{38}{subfigure.7.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {General purpose message}}}{38}{subfigure.7.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Best effort sensor message}}}{38}{subfigure.7.4}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Esquema gen\IeC {\`e}ric dels identificadors CAN pel nou laboratori.\relax }}{38}{figure.caption.35}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Diagrama de comunicacions i identificadors CAN}}{39}{figure.caption.36}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Missatge CAN del \emph {Controlador} al \emph {Actuador} .\relax }}{40}{figure.caption.37}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Identificador CAN (29 bits).}}}{40}{subfigure.10.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Informaci\IeC {\'o}.}}}{40}{subfigure.10.2}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Missatge CAN de l'estat del \emph {Sensor} per al \emph {Controlador} .\relax }}{41}{figure.caption.38}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Identificador CAN (29 bits).}}}{41}{subfigure.11.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Informaci\IeC {\'o} (8 bytes).}}}{41}{subfigure.11.2}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Missatge CAN per actualitzar el valor de refer\IeC {\`e}ncia.\relax }}{42}{figure.caption.39}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Identificador CAN (29 bits).}}}{42}{subfigure.12.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Informaci\IeC {\'o} (4 bytes).}}}{42}{subfigure.12.2}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Missatge CAN de l'estat del \emph {Sensor} per al \emph {Supervisor} .\relax }}{43}{figure.caption.40}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Identificador CAN (29 bits).}}}{43}{subfigure.13.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Informaci\IeC {\'o} (8 bytes).}}}{43}{subfigure.13.2}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Trama de supervisi\IeC {\'o} antiga per RS232}}{43}{figure.caption.41}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Trama de supervisi\IeC {\'o} nova per RS232}}{44}{figure.caption.42}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Arquitectura b\IeC {\`a}sica dels missatges enviats per RS232.\relax }}{45}{figure.caption.43}
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Diagrama de comunicacions i missatges RS232.}}{46}{figure.caption.44}
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Missatges de monitorizaci\IeC {\'o} per RS232.\relax }}{47}{figure.caption.45}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Comen\IeC {\c c}a la monitoritzaci\IeC {\'o} del lla\IeC {\c c} de control ID LLA\IeC {\c C}.}}}{47}{subfigure.18.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Atura la monitoritzaci\IeC {\'o} actual.}}}{47}{subfigure.18.2}
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Missatges per llistar lla\IeC {\c c}os de control per RS232.\relax }}{49}{figure.caption.46}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Comen\IeC {\c c}a a capturar missatges CAN per llistar els diferents lla\IeC {\c c}os de control.}}}{49}{subfigure.19.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Atura la captura de missatges CAN.}}}{49}{subfigure.19.2}
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Missatges de generaci\IeC {\'o} de c\IeC {\`a}rrega al bus CAN per RS232.\relax }}{50}{figure.caption.47}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Comen\IeC {\c c}a a generar c\IeC {\`a}rrega amb el valor de percentatge XX.}}}{50}{subfigure.20.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Atura la generaci\IeC {\'o} de c\IeC {\`a}rrega al bus CAN.}}}{50}{subfigure.20.2}
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Gr\IeC {\`a}fica realitzada amb MATLAB\textsuperscript {\textregistered } }}{51}{figure.caption.48}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Interf\IeC {\'\i }cie final del programa \textbf {DCSMonitor} }}{58}{figure.caption.49}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Estat de connexi\IeC {\'o} amb el \emph {Supervisor} via RS232.\relax }}{62}{figure.caption.50}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Pendent de connectar.}}}{62}{subfigure.2.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Connectat correctament.}}}{62}{subfigure.2.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Desconnectat correctament.}}}{62}{subfigure.2.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Error al connectar.}}}{62}{subfigure.2.4}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Barra lliscant de c\IeC {\`a}rrega en diferents posicions.\relax }}{68}{figure.caption.51}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Nivell de c\IeC {\`a}rrega al 0\%}}}{68}{subfigure.3.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Nivell de c\IeC {\`a}rrega al 89\%}}}{68}{subfigure.3.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Nivell de c\IeC {\`a}rrega al 94\%}}}{68}{subfigure.3.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Espai de text per valors monitoritzats.\relax }}{72}{figure.caption.52}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Rebent els valors d'una monitoritzaci\IeC {\'o}.}}}{72}{subfigure.4.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Havent finalitzat una monitoritzaci\IeC {\'o}.}}}{72}{subfigure.4.2}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Llista de lla\IeC {\c c}os de control al bus CAN.\relax }}{74}{figure.caption.53}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Abans de demanar la llista.}}}{74}{subfigure.5.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Amb dos lla\IeC {\c c}os al bus CAN.}}}{74}{subfigure.5.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Amb molts lla\IeC {\c c}os al bus CAN}}}{74}{subfigure.5.3}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Opci\IeC {\'o} de plots per la gr\IeC {\`a}fica.\relax }}{76}{figure.caption.54}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Abans alguns plots seleccionats.}}}{76}{subfigure.6.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Amb tots els plots seleccionats.}}}{76}{subfigure.6.2}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Finestra per posar nom a la gr\IeC {\`a}fica exportada}}{77}{figure.caption.55}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Tipus de fitxer als que es pot exportar}}{78}{figure.caption.56}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Diferents gr\IeC {\`a}fiques generades amb el programa \textbf {DCSMonitor} }}{83}{figure.caption.57}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Amb textos en angl\IeC {\`e}s, totes els plots i en format PDF.}}}{83}{subfigure.9.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Amb el bus CAN saturat de missatges, amb textos en catal\IeC {\`a}, nom\IeC {\'e}s amb plots de refer\IeC {\`e}ncia i segona integral i en format PDF.}}}{83}{subfigure.9.2}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Comparaci\IeC {\'o} dels valors estad\IeC {\'\i }stics.\relax }}{86}{figure.caption.58}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Pendent de comen\IeC {\c c}ar.}}}{86}{subfigure.10.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Connectat al dispositiu.}}}{86}{subfigure.10.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Monitoritzant.}}}{86}{subfigure.10.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Monitoritzaci\IeC {\'o} aturada.}}}{86}{subfigure.10.4}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Utilitzant \emph {QtLing\IeC {\@umlaut u}ist} }}{88}{figure.caption.59}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Prefer\IeC {\`e}ncies del programa DCSMonitor}}{89}{figure.caption.60}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Comparaci\IeC {\'o} dels labels entre diferents idiomes.\relax }}{90}{figure.caption.61}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Labels en Catal\IeC {\`a}}}}{90}{subfigure.13.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Labels en Espanyol}}}{90}{subfigure.13.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Labels en Angl\IeC {\'e}s}}}{90}{subfigure.13.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Labels en Franc\IeC {\'e}s}}}{90}{subfigure.13.4}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Distribuci\IeC {\'o} del preu segons la feina}}{122}{figure.caption.65}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Percentatge d'hores dedicades al projecte per rol}}{122}{figure.caption.67}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces \href {http://ww1.microchip.com/downloads/mplab/X_Beta/installer.html}{Pagina oficial MPLABX}}}{131}{figure.caption.69}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Obrint una terminal}}{131}{figure.caption.70}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Instalant MplabX IDE}}{132}{figure.caption.71}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Termes i condicions MplabX IDE}}{133}{figure.caption.72}
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Directori d'instal\IeC {\textperiodcentered }laci\IeC {\'o} de MplabX}}{133}{figure.caption.73}
+\contentsline {figure}{\numberline {A.6}{\ignorespaces Final instalaci\IeC {\'o} MplabX IDE}}{134}{figure.caption.74}
+\contentsline {figure}{\numberline {A.7}{\ignorespaces Termes i condicions Compilador MplabX C30}}{134}{figure.caption.75}
+\contentsline {figure}{\numberline {A.8}{\ignorespaces Directori d'instal\IeC {\textperiodcentered }laci\IeC {\'o} compilador C30}}{135}{figure.caption.76}
+\contentsline {figure}{\numberline {A.9}{\ignorespaces Instalant nou pluguin en Eclipse}}{136}{figure.caption.77}
+\contentsline {figure}{\numberline {A.10}{\ignorespaces Pantalla per afegir nous pluguins}}{136}{figure.caption.78}
+\contentsline {figure}{\numberline {A.11}{\ignorespaces Afegint nova adre\IeC {\c c}a de descarrega}}{137}{figure.caption.79}
+\contentsline {figure}{\numberline {A.12}{\ignorespaces Plugins disponibles}}{138}{figure.caption.80}
+\contentsline {figure}{\numberline {A.13}{\ignorespaces Termes i condicions \emph {RT-Druid} }}{138}{figure.caption.81}
+\contentsline {figure}{\numberline {A.14}{\ignorespaces Confian\IeC {\c c}a en certificat \emph {RT-Druid} }}{139}{figure.caption.82}
+\contentsline {figure}{\numberline {A.15}{\ignorespaces Reiniciar Eclipse}}{139}{figure.caption.83}
+\contentsline {figure}{\numberline {A.16}{\ignorespaces Path compilador \emph {RT-Druid} }}{140}{figure.caption.84}
+\contentsline {figure}{\numberline {A.17}{\ignorespaces Nour projecte \emph {RT-Druid} }}{141}{figure.caption.85}
+\contentsline {figure}{\numberline {A.18}{\ignorespaces Seleccionar tipus de projecte \emph {RT-Druid} }}{142}{figure.caption.86}
+\contentsline {figure}{\numberline {A.19}{\ignorespaces Posant nom al projecte \emph {RT-Druid} }}{142}{figure.caption.87}
+\contentsline {figure}{\numberline {A.20}{\ignorespaces Templates \emph {RT-Druid} }}{143}{figure.caption.88}
+\contentsline {figure}{\numberline {A.21}{\ignorespaces Entorn Eclipse}}{144}{figure.caption.89}
+\contentsline {figure}{\numberline {A.22}{\ignorespaces .}}{144}{figure.caption.90}
+\contentsline {figure}{\numberline {A.23}{\ignorespaces Compilar en Eclipse}}{145}{figure.caption.91}
+\contentsline {figure}{\numberline {A.24}{\ignorespaces Compilaci\IeC {\'o} en Eclipse}}{146}{figure.caption.92}
+\contentsline {figure}{\numberline {A.25}{\ignorespaces Nou projecte MplabX}}{146}{figure.caption.93}
+\contentsline {figure}{\numberline {A.26}{\ignorespaces Projecte precompilat MplabX}}{147}{figure.caption.94}
+\contentsline {figure}{\numberline {A.27}{\ignorespaces Carregant fitxer \emph {.elf} MplabX}}{147}{figure.caption.95}
+\contentsline {figure}{\numberline {A.28}{\ignorespaces Seleccionant dispositiu MplabX}}{148}{figure.caption.96}
+\contentsline {figure}{\numberline {A.29}{\ignorespaces Flex i Mplab ICD3}}{148}{figure.caption.97}
+\contentsline {figure}{\numberline {A.30}{\ignorespaces Programadors MplabX}}{149}{figure.caption.98}
+\contentsline {figure}{\numberline {A.31}{\ignorespaces Posant nom al projecte en MplabX}}{150}{figure.caption.99}
+\contentsline {figure}{\numberline {A.32}{\ignorespaces Treure del directori \emph {Debug}}}{150}{figure.caption.100}
+\contentsline {figure}{\numberline {A.33}{\ignorespaces Programar microcontrolador des de MplabX}}{150}{figure.caption.101}
+\contentsline {figure}{\numberline {A.34}{\ignorespaces Placa Flex amb programa \emph {Blink}}}{151}{figure.caption.102}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Arrencant Live CD}}{154}{figure.caption.103}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Menu Live CD}}{154}{figure.caption.104}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Logotip de c\IeC {\`a}rrega d'\emph {Ubuntu} }}{155}{figure.caption.105}
+\contentsline {figure}{\numberline {B.4}{\ignorespaces Prompt d'usuari i contrasenya}}{155}{figure.caption.106}
+\contentsline {figure}{\numberline {B.5}{\ignorespaces Escriptori del \emph {Live CD} }}{156}{figure.caption.107}
+\contentsline {figure}{\numberline {B.6}{\ignorespaces Codis comprimits dels programes del laboratori}}{157}{figure.caption.108}
+\contentsline {figure}{\numberline {B.7}{\ignorespaces Indicant espai de treball a \emph {Eclipse} }}{157}{figure.caption.109}
+\contentsline {figure}{\numberline {B.8}{\ignorespaces Seleccionant RT-Druid project a \emph {Eclipse} }}{158}{figure.caption.110}
+\contentsline {figure}{\numberline {B.9}{\ignorespaces Seleccionant directori del projecte a \emph {Eclipse} }}{159}{figure.caption.111}
+\contentsline {figure}{\numberline {B.10}{\ignorespaces Netejant i compilant a \emph {Eclipse} }}{159}{figure.caption.112}
+\contentsline {figure}{\numberline {B.11}{\ignorespaces Logo carregant MPLAB\textsuperscript {\textregistered } X }}{160}{figure.caption.113}
+\contentsline {figure}{\numberline {B.12}{\ignorespaces Seleccionant fitxer precompilat MPLAB\textsuperscript {\textregistered } X }}{160}{figure.caption.114}
+\contentsline {figure}{\numberline {B.13}{\ignorespaces Seleccionant microcontrolador a gravar en MPLAB\textsuperscript {\textregistered } X }}{160}{figure.caption.115}
+\contentsline {figure}{\numberline {B.14}{\ignorespaces Connexi\IeC {\'o} del programador ICD3 i placa \emph {FLEX} }}{161}{figure.caption.116}
+\contentsline {figure}{\numberline {B.15}{\ignorespaces Seleccionant programador en MPLAB\textsuperscript {\textregistered } X }}{161}{figure.caption.117}
+\contentsline {figure}{\numberline {B.16}{\ignorespaces Canviant el directori del projecte a MPLAB\textsuperscript {\textregistered } X }}{163}{figure.caption.118}
+\contentsline {figure}{\numberline {B.17}{\ignorespaces Directori del projecte ven posat a MPLAB\textsuperscript {\textregistered } X }}{163}{figure.caption.119}
+\contentsline {figure}{\numberline {B.18}{\ignorespaces Microcontrolador programat correctament a MPLAB\textsuperscript {\textregistered } X }}{163}{figure.caption.120}
+\contentsline {figure}{\numberline {B.19}{\ignorespaces Directori amb el codi de \textbf {DCSMonitor} }}{165}{figure.caption.121}
+\contentsline {figure}{\numberline {B.20}{\ignorespaces Pantalla principal de \textbf {DCSMonitor} }}{165}{figure.caption.122}
+\contentsline {figure}{\numberline {B.21}{\ignorespaces Preferencies}}{166}{figure.caption.123}
+\contentsline {figure}{\numberline {B.22}{\ignorespaces Connectant el port serie a \textbf {DCSMonitor} }}{166}{figure.caption.124}
+\contentsline {figure}{\numberline {B.23}{\ignorespaces Programa \textbf {DCSMonitor} connectat a un \emph {Sensor/Actuador} }}{167}{figure.caption.125}
+\contentsline {figure}{\numberline {B.24}{\ignorespaces Demanant un llistat de dispositius a \textbf {DCSMonitor} }}{168}{figure.caption.126}
+\contentsline {figure}{\numberline {B.25}{\ignorespaces Gr\IeC {\`a}fica amb tots els plots}}{169}{figure.caption.127}
+\contentsline {figure}{\numberline {B.26}{\ignorespaces Gr\IeC {\`a}fica amb plot de refer\IeC {\`e}ncia i segona integral}}{170}{figure.caption.128}
+\contentsline {figure}{\numberline {B.27}{\ignorespaces Barra lliscant per augmentar la carrega del bus}}{170}{figure.caption.129}
+\contentsline {figure}{\numberline {B.28}{\ignorespaces Posant un nom a la gr\IeC {\`a}fica a exportar}}{171}{figure.caption.130}
+\contentsline {figure}{\numberline {B.29}{\ignorespaces Exemple havent exportat una gr\IeC {\`a}fica}}{171}{figure.caption.131}
+\contentsline {figure}{\numberline {B.30}{\ignorespaces Men\IeC {\'u} principal LiveCD, instalant}}{172}{figure.caption.132}
+\contentsline {figure}{\numberline {B.31}{\ignorespaces Logotip d'\emph {Ubuntu} carregant}}{172}{figure.caption.133}
+\contentsline {figure}{\numberline {B.32}{\ignorespaces Preparant particions del disc pel LiveCD}}{173}{figure.caption.134}
+\contentsline {figure}{\numberline {B.33}{\ignorespaces Configurant usuari i contrasenya}}{174}{figure.caption.135}
+\contentsline {figure}{\numberline {B.34}{\ignorespaces Prompt de login}}{175}{figure.caption.136}
+\contentsline {figure}{\numberline {B.35}{\ignorespaces Escriptori del \emph {Live CD} recent instal\IeC {\textperiodcentered }lat}}{175}{figure.caption.137}

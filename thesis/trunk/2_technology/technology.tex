@@ -1,0 +1,320 @@
+% this file is called up by thesis.tex
+% content in this file will be fed into the main document
+
+\chapter{Tecnologia}\label{cap:tec} % top level followed by section, subsection
+
+% the code below specifies where the figures are stored
+\ifpdf
+    \graphicspath{{2_technology/figures/PNG/}{2_technology/figures/PDF/}{2_technology/figures/}}
+\else
+    \graphicspath{{2_technology/figures/EPS/}{2_technology/figures/}}
+\fi
+
+% ----------------------- contents from here ------------------------
+
+Una part molt important del projecte, ha estat familiaritzar-se amb una serie de tecnologies, materials i protocols que en certs casos eren totalment desconeguts. Aquestes tecnologies han comportat hores de dedicació i adaptació i per aquesta mateixa raó s'ha creat aquesta secció. Això permetrà que un lector que no conegui alguna d'aquestes tecnologies pugui de manera rapida fer-se una idea del seu significat o propòsit.
+
+En el capítol Tecnologia per tant s'intentarà donar una visió del tot el material que s'ha usat en el laboratori, per a que serveix cada un dels diferents dispositius i quines característiques tenen (tot això en la secció de Hardware \ref{cap:tec:hard}). 
+
+Tot seguit s'explicarà quins són els programes que es poden utilitzar per compilar els diferents codis, els programes que ens ajuden a programar els dispositius que formen els llaços de control, els programes que ens han permès crear les interfícies, o traduir-les còmodament en el programa \DCSMonitor (tot això en la secció Software \ref{cap:tec:soft}).
+
+I perquè es pugui entendre una mica millor tot el projecte, es dona una visió general sobre els diferents protocols que durant la memòria es veuran, i que han estat necessaris per poder realitzar els controls del laboratori (secció de protocols de comunicació \ref{cap:tec:prot}).
+
+Per tant aquesta secció es fa una eina bàsica necessària per tothom que vulgui comprendre una mica tot això, o per algú que vulgui repassar-ho.
+
+%====================================================================================%
+% Hardware
+%====================================================================================%
+\section{Hardware}\label{cap:tec:hard}
+
+Com hem dit en la introducció d'aquest capítol, en aquesta secció es donarà una visió del material que s'ha utilitzat en l'elaboració del laboratori de Sistemes Distribuits de Control. Entre aquest material n'hi ha que esta ja preparat per el seu us directe com la placa \FLEX (secció \ref{cap:tec:hard:flex}) i el programador ICD2 (secció \ref{cap:tec:hard:icd}). O en canvi necessita ser ensamblat en un protoboard o crear una placa per poder utilitzar-los. En el nostre cas el microcontrolador dsPIC (secció \ref{cap:tec:hard:dspic}) ja forma part de la placa \FLEX, i per utilitzar el transceptor (secció \ref{cap:tec:hard:mcp2551}), si que s'ha hagut de crear una petita plaqueta que s'explicará en un altre capitol (secció \label{cap:dis:resum}).
+
+%====================================================================================%
+% FLEX
+%====================================================================================%
+\subsection{FLEX}\label{cap:tec:hard:flex}
+
+\figuremacroNW{evidence}{Logotip de la companyia Evidence}{}{0.3}
+
+\FLEX és el nom amb el que han designat a una placa de prototipatge creada per la casa Evidence (logotip \ref{evidence}) per treure el màxim partit d'un microcontrolador amb tecnologia dsPIC.
+
+Aquesta placa va néixer amb l'objectiu de desenvolupar aplicacions en temps real, i per aquest motiu compte amb moltes qualitats interessants per el nostre laboratori.
+
+Entre les seves característiques es troben:
+
+\begin{itemize}
+	\item Un disseny de la electrònica robust.
+	\item Una arquitectura modular.
+	\item Disponibilitat d'un gran nombre creixent de guies d'aplicacions.
+	\item Tot el suport del kernel Erika Enterprise, de Evidence.
+\end{itemize}
+
+El cor d'aquesta placa es composa d'un dsPIC33FJ256MC710 (veure secció \ref{cap:tec:hard:dspic}), el qual ens dona moltes possibilitats a l'hora de crear diferents dispositius.
+
+\figuremacroW{flex_boards}{FLEX: placa de avaluació de dsPIC de \Microchip}{}{0.8}
+
+\clearpage
+
+%====================================================================================%
+% dsPIC33FJ256MC710
+%====================================================================================%
+\subsection{dsPIC33FJ256MC710}\label{cap:tec:hard:dspic}
+
+\figuremacroNW{dspic33fj256mc710}{Fotografia d'un dsPIC33FJ256MC710}{}{0.4}
+
+Aquest és un microcontrolador de la casa \Microchip Technology (fabricant de microcontroladors, memòries i semiconductors analògics, situat en Chandler, Arizona, EE.UU.), destinat a Sistemes Digitals de Control. Per aquesta raó aquest microcontrolador compta amb una multitud de perifèrics de comunicació, entre els quals es troba el CAN. Això fa que la casa Evidence l'hagi escollit per formar part del nucli de la placa de desenvolupament \FLEX (explicada en la secció \ref{cap:tec:hard:flex}), i que s'hagi adaptat el Sistema Operatiu en Temps Real Erika Enterprise perquè pugui ser instal·lat en ell.
+
+A part del mencionat, aquest microcontolador compta amb característiques molt interessants, entre d'elles es poden destacar les següents  (informació extreta del datasheet \cite{DataSheetdsPIC33}):
+
+\begin{itemize}
+	\item Una arquitectura de 16 bits
+	\item CPU a velocitat de 40 MIPS (Mega Instructions Per Second)
+	\item Memòria per programa de 256 KB de tipus Flash
+	\item Memòria RAM de 30,720 Bytes
+	\item 85 pins d'entrada/sortida
+	\item Perifèrics de comunicació UART, SPI, I2C i CAN
+	\item PWM amb resolució màxima de 16 bits
+	\item 8 canals DMA hardware
+\end{itemize}
+
+%====================================================================================%
+% MCP2551
+%====================================================================================%
+\subsection{MCP2551}\label{cap:tec:hard:mcp2551}
+
+\figuremacroNW{mcp2551}{MCP2551}{}{0.3}
+
+El semiconductor MCP2551 és un transceptor CAN d'alta velocitat, i un dispositiu tolerant a fallades que serveix d'intermediari entre el el controlador CAN i el bus físic. Aquest pot arribar a treballar a velocitats de 1 Mb/s, i en un bus CAN es poden arribar a connectar fins a 112 nodes amb aquest transceptor (datasheet \cite{MCP2551}).
+
+Per tant en el nostre laboratori, cada un dels diferents dispositius (\Monitor, \SensorActuador i \Controlador), necessàriament han de comptar amb aquest semiconductor, i s'han creat uns petits circuits per connectar ràpidament en cadascuna de les plaques \FLEX (veure laboratori actual \ref{cap:dis:resum}).
+
+%====================================================================================%
+% ICD2/3
+%====================================================================================%
+\subsection{ICD2/3}\label{cap:tec:hard:icd}
+
+\figuremacroNW{icd2}{Fotografia d'un programador ICD2}{}{0.3}
+
+Aquest aparell (figura \ref{icd2}) és un programador/debugador d'errors, fabricat per la casa \Microchip, que juntament amb el programa \MplabX pot realitzar aquestes funcions. Aquest compta amb una connexió per USB per connectar-lo al ordinador, i un cable amb dos extrems RJ-11 per connectar entre ell i el dispositiu a programar (figura \ref{RJ11}, connector típicament utilitzat en els cables telefònics a España).
+
+\figuremacroW{RJ11}{Connector RJ-11}{}{0.3}
+
+Mentre que fins aquest moment s'utilitzava el programador ICD2 actualment ha sortit al mercat el ICD3. Això en principi no és cap problema ja que l'antic programador segueix funcionant correctament, però així com el programa \MplabX en les primeres versions betes estava procurant donar suport al primer, a partir de la versió 0.17 ha deixat de ser així, obligant d'alguna manera a deixar enrere aquest programadors; els quals no són precisament barats.
+
+
+
+%====================================================================================%
+% Software
+%====================================================================================%
+\section{Software}\label{cap:tec:soft}
+
+Durant el projecte s'han emprat multitud de programes que eren necessaris per poder compilar els codis, gravar els microcontroladors, o preparar l'entorn multilingüe del programa \DCSMonitor.
+
+En aquesta secció s'explicarà quins són aquests programes, i es farà un resum del seu objectiu.
+
+%====================================================================================%
+% Eclipse
+%====================================================================================%
+\subsection{Eclipse}\label{cap:tec:soft:eclipse}
+
+\figuremacroNW{eclipse_2}{Logotip d'Eclipse}{}{0.4}
+
+Aquest software ens ofereix un entorn de desenvolupament integrat (també coneguts com IDE's) multiplataforma de codi obert. Aquesta plataforma ha estat típicament utilitzada per desenvolupar IDE's. Típicament és usat el IDE de Java \emph{Java Development toolkit} (JDT) el qual ve integrat per defecte amb el propi \Eclipse.
+
+Entre aquests IDE's desenvolupats per \Eclipse està el RT-Druid (figura \ref{rt_druid}) creat per la casa Evidence, amb el qual és possible programar de manera facil el Sistema Operatiu en Temps Real Erika, que és el codi base sobre el que treballem en el laboratori per programar les plaques \FLEX.
+
+\figuremacroW{rt_druid}{Logotip del pluguin d'\Eclipse RT-Druid}{}{0.4}
+
+A part d'utilitzar aquest IDE per programar els dispositius, també existeix el pluguin PyDev per \Eclipse, que també ens ofereix un IDE per programar en \Python, i gracies al qual hem pogut programar més facilment el codi del programa \DCSMonitor.
+
+\figuremacroW{pydev}{Logotip del pluguin d'\Eclipse PyDev}{}{0.4}
+
+%\FloatBarrier
+
+%====================================================================================%
+% Mplab
+%====================================================================================%
+\subsection{\MplabX}\label{cap:tec:soft:mplab}
+
+
+Mplab és un editor IDE gratuït desenvolupat per la casa Microchip i destinat a la programació dels seus productes. Fins aquest moment era exclusivament per Windows, però amb la nova aparició de \MplabX programat en Java l'han convertit en multiplataforma. Encara que les versions actuals encara estan en beta (això vol dir que algunes de les seves funcionalitats encara poden ser inestables o no estar implementades).
+
+\figuremacroW{mplabx}{Logotip de \MplabX}{Publicitat de la pàgina oficial de Microchip}{0.7}
+
+Encara que sigui un editor IDE, en el nostre laboratori no l'utilitzem per aquesta tasca, ja que això ens ho fa l'entorn comentat anteriorment RT-Druid (veure secció d'Eclipse \ref{cap:tec:soft:eclipse}). Per tant te una altra funcionalitat que és la de programar mitjançant el dispositiu ICD2 o altres els microcontroladors; en el nostre cas les plaques \FLEX.
+
+
+%====================================================================================%
+% QtCreator
+%====================================================================================%
+\subsection{QtCreator}\label{cap:tec:soft:qtcreator}
+
+\figuremacroNW{qtcreator}{Logotip de QtCreator}{}{0.3}
+
+QtCreator és un altre IDE per desenvolupar aplicacions d'escriptori multiplataforma (tant el programa com les interfícies que és capaç de generar poden ser executats en Windows, Linux/X11 i Mac OS). Aquesta eina ens ha sigut molt útil a l'hora de dissenyar tota la part visual del programa \DCSMonitor, ja que l'entorn que proporciona aquest programa és molt senzill d'utilitzar, i ofereix un gran ventall de possibilitats, com poden ser els botons, les etiquetes, els menús, la finestra de exportar les gràfiques, la integració amb les gràfiques en temps real, etc.
+
+Encara que té moltes característiques interessants nosaltres només l'hem utilitzat per fer l'entorn gràfic en un fitxer de format .ui, per després exportar-lo per Python.
+
+%====================================================================================%
+% QtLingüist
+%====================================================================================%
+\subsection{QtLingüist}\label{cap:tec:soft:qtlinguist}
+
+%\figuremacroNW{qt-linguist}{Logotip de QtLingüist}{}{0.2}
+
+\begin{wrapfigure}{r}{0.3\textwidth}
+	\centering
+	\includegraphics[width=0.27\textwidth]{qt-linguist}
+	\caption[Logotip de QtLingüist]{{\small\textbf{Logotip de QtLingüist}}}
+	\label{qt-linguist}
+\end{wrapfigure}
+
+Qt ens ofereix suport per traduir les aplicacions en altres llenguatges, i gracies a aquest programa podem editar els fitxers de traducció fàcilment, i un cop traduïts tots els textos, el mateix \Qtlinguist ens genera el fitxer adequat perquè el nostre programa \DCSMonitor pugui canviar l'idioma en qualsevol moment.
+
+%====================================================================================%
+% ERIKA Enterprise
+%====================================================================================%
+\subsection{ERIKA Enterprise}\label{cap:tec:soft:erika}
+
+\figuremacroN{erika_enterprise}{Logotip Erika Enterprise}{}
+
+ERIKA Enterprise \ref{erika_enterprise} és un Sistema Operatiu en Temps Real de codi obert derivat de OSEK/VDX (veure glossari), creat per la casa Evidence i que està integrat en el plugin RT-Druid d'Eclipse.
+
+Erika ens ofereix un RTOS d'espai reduït (1-4 Kb Flash) per sistemes empotrats d'un sol nucli o multi-nucli.
+
+Aquest sistema operatiu és usat actualment en més de 20 universitats de tot el mon, a més de varies companyies del mercat automobilístic (entre d'elles Magneti Marelli Powertrain i Cobra Automotive Technologies).
+
+
+%====================================================================================%
+% Protocols de comunicació
+%====================================================================================%
+\section{Protocols de comunicació}\label{cap:tec:prot}
+
+Les comunicacions en els Sistemes Distribuïts de Control són el pilar mestre sobre el que es recolza el control, per aquesta raó la major part del projecte es bassa en aquestes qüestions, i es dissenyen els diferents missatges i identificadors de manera que es pugui maximitzar l'us dels avantatges que té cada protocol. 
+
+En aquesta secció es podrà veure un repas general sobre el tipus de protocols usats en el laboratori, així com el tipus de connexionat que existeix entre els diferents dispositius que el formen.
+
+%====================================================================================%
+% CAN
+%====================================================================================%
+\subsection{CAN}\label{cap:tec:prot:can}
+
+El protocol CAN (de l'Anglès Controller Area Network) va ser dissenyat per permetre la comunicació entre dispositius sense la necessitat d'un host (o amfitrió). Inicialment la seva aparició va esdevenir de la problemàtica que existia en els vehicles automòbils, en els quals el nombre de dispositius era cada cop més gran, fins arribar al punt de necessitar més de 2 km de cable, els quals representaven més de 100 Kg.
+
+Va ser la firma Alemana \emph{Robert Bosch GmbH} , qui va desenvolupar aquest protocol, basat en una topologia bus per la transmissió de missatges en entorns distribuïts, inicialment (com hem dit anteriorment) per l'entorn automobilístic, però finalment acollit per entorns marins, agrícoles, industrials, etc.
+
+Les característiques més importants de la comunicació CAN són les següents (especificació,  \cite{Bosch1991}):
+
+\begin{itemize}
+	\item Jerarquia de nodes multimaster:
+	\item Tècnica d'accés al medi CSMA/CD+CR (de l'anglès Carrier Sense, Multiple Access/Collision Detection + Collision Resolution):
+	\item Comunicació conduïda per events:
+	\item Broadcast:
+	\item Iniciativa de transmissió a càrrec de la font d'informació:
+	\item El nom del missatge genèricament dessigna la informació, no el node:
+	\item Resposta a petició remota:
+	\item Detecció i correcció d'error a nivell de missatge:
+	\item Capacitat de detecció d'errors a nivell del medi de comunicació:
+	\item Tolerància a fallades:
+	\item Confirmació:
+	\item Transferència de missatges consistent sobre tot el sistema:
+	\item Codificació de bit:
+	\item Sincronització de bit:
+	\item Sincronització entre nodes:
+	\item Distribució del sistema:
+	\item Velocitat de transmissió:
+	\item Característiques del driver de línia:
+	\item Múltiples proveïdors de xips:
+\end{itemize}
+
+%====================================================================================%
+% Serie RS232
+%====================================================================================%
+\subsection{Serie via RS232}\label{cap:tec:prot:rs232}
+
+En computació la comunicació serie és tota aquella transferència de dades en la que la informació va bit a bit una darrera una altra. Aquest tipus de comunicació és usada en multiples protocols de comunicació, com poden ser el USB, Ethernet, FireWire o per exemple CAN (vist anteriorment \ref{cap:tec:prot:can}). Però usualment, quan parlem del port serie de l'ordinador, ens referim a la norma RS232 (de l'anglès Recommended Standard 232).
+
+Aquesta norma determina les seves característiques físiques, la temporització dels senyals, les velocitats de transmissió, i la mida del connector i dels seu pinatge.
+
+\figuremacroN{SerialPort_ATX}{Connector per port serie RS232}{En forma de DE-9}
+
+Normalment tots els ordinadors de sobretaula solen tenir algun connector destinat a aquest tipus de comunicació, en el format d'un connector DB-9 (originalment DE-9, veure figura \ref{SerialPort_ATX}), en canvi els ordinadors portàtils ja no solen tenir aquest tipus de connector, per aquesta raó es necessita utilitzar un convertidor de RS232 a USB.
+
+Aquesta comunicació va ser dissenyada per connectar equips terminals de dades amb equips de comunicació de dades, però en ocasions (com en el cas del connexionat entre dos ordinadors) es connecten dues terminals de dades. En aquest cas es sol utilitzar un tipus de connexionat anomena null módem (per la no existència de módem).
+
+El connector DB-9; com el seu nom indica; té 9 pins, i cada un d'ells te definit el seu funcionament, com pot ser el d'enviar dades, o el de rebre dades. S'adjunta una taula amb l'especificació de cada un d'aquests pins (taula tab:tec:prot:rs232).
+
+\begin{table}[ht!]
+	\begin{center}
+	\begin{tabular}{ | c | l | }
+\hline
+Número de pin	&Nom\\
+\hline
+1	&CD: Detector de transmissió\\
+\hline
+2	&RXD: Recepció de dades\\
+\hline
+3	&TXD: Transmissió de dades\\
+\hline
+4	&DTR: Terminal de dades preparat\\
+\hline
+5	&GND: Senyal de terra\\
+\hline
+6	&DSR: Ajust de dades preparat\\
+\hline
+7	&RTS: Permís per transmetre\\
+\hline
+8	&CTS: Preparat per transmetre\\
+\hline
+9	&RI: Indicador de trucada\\
+\hline
+	\end{tabular}
+	\end {center}
+	\captionof{table}{Pinatge del connector serie per RS232}
+	\label{tab:tec:prot:rs232}
+\end{table}
+
+
+%====================================================================================%
+% Topologia en bus
+%====================================================================================%
+\subsection{Topologia en bus}\label{cap:tec:prot:bus}
+
+Aquest és un tipus de connexionat entre múltiples dispositius en els quals tots ells estan connectats a un mateix bus central (veure figura \ref{Bus_Topology}). Això comporta alguns avantatges però també molts inconvenients que es procuren resoldre de diferents maneres.
+
+Per crear aquest tipus de xarxa és necessari finalitzar els cables amb resistències de carrega final. Aquestes resistències són calculades depenent de les senyals que hi circulen, i els metres de cable que formen el bus, i aconsegueixen mitigar l'efecte rebot que apareix en un cable tallat (amb la resistència ben calculada a ulls dels dispositius el bus resultaria ser de mida infinita).
+
+\begin{itemize}
+	\item Avantatges
+		\begin{itemize}
+			\item Facilitat en la implementació.
+			\item Creixement del nombre de dispositius fàcil.
+			\item Simplicitat en el tipus d'arquitectura.
+			\item Recepció de tota la informació del bus.
+			\item No hi ha necessitat de redireccionar missatges.
+		\end{itemize}
+	\item Inconvenients
+		\begin{itemize}
+			\item Existeix un  límit del nombre de dispositius, depenent de la qualitat del senyal.
+			\item Pot produir-se degradació del senyal.
+			\item Complexitat de reconfiguració i aïllament de fallades.
+			\item Un problema en un canal sol degradar tot el bus.
+			\item El bon funcionament sol degradar a mesura que el bus creix.
+			\item El bus ha de ser degudament tancat.
+			\item Alta pèrdua de transmissions degut a les col·lisions entre missatges.
+		\end{itemize}
+\end{itemize}
+
+\figuremacroW{Bus_Topology}{Topologia en bus}{}{0.5}
+
+
+%====================================================================================%
+% Conclusions
+%====================================================================================%
+\section{Conclusions}\label{cap:tec:conc}
+
+En aquest punt ja ens hem fet una idea de totes les tecnologies que hi ha al voltant d'aquest projecte. Hem vist que les xarxes en bus tenen alguns inconvenients que cal resoldre, quines facilitats ens proporciona utilitzar un bus CAN, com podem rebre els valors d'estat del control mitjançant la comunicació serie via RS232, i quins dispositius s'utilitzen per poder connectar-se a un bus CAN, anomenats transceptor CAN.
+
+També hem pogut conèixer varis programes que ens ajuden en la tasca de programar tots aquests dispositius, com crear interfícies per programes que corrin en varis sistemes operatius, i com generar aquests programes multilingües.
+
+Per tant ja podem abordar la configuració que té el laboratori actual, i podem començar a dissenyar tot el necessari per muntar un laboratori en el que tots els dispositius comparteixin un mateix bus CAN. Tot això ho podrem veure i seguir en el següent capítol.

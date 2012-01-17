@@ -1,0 +1,105 @@
+\BOOKMARK [0][]{section*.3}{\315ndex de figures}{}
+\BOOKMARK [0][]{section*.5}{\315ndex de taules}{}
+\BOOKMARK [0][]{chapter*.6}{\315ndex de codis}{}
+\BOOKMARK [0][]{chapter*.7}{Glossari}{}
+\BOOKMARK [0][]{chapter.1}{1 Introducci\363}{}
+\BOOKMARK [1][]{section.1.1}{1.1 Estructuraci\363 de la mem\362ria}{chapter.1}
+\BOOKMARK [1][]{section.1.2}{1.2 Motivaci\363}{chapter.1}
+\BOOKMARK [1][]{section.1.3}{1.3 Abast}{chapter.1}
+\BOOKMARK [2][]{subsection.1.3.1}{1.3.1 Objectius}{section.1.3}
+\BOOKMARK [1][]{section.1.4}{1.4 Planificaci\363}{chapter.1}
+\BOOKMARK [0][]{chapter.2}{2 Tecnologia}{}
+\BOOKMARK [1][]{section.2.1}{2.1 Hardware}{chapter.2}
+\BOOKMARK [2][]{subsection.2.1.1}{2.1.1 FLEX}{section.2.1}
+\BOOKMARK [2][]{subsection.2.1.2}{2.1.2 dsPIC33FJ256MC710}{section.2.1}
+\BOOKMARK [2][]{subsection.2.1.3}{2.1.3 MCP2551}{section.2.1}
+\BOOKMARK [2][]{subsection.2.1.4}{2.1.4 ICD2/3}{section.2.1}
+\BOOKMARK [1][]{section.2.2}{2.2 Software}{chapter.2}
+\BOOKMARK [2][]{subsection.2.2.1}{2.2.1 Eclipse}{section.2.2}
+\BOOKMARK [2][]{subsection.2.2.2}{2.2.2 MPLAB\256 X }{section.2.2}
+\BOOKMARK [2][]{subsection.2.2.3}{2.2.3 QtCreator}{section.2.2}
+\BOOKMARK [2][]{subsection.2.2.4}{2.2.4 QtLing\374ist}{section.2.2}
+\BOOKMARK [2][]{subsection.2.2.5}{2.2.5 ERIKA Enterprise}{section.2.2}
+\BOOKMARK [1][]{section.2.3}{2.3 Protocols de comunicaci\363}{chapter.2}
+\BOOKMARK [2][]{subsection.2.3.1}{2.3.1 CAN}{section.2.3}
+\BOOKMARK [2][]{subsection.2.3.2}{2.3.2 Serie via RS232}{section.2.3}
+\BOOKMARK [2][]{subsection.2.3.3}{2.3.3 Topologia en bus}{section.2.3}
+\BOOKMARK [1][]{section.2.4}{2.4 Conclusions}{chapter.2}
+\BOOKMARK [0][]{chapter.3}{3 Disseny del laboratori}{}
+\BOOKMARK [1][]{section.3.1}{3.1 Resum del laboratori actual}{chapter.3}
+\BOOKMARK [1][]{section.3.2}{3.2 Disseny del Nou laboratori}{chapter.3}
+\BOOKMARK [2][]{subsection.3.2.1}{3.2.1 Interficie}{section.3.2}
+\BOOKMARK [2][]{subsection.3.2.2}{3.2.2 Identificadors dels missatges CAN}{section.3.2}
+\BOOKMARK [3][]{subsubsection.3.2.2.1}{3.2.2.1 Missatge de control per l'Actuador }{subsection.3.2.2}
+\BOOKMARK [3][]{subsubsection.3.2.2.2}{3.2.2.2 Missatge de l'estat del Sensor per al Controlador }{subsection.3.2.2}
+\BOOKMARK [3][]{subsubsection.3.2.2.3}{3.2.2.3 Missatge de canvi de refer\350ncia}{subsection.3.2.2}
+\BOOKMARK [3][]{subsubsection.3.2.2.4}{3.2.2.4 Missatge de l'estat del Sensor per al Supervisor }{subsection.3.2.2}
+\BOOKMARK [2][]{subsection.3.2.3}{3.2.3 Comunicaci\363 s\350rie}{section.3.2}
+\BOOKMARK [3][]{subsubsection.3.2.3.1}{3.2.3.1 Senyals de control per monitoritzar}{subsection.3.2.3}
+\BOOKMARK [3][]{subsubsection.3.2.3.2}{3.2.3.2 Senyals de control per consultar lla\347os}{subsection.3.2.3}
+\BOOKMARK [3][]{subsubsection.3.2.3.3}{3.2.3.3 Senyals de control per generar c\340rrega}{subsection.3.2.3}
+\BOOKMARK [2][]{subsection.3.2.4}{3.2.4 Gr\340fiques en temps real}{section.3.2}
+\BOOKMARK [2][]{subsection.3.2.5}{3.2.5 Idiomes}{section.3.2}
+\BOOKMARK [1][]{section.3.3}{3.3 Conclusions}{chapter.3}
+\BOOKMARK [0][]{chapter.4}{4 Implementaci\363 del laboratori}{}
+\BOOKMARK [1][]{section.4.1}{4.1 DCSMonitor }{chapter.4}
+\BOOKMARK [2][]{subsection.4.1.1}{4.1.1 Interficie}{section.4.1}
+\BOOKMARK [2][]{subsection.4.1.2}{4.1.2 Comunicaci\363 s\350rie RS232}{section.4.1}
+\BOOKMARK [3][]{subsubsection.4.1.2.1}{4.1.2.1 Obrir i tancar dispositiu s\350rie}{subsection.4.1.2}
+\BOOKMARK [3][]{subsubsection.4.1.2.2}{4.1.2.2 Enviar petici\363 de llistar lla\347os de control}{subsection.4.1.2}
+\BOOKMARK [3][]{subsubsection.4.1.2.3}{4.1.2.3 Enviar petici\363 de monitoritzaci\363}{subsection.4.1.2}
+\BOOKMARK [3][]{subsubsection.4.1.2.4}{4.1.2.4 Enviar percentatge de c\340rrega}{subsection.4.1.2}
+\BOOKMARK [3][]{subsubsection.4.1.2.5}{4.1.2.5 Recepci\363 de valors monitoritzats}{subsection.4.1.2}
+\BOOKMARK [3][]{subsubsection.4.1.2.6}{4.1.2.6 Recepci\363 de llista de dispositius}{subsection.4.1.2}
+\BOOKMARK [2][]{subsection.4.1.3}{4.1.3 Generaci\363 de gr\340fiques en temps real}{section.4.1}
+\BOOKMARK [2][]{subsection.4.1.4}{4.1.4 Exportar gr\340fica}{section.4.1}
+\BOOKMARK [2][]{subsection.4.1.5}{4.1.5 Mostrant estad\355stiques}{section.4.1}
+\BOOKMARK [2][]{subsection.4.1.6}{4.1.6 Idiomes}{section.4.1}
+\BOOKMARK [3][]{subsubsection.4.1.6.1}{4.1.6.1 PyQT4}{subsection.4.1.6}
+\BOOKMARK [3][]{subsubsection.4.1.6.2}{4.1.6.2 Pylupdate4}{subsection.4.1.6}
+\BOOKMARK [3][]{subsubsection.4.1.6.3}{4.1.6.3 QtLing\374ist}{subsection.4.1.6}
+\BOOKMARK [3][]{subsubsection.4.1.6.4}{4.1.6.4 Resultat}{subsection.4.1.6}
+\BOOKMARK [1][]{section.4.2}{4.2 dsPIC}{chapter.4}
+\BOOKMARK [2][]{subsection.4.2.1}{4.2.1 Tasques en Erika}{section.4.2}
+\BOOKMARK [2][]{subsection.4.2.2}{4.2.2 Comunicaci\363 serie RS232}{section.4.2}
+\BOOKMARK [3][]{subsubsection.4.2.2.1}{4.2.2.1 Recepci\363 de senyals de control}{subsection.4.2.2}
+\BOOKMARK [3][]{subsubsection.4.2.2.2}{4.2.2.2 Enviament de dades}{subsection.4.2.2}
+\BOOKMARK [2][]{subsection.4.2.3}{4.2.3 Comunicaci\363 bus CAN}{section.4.2}
+\BOOKMARK [3][]{subsubsection.4.2.3.1}{4.2.3.1 Creaci\363 de les m\340scares CAN}{subsection.4.2.3}
+\BOOKMARK [3][]{subsubsection.4.2.3.2}{4.2.3.2 Creaci\363 dels filtres CAN}{subsection.4.2.3}
+\BOOKMARK [3][]{subsubsection.4.2.3.3}{4.2.3.3 Recepci\363 de missatges CAN}{subsection.4.2.3}
+\BOOKMARK [3][]{subsubsection.4.2.3.4}{4.2.3.4 Pila de lla\347os de control}{subsection.4.2.3}
+\BOOKMARK [3][]{subsubsection.4.2.3.5}{4.2.3.5 Tractant missatges de control per l'Actuador }{subsection.4.2.3}
+\BOOKMARK [3][]{subsubsection.4.2.3.6}{4.2.3.6 Tractant missatges d'estat del Sensor per al Controlador }{subsection.4.2.3}
+\BOOKMARK [3][]{subsubsection.4.2.3.7}{4.2.3.7 Tractant missatges de canvi de referencia}{subsection.4.2.3}
+\BOOKMARK [3][]{subsubsection.4.2.3.8}{4.2.3.8 Tractant missatges d'estat del Sensor per al Supervisor }{subsection.4.2.3}
+\BOOKMARK [3][]{subsubsection.4.2.3.9}{4.2.3.9 Tractant la resta dels missatges}{subsection.4.2.3}
+\BOOKMARK [3][]{subsubsection.4.2.3.10}{4.2.3.10 Monitoritzaci\363 d'un lla\347 de control}{subsection.4.2.3}
+\BOOKMARK [1][]{section.4.3}{4.3 Conclusions}{chapter.4}
+\BOOKMARK [0][]{chapter.5}{5 An\340lisi econ\362mic}{}
+\BOOKMARK [1][]{section.5.1}{5.1 Material}{chapter.5}
+\BOOKMARK [1][]{section.5.2}{5.2 Ma d'obra}{chapter.5}
+\BOOKMARK [0][]{chapter.6}{6 Conclusions}{}
+\BOOKMARK [1][]{subsection.6.0.1}{6.0.1 Treball futur}{chapter.6}
+\BOOKMARK [0][]{appendix.A}{A Guia del laboratori}{}
+\BOOKMARK [1][]{section.A.1}{A.1 Preparaci\363 de l'entorn de desenvolupament}{appendix.A}
+\BOOKMARK [2][]{subsection.A.1.1}{A.1.1 Instalaci\363 de Mplab}{section.A.1}
+\BOOKMARK [2][]{subsection.A.1.2}{A.1.2 Instalaci\363 d'Eclipse}{section.A.1}
+\BOOKMARK [2][]{subsection.A.1.3}{A.1.3 Instal\267laci\363 del pluguin RT-Druid per Eclipse}{section.A.1}
+\BOOKMARK [1][]{section.A.2}{A.2 Fer parpellejar un led}{appendix.A}
+\BOOKMARK [2][]{subsection.A.2.1}{A.2.1 Entorn Eclipse}{section.A.2}
+\BOOKMARK [2][]{subsection.A.2.2}{A.2.2 Entorn MplabX}{section.A.2}
+\BOOKMARK [0][]{appendix.B}{B Guia del Live CD}{}
+\BOOKMARK [1][]{section.B.1}{B.1 Requisits m\355nims}{appendix.B}
+\BOOKMARK [1][]{section.B.2}{B.2 Arrencant el Live CD }{appendix.B}
+\BOOKMARK [1][]{section.B.3}{B.3 Guia pas a pas del Live CD}{appendix.B}
+\BOOKMARK [2][]{subsection.B.3.1}{B.3.1 Estructura del Live CD }{section.B.3}
+\BOOKMARK [2][]{subsection.B.3.2}{B.3.2 Compilant amb Eclipse el DSPIC\137SENSOR}{section.B.3}
+\BOOKMARK [2][]{subsection.B.3.3}{B.3.3 Gravant amb MPLAB\256 X el DSPIC\137SENSOR}{section.B.3}
+\BOOKMARK [2][]{subsection.B.3.4}{B.3.4 Resum per gravar la resta}{section.B.3}
+\BOOKMARK [2][]{subsection.B.3.5}{B.3.5 DCSMonitor}{section.B.3}
+\BOOKMARK [3][]{subsubsection.B.3.5.1}{B.3.5.1 Connectat a un dispositiu Sensor/Actuador }{subsection.B.3.5}
+\BOOKMARK [3][]{subsubsection.B.3.5.2}{B.3.5.2 Connectat a un dispositiu Monitor }{subsection.B.3.5}
+\BOOKMARK [3][]{subsubsection.B.3.5.3}{B.3.5.3 Exportant gr\340fica generada}{subsection.B.3.5}
+\BOOKMARK [1][]{section.B.4}{B.4 Instal\267lant}{appendix.B}
+\BOOKMARK [0][]{section*.139}{Bibliograf\355a}{}

@@ -1,0 +1,366 @@
+%%==================================================================%%
+%% Author : Perelló Nieto, Miquel                                   %%
+%% Version: 1.0, 04/11/2011                                         %%
+%%                                                                  %%
+%% Memoria del Projecte de Final de Carrera                         %%
+%% Disseny del laboratori                                           %%
+%%==================================================================%%
+
+\chapter{Guia del laboratori}\label{cap:lab_gui}
+
+
+% the code below specifies where the figures are stored
+\ifpdf
+    \graphicspath{{5_laboratory_guide/figures/PNG/}{5_laboratory_guide/figures/PDF/}{5_laboratory_guide/figures/}}
+\else
+    \graphicspath{{5_laboratory_guide/figures/EPS/}{5_laboratory_guide/figures/}}
+\fi
+
+
+% ----------------------- contents from here ------------------------
+
+%TODO
+
+\section{Preparació de l'entorn de desenvolupament}
+Per tal de programar les plaques Flex per la realització del laboratori 
+es necessita tenir l'entorn de desenvolupament preparat amb els següents 
+programes:
+
+\begin{itemize}
+  	\item Eclipse (EE\_160) : entorn de programació, reanomenat Erika Enterprise (EE) \RTDruid.
+	\item Mplab (mplabx\_ide\_beta\_7) : entorn per descarregar els binaris al dsPIC.
+	\item Matlab (matlab 7.8) : entorn per la comunicació entre el PC i el dsPIC.
+	\item Python (Python 2.7) : interpret de programes en python.
+	\begin{itemize}
+		\item PySerial : modul per comunicació serie.
+		\item Matplotlib : modul per la interpretació de les dades rebudes del dsPIC.
+	\end{itemize}
+\end{itemize}
+
+Tots aquests programes són de lliure distribució (excepte el Matlab), i aquests es poden aconseguir de les seves pagines oficials:
+
+\begin{itemize} 
+	\item Eclipse
+	
+		\url{http://erika.tuxfamily.org/erika-for-multiple-devices.html}
+	\item Mplabx
+	
+		\url{http://ww1.microchip.com/downloads/mplab/X_Beta/installer.html}
+	\item Python
+	
+		\url{http://www.python.org/download/}
+	\item PySerial
+	
+		\url{http://pypi.python.org/pypi/pyserial}
+	\item Matplotlib
+	
+		\url{http://matplotlib.sourceforge.net/users/installing.html}
+		
+	\item PyQT4
+	
+		\url{http://www.riverbankcomputing.co.uk/software/pyqt/download}
+\end{itemize}
+
+\paragraph{Llibreries Python}
+	sudo apt-get install gnuplot
+	sudo apt-get install python-matplotlib
+	sudo apt-get install python-scitools
+	sudo apt-get install python-qt4
+	
+	
+\subsection{Instalació de Mplab}
+
+Per poder instal·lar \MplabX es necessari tenir instal·lat Java, en molts casos ja ve preinstal·lat (com en el nostre cas si treballem amb Ubuntu), però en cas de necessitar-lo instal·lar visiteu la seva pagina oficial des de on es pot descarregar:
+	\url{http://www.java.com/es/}
+
+En Ubuntu el podeu instal·lar directament des dels repositoris amb la comanda:
+
+\begin{code_bash}{Instalar Java Runtime Environment en Ubuntu}{cons:list:lab_gui:ins_jav}
+sudo apt-get install default-jre
+\end{code_bash}
+
+Un cop tingueu instal·lat l'entorn de Java, accediu a la pagina de Mplab X de Michrochip (Figura \ref{instalant/mplabx/mplabx_00}) i seleccioneu:
+
+\begin{itemize}
+	\item MPLAB IDE X Beta
+	\item MPLAB C30 Lite Compiler for dsPIC DSCs and PIC24 MCUs
+\end{itemize}
+
+\url{http://ww1.microchip.com/downloads/mplab/X_Beta/installer.html}
+
+\figuremacro{instalant/mplabx/mplabx_00}{\href{http://ww1.microchip.com/downloads/mplab/X_Beta/installer.html}{Pagina oficial MPLABX}}{En aquesta pàgina podem descarregar la ultima versió per Windows o Linux.}
+	
+	
+Un cop descarregats obrirem una terminal per instalar-los (Figura \ref{instalant/mplabx/mplabx_01}):
+
+\figuremacro{instalant/mplabx/mplabx_01}{Obrint una terminal}{Per obrir una terminal anem a Aplicacions -\textgreater Accessoris -\textgreater Terminal}
+
+Accedim al directori on s'hagin descarregat els fitxers i comproveu que efectivament s'han descarregat:
+
+\begin{code_bash}{Comprobant mplab descarregat en Ubuntu}{list:lab_gui:comp_mplab}
+cd ~/Downloads/
+ls
+\end{code_bash}
+
+Donem permís d'execució a mplabx-ide e instal·lem MplabX IDE(Figura \ref{instalant/mplabx/mplabx_02}):
+
+\begin{code_bash}{Instalar \MplabX en Ubuntu}{list:lab_gui:ins_mplabX}
+chmod u+x mplabx-ide-beta7.12-linux-installer.run
+sudo ./mplabx-ide-beta7.12-linux-installer.run
+\end{code_bash}
+
+\figuremacro{instalant/mplabx/mplabx_02}{Instalant MplabX IDE}{Canviem els permisos d'execució i executem l'instal·lador.}
+
+Tot seguit només haurem d'acceptar totes les condicions d'us (Figura \ref{instalant/mplabx/mplabx_04}) i indicar-li el directori d'instal·lació (Figura \ref{instalant/mplabx/mplabx_05}), el qual podem deixar per defecte a `/opt/microchip/mplabx`.
+
+\figuremacroW{instalant/mplabx/mplabx_04}{Termes i condicions MplabX IDE}{Acceptem els termes i les condicions d'us de MplabX.}{0.6}
+
+\figuremacroW{instalant/mplabx/mplabx_05}{Directori d'instal·lació de MplabX}{Podem deixar per defecte aquest directori.}{0.6}
+
+Ens dirà que hem de reiniciar perquè els canvis tinguin efecte (Figura \ref{instalant/mplabx/mplabx_07}). Peró de totes maneres no reiniciarem fins que hàgim instal·lat el següent paquet.
+
+\figuremacro{instalant/mplabx/mplabx_07}{Final instalació MplabX IDE}{Ens indica que es necessari reiniciar el sistema.}
+
+Un cop hem acabat d'instal·lar l'IDE de \MplabX procedim a instal·lar el paquet per programar els dsPIC:
+
+\begin{code_bash}{Instalar compilador mplab 30 en Ubuntu}{list:lab_gui:ins_mplabc30}
+chmod u+x mplabc30-v3.30c-linux-installer.run
+sudo ./mplabc30-v3.30c-linux-installer.run
+\end{code_bash}
+
+I igual que en el cas anterior només haurem de acceptar les condicions (Figura \ref{instalant/mplabx/mplabx_10}) i deixar el directori d'instal·lació per defecte `/opt/microchip/mplabc30/v3.30c`
+	
+\figuremacroW{instalant/mplabx/mplabx_10}{Termes i condicions Compilador MplabX C30}{Acceptem els termes d'us del compilador}{0.6}
+
+\figuremacroW{instalant/mplabx/mplabx_11}{Directori d'instal·lació compilador C30}{Si en el cas anterior no hem canviat el directori deixem-lo per defecte.}{0.6}
+
+\subsection{Instalació d'Eclipse}
+
+En aquest cas instal·lem seguint les instruccions que ens indica a la seva pàgina oficial:
+\url{http://www.eclipse.org/}
+
+En linux el trobem en els repositoris. Així que en Ubuntu faríem el següent :
+
+\begin{code_bash}{Instalar Eclipse en Ubuntu}{list:lab_gui:ins_ecl}
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install eclipse
+\end{code_bash}
+
+\subsection{Instal·lació del pluguin \RTDruid per Eclipse}
+
+Un cop tinguem Eclipse instal·lat hauríem d'afegir a aquest el paquet corresponent a \RTDruid, per fer això obrirem l'Eclipse i farem els següents passos:
+
+Anem a:
+\begin{itemize}
+	\item Help -\textgreater Install new Software...
+\end{itemize}
+
+
+\figuremacro{instalant/rt_druid/rt_druid_00}{Instalant nou pluguin en Eclipse}{Per instal·lar un pluguin nou anem a Help -\textgreater Install new Software...}
+
+	
+Afegirm una entrada nova (Figura \ref{instalant/rt_druid/rt_druid_01}) clicant a:
+\begin{itemize}
+	\item Add...
+\end{itemize}
+
+\figuremacroW{instalant/rt_druid/rt_druid_01}{Pantalla per afegir nous pluguins}{Des de aquesta pantalla podem instal·lar nous pluguins a Eclipse.}{0.6}
+
+
+En la finestra que apareix (Figura \ref{instalant/rt_druid/rt_druid_02}) ompliu els camps amb les següents dades:
+\begin{itemize}
+	\item Name -\textgreater  \RTDruid
+	\item Location -\textgreater  \url{http://download.tuxfamily.org/erika/webdownload/rtdruid_160_nb/}
+\end{itemize}
+
+\figuremacroW{instalant/rt_druid/rt_druid_02}{Afegint nova adreça de descarrega}{Aquí podem afegir una adreça on existeixin diferents pluguins.}{0.6}
+
+
+Tot seguit haurien d'aparèixer els paquets que ha trobat en l'adreça que li hem indicat (Figura \ref{instalant/rt_druid/rt_druid_03}), els marquem tots i prosseguim.
+
+\figuremacroW{instalant/rt_druid/rt_druid_03}{Plugins disponibles}{Aquí surt una llista de tots els plugins disponibles a l'adreça indicada.}{0.6}
+
+	
+	
+Tot seguit ens apareixerà un desglos de tots els paquets que s'instal·laran, i si seguim ens demanarà que acceptem els termes i condicions d'us (Figura \ref{instalant/rt_druid/rt_druid_05})
+
+\figuremacroW{instalant/rt_druid/rt_druid_05}{Termes i condicions \RTDruid}{S'han d'acceptar els termes i les condicions d'us del software de \RTDruid.}{0.6}
+
+
+En un punt de la instalació aquesta s'aturarà i darrera la finestra principal apareixerà un avís referent a la confiança del lloc de descarrega d'un dels paquets, fixeu-vos-hi i accepteu (Figura \ref{instalant/rt_druid/rt_druid_08}).
+
+\figuremacroW{instalant/rt_druid/rt_druid_08}{Confiança en certificat \RTDruid}{Acceptar la confiança del certificat de \RTDruid.}{0.7}
+
+Finalment ens avisarà que hauríem de reiniciar eclipse perquè els canvis tinguin efecte, així que digueu-li que sí volem reiniciar (Figura \ref{instalant/rt_druid/rt_druid_09}).
+
+\figuremacroW{instalant/rt_druid/rt_druid_09}{Reiniciar Eclipse}{Indicar que reiniciï Eclipse.}{0.7}
+
+\label{gui:lab:ins:rtdruid:path}
+Per tal que el mateix Eclipse sigui capaç de compilar el codi i generar el fitxer .elf necessari per Mplab, li hem d'indicar la ruta d'on tenim instal·lat el compilador.
+Això li podem indicar accedint a:
+
+\begin{itemize}
+	\item Window -\textgreater{} Preferences
+\end{itemize}
+
+Dintre de les preferencies naveguem fins a :
+
+\begin{itemize}
+	\item \RTDruid -\textgreater{} Oil -\textgreater{} dsPic
+\end{itemize}
+
+I comprovem que la ruta es correcte (Figura \ref{utilitzant/eclipse/eclipse_u_11}) (vigileu que la versió de mplab pot ser diferent, però de totes maneres en una instal·lació per defecte hauria de ser de la forma:
+
+\begin{itemize}
+	\item Gcc path /opt/microchip/mplabc30/X.XXy
+	\item Asm path /opt/microchip/mplabx/asm30
+\end{itemize}
+
+\figuremacroW{utilitzant/eclipse/eclipse_u_11}{Path compilador \RTDruid}{Introduim el path dels compiladors.}{0.6}
+
+Amb aquests passos tindrem l'entorn necessari per programar els microcontroladors amb el sistema operatiu en temps real Erika.
+
+\section{Fer parpellejar un led}
+
+Aquests son els passos necessaris per crear un nou projecte a partir d'una plantilla, compilar-la i gravar-la en el microcontrolador.
+
+\subsection{Entorn Eclipse}
+
+Primer de tot haurem d'obrir el programa Eclipse, que és un IDE de programació, en aquest cas porta un plugin \RTDruid de Evidence que ens permetrà programar el RTOS \g Erika.
+
+Un cop obert el programa crearem un nou projecte (Figura \ref{utilitzant/eclipse/eclipse_u_02})
+
+\begin{itemize}
+	\item File -\textgreater New -\textgreater Project...
+\end{itemize}
+
+
+\figuremacroW{utilitzant/eclipse/eclipse_u_02}{Nour projecte \RTDruid}{Per crear un nou projecte \RTDruid anar a New, Project...}{0.6}
+
+Seleccionarem el tipus de projecte que apareix a la llista (Figura \ref{utilitzant/eclipse/eclipse_u_03}):
+
+\begin{itemize}
+	\item Evidence -\textgreater \RTDruid Oil and C/C++ Project
+\end{itemize}
+
+\figuremacroW{utilitzant/eclipse/eclipse_u_03}{Seleccionar tipus de projecte \RTDruid}{}{0.6}
+
+Ara li posarem un nom de projecte (Figura \ref{utilitzant/eclipse/eclipse_u_04}) i deixarem les altres opcions per defecte (si volem podem canviar el directori on volem crear-lo, però en principi volem tenir tots els projectes junts al nostre \emph{workspace}).
+
+\figuremacroW{utilitzant/eclipse/eclipse_u_04}{Posant nom al projecte \RTDruid}{Deixem les opcions per defecte}{0.6}
+
+En aquest punt es quan podem seleccionar una plantilla per començar el projecte (Figura \ref{utilitzant/eclipse/eclipse_u_06}), així no haurem de programar les coses bàsiques. Per tant fem el següent:
+
+Marquem la caixeta \emph{Create a project using one of these templates} i seleccionem \emph{pic30} (en el nostre cas, ja que estem programant un dsPIC33XXX) i aquí dintre seleccionem un dels \emph{templates}, en aquest cas:
+
+\begin{itemize}
+	\item pic30 -\textgreater FLEX -\textgreater EDF: Periodic task with period
+\end{itemize}
+
+\figuremacroW{utilitzant/eclipse/eclipse_u_06}{Templates \RTDruid}{En aquest apartat podem seleccionar entre alguns \emph{templates} predisenyats els quals només cal compilar i gravar en la placa Flex}{0.6}
+
+Un cop li donem a \emph{Finish} ja tindrem carregat l'entorn per programar. 
+
+\figuremacroW{utilitzant/eclipse/eclipse_u_07}{Entorn Eclipse}{Enotorn amb projecte carregat preparat per compilar.}{0.8}
+
+En cas de tenir activada la opció \emph{Build Automatically} es compilarà per primer cop sense haver de realitzar cap acció, però de totes maneres ens interessa desactivar-ho. Per tant mirem que \emph{Build Automatically"} estigui desmarcat (Figura \ref{utilitzant/eclipse/eclipse_u_08}):
+
+\begin{itemize}
+	\item Project -\textgreater Build Automatically
+\end{itemize}
+
+\figuremacroW{utilitzant/eclipse/eclipse_u_08}{.}{.}{0.6}
+
+Amb tot això ja podríem modificar el codi i programar el que sigui necessari. Un cop tinguem el codi desitjat per compilar-lo hauríem \textbf{primer de tot Guardar el projecte} (si no guardem estarem compilant una versió anterior), y un cop guardat anem a:
+
+\begin{itemize}
+	\item Project -\textgreater Clean
+\end{itemize}
+
+Fent el clean ens assegurem que el codi que es compila sigui realment la versió que acabem de programar, i podem deixar les opcions que hi ha per defecte  (Figura \ref{utilitzant/eclipse/eclipse_u_09}) (que netejaran tots els projectes que tinguem oberts i els compilaran), o seleccionar \emph{Clean projects selected below} i \emph{Build only the selected projects} per tal de netejar i compilar només el projecte que seleccionem.
+
+\figuremacroW{utilitzant/eclipse/eclipse_u_09}{Compilar en Eclipse}{Per tal de compilar primer es recomanable netejar l'entorn.}{0.6}
+
+Un cop acabi de compilar ho indicarà a la Consola inferior (Figura \ref{utilitzant/eclipse/eclipse_u_12}) amb el missatge \emph{Compilation terminated successfully!} això haurà creat un fitxer nou anomenat pic30.elf, que serà el que més endavant utilitzarem el \MplabX per gravar al microcontrolador.
+
+\figuremacroW{utilitzant/eclipse/eclipse_u_12}{Compilació en Eclipse}{Missatge de compilació satisfactoria}{0.6}
+
+Podria ser que al compilar no trobés la ruta al compilador, comprobeu que hagueu indicat el path correcte en el pas d'instalació del pluguin \RTDruid de la secció anterior \ref{gui:lab:ins:rtdruid:path}, (Figura \ref{utilitzant/eclipse/eclipse_u_11}).
+
+
+\subsection{Entorn MplabX}
+
+Un cop hem generat el fitxer \emph{.elf} procedim a obrir \MplabX. Amb aquest programa podrem finalment grabar el microcontrolador.
+
+Així que obrim el programa i anem a crear un nou projecte (Figura \ref{utilitzant/mplabx/mplabx_u_00}):
+
+\begin{itemize}
+	\item File -\textgreater New Project...
+\end{itemize}
+
+\figuremacroW{utilitzant/mplabx/mplabx_u_00}{Nou projecte MplabX}{}{0.4}
+
+Un cop seleccionat, ens preguntarà quint tipus de projecte volem crear. En el nostre cas com ja hem precompilat en Eclipse li indiquem que utilitzi el nostre fitxer \emph{.elf} (Figura \ref{utilitzant/mplabx/mplabx_u_01}).
+
+\begin{itemize}
+	\item Categories : Microchip Embedded
+	\item Projects:    Prebuilt (Hex, Loadable image) Project
+\end{itemize}
+
+\figuremacroW{utilitzant/mplabx/mplabx_u_01}{Projecte precompilat MplabX}{}{0.6}
+
+A la següent secció ens demanarà que li indiquem el path del fitxer, així que anem fins a ell i el seleccionem (Figura \ref{utilitzant/mplabx/mplabx_u_02}).
+Si hem seguit la guia fins aquest punt hauria de ser en el path següent:
+
+\begin{itemize}
+	\item $home/student/workspace/flex_blink/Debug/pic30.elf$
+\end{itemize}
+
+(Això depèn d''on hàgiu creat el vostre \emph{workspace} i el nom que li hàgiu donat al projecte)
+
+\figuremacroW{utilitzant/mplabx/mplabx_u_02}{Carregant fitxer \emph{.elf} MplabX}{El fitxer \emph{.elf} ja esta precompilat.}{0.6}
+
+Aquí seleccionem quin microcontrolador ens disposem a programar (Figura \ref{utilitzant/mplabx/mplabx_u_04}), en el nostre cas es:
+
+\begin{itemize}
+	\item Family: DSPIC33
+	\item Device: dsPIC33FJ256MC710
+\end{itemize}
+
+\figuremacroW{utilitzant/mplabx/mplabx_u_04}{Seleccionant dispositiu MplabX}{Aquí apareix una llista de microcontroladors per ser programats}{0.6}
+
+Ara s'ha d'indicar quin és el programador que es vol utilitzar, en el nostre cas programarem les plaques Flex amb el ICD3 (Figura \ref{utilitzant/mplabx/mplabx_u_05}).
+La connexió de la placa Flex i el programador hauria de estar ara mateix com la fotografia (Figura \ref{fotos/DSC_0224}):
+
+\figuremacroW{fotos/DSC_0224}{Flex i Mplab ICD3}{Correctament connectats per ser programat.}{0.6}
+
+En el cas que es trii una altra eina per programar-los s'ha de tenir en compte els colors en els que apareixen els diferents programadors:
+
+%\label{tab:mplab_colors}
+\input{5_laboratory_guide/mplab_colors.tex}
+
+%Verd : Indica que aquest programador ha estat totalment testejat i certificat per l'us general. Per tant és possible seleccionar-lo.
+
+%Groc : Idica que el programador ha estat minimament provat i només hauria de ser utilitzat per primeres proves. En aquest cas també ens permeten seleccionar-lo.
+
+%Vermell : Indica que el programador no és actualment suportat. En aquest cas no podrem seleccionar-lo.
+
+\figuremacroW{utilitzant/mplabx/mplabx_u_05}{Programadors MplabX}{Els programadors apareixen de diferent color segons la compatibilitat amb \MplabX veure la taula \ref{tab:mplab_colors}}{0.6}
+
+Ara només queda posar-li un nom al projecte (Figura \ref{utilitzant/mplabx/mplabx_u_06}), i \emph{sobretot vigilar de canviar el directori del projecte} i treure'l del directori \emph{Debug} (Figura \ref{utilitzant/mplabx/mplabx_u_07}). Si el deixesiu en aquest directori al fer qualsevol \emph{Clean} al programa Eclipse podríeu tenir problemes en el projecte creat al \MplabX.
+
+\figuremacroW{utilitzant/mplabx/mplabx_u_06}{Posant nom al projecte en MplabX}{}{0.8}
+
+\figuremacroW{utilitzant/mplabx/mplabx_u_07}{Treure del directori \emph{Debug}}{S'ha de treure el projecte del directori \emph{Debug} si no volem que MplabX tingui problemes amb els seus fitxers}{1}
+
+Finalment apareixeran els detalls del projecte que estem a punt de crear.
+Acceptem i ens deixarà el projecte en l'entorn de treball.
+A l'hora de programar la placa, clicarem al botó \emph{Make and Program Device} a dalt a la dreta (Figura \ref {utilitzant/mplabx/mplabx_u_08}).
+
+\figuremacroW{utilitzant/mplabx/mplabx_u_08}{Programar microcontrolador des de MplabX}{Per programar el microcontrolador clicar el botó que apareix a dalt a la imatge}{0.6}
+
+Un cop programat hauria de començar a parpellejar el primer led taronja començant per l'esquerra (Figura \ref{fotos/DSC_0231}) (després dels tres leds verds que indiquen alimentació):
+
+\figuremacroW{fotos/DSC_0231}{Placa Flex amb programa \emph{Blink}}{Amb aquest programa carregat el primer led taronja parpelleja cada mig segon.}{0.6}
+

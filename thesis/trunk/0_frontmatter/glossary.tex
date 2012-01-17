@@ -1,0 +1,77 @@
+% this file is called up by thesis.tex
+% content in this file will be fed into the main document
+
+% Glossary entries are defined with the command \nomenclature{1}{2}
+% 1 = Entry name, e.g. abbreviation; 2 = Explanation
+% You can place all explanations in this separate file or declare them in the middle of the text. Either way they will be collected in the glossary.
+
+% required to print nomenclature name to page header
+\markboth{\MakeUppercase{\nomname}}{\MakeUppercase{\nomname}}
+
+
+% ----------------------- contents from here ------------------------
+
+% chemicals
+\nomenclature{DCSMonitor}{Nom del programa creat en aquest projecte per rebre totes les dades monitoritzades presents en el bus CAN. Ve de les sigles en Anglès de \textit{Distributed Control Systems Monitor} (Monitor de Sistemes Distribuïts de Control)}
+
+\nomenclature{DCS}{Sigles en Anglès de \textit{Distributed Control System}  (Sistema Distribuït de Control); són sistemes de control aplicats generalment en sistemes de fabricació, o qualsevol tipus de sistemes dinàmics, en els quals els elements de control no són centrals sinó que estan distribuïts en el sistema a més cada component del subsistema està connectat als demés mitjançant una xarxa.}
+
+\nomenclature{CAN}{Sigles en Anglès de \textit{Controller Area Network}; És un protocol de comunicacions desenvolupat per la firma alamanya Robert Bosch GmbH, basat en una topologia en bus per la transmissió de missatges en entorns distribuïts.}
+
+\nomenclature{RTOS}{Sigles en Anglès de \textit{Real-Time Operating System} (Sistema Operatiu en Temps Real); es diu dels Sistemes Operatius dissenyats per atendre aplicacions en temps real. La principal característica d'aquests SO és el nivell de precisió en els temps d'execució de cada una de les tasques que ha de realitzar.}
+
+\nomenclature{.elf}{Sigles en Anglès de \textit{Executable and Linkable Format} (Format Enllaçable i Executable ); és un format de fitxers per executables, codi obert, biblioteques compartides i bolcat de memòria. Va ser dissenyat per \emph{Unix System Laboratories}, i en principi va ser desenvolupat per plataformes de 32 bits, encara que actualment s'utilitza en varietat de plataformes.}
+
+\nomenclature{.svg}{Sigles en Anglès de \textit{Scalable Vector Graphics} (Gràfics Vectorials Escalables); és una especificació per descriure gràfics vectorials bidimensionals, tant estàtics com dinàmics, en format XML.}
+
+\nomenclature{PIC}{Sigles en Anglès de \textit{Peripheral Interface Controller} (Controlador d'Interficie de Periféric); són una familia de microcontroladors de tipus RISC fabricats per \emph{Microchip Technology Inc.} originalment creats per la divisió de microelectrónica de General Instruments.}
+
+\nomenclature{dsPIC33FJ256MC710}{Model de microcontrolador de la casa \emph{Microchip} caracteritzat per ser de la família dels dsPIC i per comptar amb multitud d'utilitats en sistemes distribuïts.}
+
+\nomenclature{dsPIC}{Família de microcontroladors fabricats per la casa \emph{Microchip} caracteritzat per comptar amb bus de dades inherent de 16 bits, i per incorporar varies operacions de DSP implementades en hardware.}
+
+\nomenclature{DSP}{Sigles en Anglès de \textit{Digital Signal Processor} (Processador de Senyals Digitals); són microprocesadors especialitzats amb una arquitectura optimitzada per el tractament ràpid de senyals digitals.}
+
+\nomenclature{Llaç de Control}{En els sistemes distribuïts de control s'anomena d'aquesta manera a un grup de dispositius que formen part del control d'algun proces, en el cas del nostre laboratori aquests grups estan formats per un \Controlador, un \Sensor i un \Actuador.}
+
+\nomenclature{Microcontrolador}{Es un circuit integrat programable, capaç d'executar les ordres gravades en la seva memòria. Està composat per varis blocs funcionals, els quals compleixen una tasca concreta. Un microcontrolador conté al seu interior les tres unitats funcionals principals de un computador: unitat central de processament, memòria i perifèrics d'entrada i sortida.}
+
+\nomenclature{Microprocesador}{Els microprocesadors compten amb les funcions d'una CPU (Unitat Central de Procesament) en un o varis circuits integrats.}
+
+\nomenclature{Controlador}{El controlador en sistema distribuït de control és l'encarregat de calcular el valor a donar al actuador per tal de aconseguir un senyal desitjat.}
+
+\nomenclature{Sensor}{El sensor en un sistema distribuït de control és l'encarregat de prendre els valors de sortida del sistema, per tal de oferir-li al controlador.}
+
+\nomenclature{Actuador}{L'actuador en un sistema distribuït de control és l'encarregat de assignar el valor calculat pel controlador a l'entrada del circuit a controlar.}
+
+\nomenclature{Supervisor}{El supervisor en un sistema distribuït de control és el dispositiu que ens dona els valors necessaris del sistema per saber el seu estat.}
+
+\nomenclature{Monitor}{El monitor es un dispositiu que hem afegit en el nostre laboratori i en el sistema distribuït de control que s'encarrega de monitoritzar el bus del sistema capturant la informació demanada, i poden interferir en el sistema per veure la resposta dels diferents controls.}
+
+\nomenclature{IDE}{Sigles en Anglès de \textit{Integrated Development Environment} (Entorn de Desenvolupament Integrat); és un programa informàtic composat per un conjunt d'eines de programació en un o varis llenguatges de programació i dedicat a ajudar en les tasques habituals de programació.}
+
+\nomenclature{.ui}{Sigles en Anglès de \textit{User Interface} (Interficie d'usuari'); és un format de fitxers creat per la casa QT, i amb informació necessària per muntar la interfície visual d'un programa.}
+
+\nomenclature{API}{Sigles en Anglès de \textit{Application Programming Interface} (Interfície de Programació d'Aplicacions); és un conjunt de declaracions amb el propòsit de ser usades per un altre programa com una capa d'abstracció.}
+
+\nomenclature{DMA}{Sigles en Anglès de \textit{Direct Memory Acces} (Accés Directe a Memòria); és un mètode que permet a certs tipus de circuits integrats accedir a la memòria d'aquests per llegir i escriure independentment de la CPU principal.}
+
+\nomenclature{PWM}{Sigles en Anglès de \textit{Pulse-Width Modulation} (Modulació per amplària d'impuls); aquesta és una tècnica en la qual es modifica el cicle de treball d'un senyal periòdic (una ona sinusoïdal o ona quadrada, per exemple), ja sigui per transmetre informació a través d'un canal de comunicacions o per controlar la quantitat d'energia que s'envia a una càrrega.}
+
+\nomenclature{WBS}{Sigles en Anglès de \textit{Work Breakdown Structure} (Estructura de Descomposició de Treball); en gestió de projectes es una descomposició jeràrquica orientada al entregable, del treball a ser realitzat per l'equip del projecte per cumplir amb els objectius d'aquest.}
+
+\nomenclature{Mutex}{De l'Anglès \textit{Mutual Exclusión} (Zona d'exclusió mutua); tipus d'algoritmes utilitzats en la programació concurrent per evitar l'us simultani dels recursos, com variables globals, per fragments de codi coneguts de manera comú com zones crítiques.}
+
+
+\nomenclature{.ts}{De l'Anglès \textit{Translation files} (Fitxers de traducció); Tipus d'extensió de fitxers utilitzats per QtLingüist per crear traduccions dels textos d'un programa.}
+
+\nomenclature{.qm}{Extensió d'un tipus de fitxers que utilitza la llibreria PyQT4 per traduir textos.}
+
+\nomenclature{SAE}{Sigles en Anglès de \textit{Society of Automotive Engineers} (Societat d'Enginyers Automotrius); és l'organització enfocada a la mobilitat dels professionals en l'enginyeria aeroespacial, automoció, i industries comercials especialitzades en la construcció de vehicles.}
+
+\nomenclature{IPS}{Sigles en Anglès de \textit{Instructions Per Second} (Instruccions Per Segon); és una mesura de velocitat d'un processador. Indica el nombre d'instruccions que la CPU pot executar en un segon.} 
+
+\nomenclature{OSEK/VDX}{Sigles en Alemà de \textit{Offene Systeme und deren Schnittstellen für die Elektronik in Kraftfahrzeugen} (Sistemes oberts i les seves interfícies per la electrònica en automòbils); és un estandart que especifica el Sistema Operatiu integrat incloent una pila per comunicacions i un protocol per l'administració de xarxes per sistemes empotrats en automòbils.} 
+
+\nomenclature{XML}{De l'Anglès \textit{eXtensible Markup Language} (Llenguatge de Marques Extensibles); és un metallenguatge d'etiquetes, desenvolupat per el \emph{World Wide Web Consortium (W3C)} que permet definir la gramàtica de llenguatges específics.} 
+

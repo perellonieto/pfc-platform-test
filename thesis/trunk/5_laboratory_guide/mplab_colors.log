@@ -1,0 +1,32 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.10.27)  18 DEC 2011 12:15
+entering extended mode
+ %&-line parsing enabled.
+**\nonstopmode \input{"/media/home/maikel/Dropbox/UNI/PFC/administracio/prova_m
+emoria/PhDtemplateLATEX/5_laboratory_guide/mplab_colors.tex"}
+
+(/media/home/maikel/Dropbox/UNI/PFC/administracio/prova_memoria/PhDtemplateLATE
+X/5_laboratory_guide/mplab_colors.tex
+
+! LaTeX Error: File `Latex/Classes/PhDthesisPSnPDF.cls' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: cls)
+
+Enter file name: 
+! Emergency stop.
+<read *> 
+         
+l.60        \usepackage
+                       [latin1]{inputenc}^^M
+*** (cannot \read from terminal in nonstop modes)
+
+ 
+Here is how much of TeX's memory you used:
+ 15 strings out of 495061
+ 638 string characters out of 1182620
+ 45108 words of memory out of 3000000
+ 3288 multiletter control sequences out of 15000+50000
+ 3640 words of font info for 14 fonts, out of 3000000 for 9000
+ 28 hyphenation exceptions out of 8191
+ 11i,0n,7p,216b,8s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!

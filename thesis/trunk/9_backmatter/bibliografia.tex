@@ -1,0 +1,28 @@
+%%==================================================================%%
+%% Author : Perelló Nieto, Miquel                                   %%
+%% Version: 1.0, 04/11/2011                                         %%
+%%                                                                  %%
+%% Memoria del Projecte de Final de Carrera                         %%
+%% bibliografia                                                     %%
+%%==================================================================%%
+
+\newpage
+
+%: ----------------------- bibliography ------------------------
+
+% The section below defines how references are listed and formatted
+% The default below is 2 columns, small font, complete author names.
+% Entries are also linked back to the page number in the text and to external URL if provided in the BibTex file.
+
+% PhDbiblio-url2 = names small caps, title bold & hyperlinked, link to page 
+\begin{scriptsize} % tiny(5) < scriptsize(7) < footnotesize(8) < small (9)
+
+\bibliographystyle{Latex/Classes/PhDbiblio-url2} % Title is link if provided
+%\renewcommand{\bibname}{References} % changes the header; default: Bibliography
+
+\bibliography{9_backmatter/library} % adjust this to fit your BibTex file
+
+\end{scriptsize}
+
+%make all the elements in the library.bib show up
+\nocite{*}

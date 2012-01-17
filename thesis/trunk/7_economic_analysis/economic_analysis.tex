@@ -1,0 +1,179 @@
+% this file is called up by thesis.tex
+% content in this file will be fed into the main document
+
+\chapter{Anàlisi econòmic}\label{cap:eco} % top level followed by section, subsection
+
+
+% ----------------------- paths to graphics ------------------------
+
+% change according to folder and file names
+\ifpdf
+    \graphicspath{{7_economic_analysis/figures/PNG/}{7_economic_analysis/figures/PDF/}{7_economic_analysis/figures/}}
+\else
+    \graphicspath{{7_economic_analysis/figures/EPS/}{7_economic_analysis/figures/}}
+\fi
+
+
+% ----------------------- contents from here ------------------------
+
+En aquest capítol mostrem un desglos del preu que ha comportat aquest projecte, separant la part de materials necessaris per l'execució dels experiments de laboratori, i la part d'hores dedicades a cada una de les fases del projecte segons el tipus de personal necessari per dur la feina.
+
+%====================================================================================%
+% Material
+%====================================================================================%
+\section{Material}\label{cap:eco:mat}
+
+Tot el material necessari per dur a terme el projecte, es bàsicament el material que es necessita per elaborar un laboratori de Sistemes Distribuïts de Control com el que hem realitzat, en el que existeixen dos grups de laboratori i un professor.
+Cada un d'els grups de laboratori necessita per tant dues plaques \FLEX per la elaboració del control, i el professor en necessita una que faci de \Monitor. Com realment no existeixen alumnes no necessitàvem dos ordinadors per els grups ja que amb un ordinador connectat al dispositiu \Monitor ja podíem realitzar totes les lectures.
+
+També era necessari un programador per poder programar els diferents dispositius, els alimentadors (que fent ponts entre les plaques només ens han calgut un parell), un convertidor de RS232 a USB ja que l'ordinador portàtil no comptava amb aquest port, i el material d'oficina que hem anat necessitant per prendre apunts, imprimir material didàctic, o realitzar els \LiveCD necessaris.
+
+A continuació es pot veure desglossat el preu de tot el material mencionat (taula \ref{tab:costs:mat}).
+
+\begin{table}[ht!]
+	\begin{tabularx}{\linewidth}{l | X | l | l | l}
+		%\input{7_economic_analysis/preu_hora.tex}
+\textbf{Material}	&\textbf{descripció}	&\textbf{preu un.}	&\textbf{unitats}	&\textbf{preu}\\
+\hline
+\hline
+Placa FLEX	&Placa de prototipat de la casa \FLEX	&119	&5	&595\\
+\hline
+Modul CAN	&Circuit amb transceptor CAN	&8	&5	&40\\
+\hline
+Modul RS232	&Circuit amb codificador RS232	&9	&1	&9\\
+\hline
+ICD3	&Programador Mplab de la casa \Microchip	&148	&1,00	&148\\
+\hline
+Ordinador portatil	&Portatil estandart	&399	&1	&399\\
+\hline
+Alimentadors	&Alimentador 9VDC 500mA	&12	&2	&24\\
+\hline
+Convertidor RS232	&Convertidor de estandart RS232 a USB	&9	&1	&9\\
+\hline
+Cables varis	&(cables per bus CAN, cables alimentació...)	&35	&1	&35\\
+\hline
+Material oficina	&(impresions, dvd's, cd's, fulls...)	&50	&1	&50\\
+\hline
+\hline
+TOTAL	&	&	&	&1309\\
+\hline
+	\end{tabularx}
+	\caption[Preu del material necessari]{Desglos del preu de tot el material empleat}
+	\label{tab:costs:mat}
+\end{table}
+
+
+%====================================================================================%
+% Ma d'obra
+%====================================================================================%
+\section{Ma d'obra}\label{cap:eco:hora}
+
+
+Aquest es un dels aspectes més importants a l'hora de fer el calcul de preus del projecte, ja que en aquest cas s'emporta el 90\% del pressupost total del projecte.
+
+\begin{wraptable}{r}{0.5\textwidth}
+
+%\begin{table}[ht!]
+\begin{center}
+	\begin{tabular}{|| l | c ||}
+		%\input{7_economic_analysis/preu_hora.tex}
+\hline
+\textbf{Rol} 	&\textbf{Preu}\\
+\hline
+\hline
+Enginyer de Software	&30\\
+\hline
+Enginyer Industrial	&25\\
+\hline
+Director de Projecte	&60\\
+\hline
+Becari	&15\\
+\hline
+	\end{tabular}
+\end{center}
+	\caption[Preus hora de cada rol]{Preu de cada rol en Euros/hora}
+	\label{tab:cost:hour}
+%\end{table}
+
+\end{wraptable}
+
+Per fer aquest calcul s'ha estimat el preu de la ma d'obra de diferents rols que s'han tocat durant el projecte, per exemple l'Enginyer de Software que ha realitzat tots els codis relacionats amb interfícies, programes, disseny d'aquests, etc. L'enginyer Industrial que s'ha encarregat dels diferents protocols de comunicació, les connexions elèctriques i el disseny del laboratori físic. El director de projecte, que ha planificat els temps d'entrega, els canvis del diagrama de Gantt, i ha fet les reunions periòdiques per controlar el bon funcionament de tot. I el becari que ha fet les proves dels sistemes, documentat l'us del laboratori i de part del \LiveCD.
+
+Per tant es posa una taula amb els preus de cada un dels diferents rols (taula \ref{tab:cost:hour}), i tot seguit un desglos dels dies dedicats a cada una de les tasques, el seu equivalent en hores, el percentatge d'elaboració d'aquestes feines per rol, i finalment el preu resultant de fer els calculs (taula \ref{tab:costs}).
+
+
+
+Tota la feina indicada en aquesta taula es pot contrastar en el diagrama de Gantt mostrat en el primer capitol (Introducció, \ref{cap:int}) en l'apartat de planificació (secció \ref{cap:int:plan}).
+
+
+\begin{table}[ht!]
+	\begin{tabular}{l | r r r r | r | r | r}
+		%\input{7_economic_analysis/ma_obra.tex}
+\textbf{Feina} &\textbf{E.S.}	&\textbf{E.I.}	&\textbf{P.M.}	&\textbf{Bec.}	&\textbf{dies}	&\textbf{hores}	&\textbf{Euros}\\
+\hline
+\hline
+Estudi General	&50	&50	&0	&0	&7,00	&24,50	&673,75\\
+\hline
+Planificar Projecte	&25	&25	&50	&0	&1,00	&3,50	&153,12\\
+\hline
+Laboratori Actual	&35	&60	&0	&10	&19,00	&66,50	&1.795,50\\
+\hline
+Preparar codis lliures	&70	&30	&0	&0	&12,40	&43,40	&1.236,90\\
+\hline
+Ampliació del laboratori	&50	&50	&0	&0	&53,40	&186,90	&5.139,75\\
+\hline
+Preparar Live CD	&80	&0	&0	&20	&14,00	&49,00	&1.323,00\\
+\hline
+Realitzar Guies	&80	&0	&0	&20	&9,40	&32,90	&888,30\\
+\hline
+Preparar Informe Previ	&50	&45	&5	&0	&7,00	&24,50	&716,62\\
+\hline
+Preparar Memória	&49	&49	&2	&0	&15,00	&52,50	&1.477,88\\
+\hline
+Preparar Defensa	&50	&40	&5	&0	&7,00	&24,50	&686,00\\
+\hline
+Reuninons periódiques	&25	&25	&50	&0	&9,00	&31,50	&1.378,12\\
+\hline
+\hline
+\textbf{TOTAL}	&	&	&	&	&\textbf{154,20}	&\textbf{539,70}	&\textbf{14.090,83}\\
+\hline
+	\end{tabular}
+	\caption[Desglos del preu de la ma d'obra]{Desglos del preu de la ma d'obra, amb el percentatge de dedicació per rol}
+	\label{tab:costs}
+\end{table}
+
+Tot seguit es pot observar una gràfica de pastís (figura \ref{economic_2}) que s'ha creat per veure visualment com s'ha distribuït la inversió de capital en la ma d'obra segons la feina que s'ha realitzat. Com era d'esperar una gran part del preu del projecte recau sobre l'elaboració de l'ampliació del nou laboratori, i la preparació anterior amb el laboratori actual, que ens va servir per entendre els Sistemes Distribuïts de Control.
+
+\figuremacro{economic_2}{Distribució del preu segons la feina}{}
+
+
+%\begin{wraptable}{r}{0.7\textwidth}
+
+\begin{table}[ht!]
+\begin{center}
+	\begin{tabular}{|| l | r | r ||}
+		%\input{7_economic_analysis/hores_rol.tex}
+\hline
+\textbf{Rol} 	&\textbf{hores}	&\textbf{percentatge}\\
+\hline
+\hline
+Enginyer de Software	&283,85	&53\%\\
+\hline
+Enginyer Industrial	&213,92	&40\%\\
+\hline
+Director de Projecte	&21,00	&4\%\\
+\hline
+Becari	&23,03	&4\%\\
+\hline
+	\end{tabular}
+	\end{center}
+	\caption[Hores dedicades per rol]{Hores dedicades al projecte per rol, i els seus percentatges}
+	\label{tab:hores:rol}
+\end{table}
+
+%\end{wraptable}
+
+També és important veure quin es el percentatge d'hores que li ha dedicat cada rol al projecte, i amb la taula \ref{tab:hores:rol} podem veure que l'Enginyer de Software i l'Enginyer Industrial són els que més hores han dedicat al projecte, donant una expectativa positiva envers el resultat del projecte.
+
+\figuremacroW{hores}{Percentatge d'hores dedicades al projecte per rol}{}{0.6}
+
