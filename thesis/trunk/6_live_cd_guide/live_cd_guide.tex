@@ -26,6 +26,9 @@ Tot l'entorn està preparat perquè es pugui engegar el Live CD des de l'arranc 
 Cal dir que la velocitat de resposta d'aquest entorn es algo inferior a la que podria donar un sistema instal·lat, però aquest sistema ens dona una portabilitat i una velocitat en la preparació del entorn.
 	
 De totes maneres el mateix Live CD compta amb l'opció de fer una instal·lació en el disc, compartint-lo amb un altre sistema operatiu si es necessari i podent arrancar des de qualsevol dels instal·lats.
+
+També estan disponibles una serie de guies d'us del Live CD i del programa \DCSMonitor en format vídeo a la pàgina del Projecte de Final de Carrera "Design of a platform to test distributed control systems" (\href{http://code.google.com/p/pfc-platform-test/}{http://code.google.com/p/pfc-platform-test/}) en l'apartat de vídeos (\href{http://code.google.com/p/pfc-platform-test/wiki/VideoExamples}{http://code.google.com/p/pfc-platform-test/wiki/VideoExamples}).
+
 \section{Requisits mínims}
 Per tal d'iniciar el Live CD del laboratori, el nostre ordinador hauria de tenir els següents requisits mínims:
 \begin{itemize}
@@ -172,12 +175,14 @@ Aquí seleccionem quin microcontrolador ens disposem a programar (Figura \ref{li
 Ara s'ha d'indicar quin és el programador que es vol utilitzar, en el nostre cas programarem les plaques Flex amb el ICD3 (Figura \ref{live_cd_20}).
 La connexió de la placa Flex i el programador hauria de estar ara mateix com la fotografia (Figura \ref{DSC_0224}):
 
-\figuremacroW{DSC_0224}{Connexió del programador ICD3 i placa \FLEX}{}{0.5}
+\figuremacroW{DSC_0224}{Connexió del programador ICD3 i placa \FLEX}{}{0.7}
 \figuremacroW{live_cd_20}{Seleccionant programador en \MplabX}{}{0.8}
 
-En el cas que es trii una altra eina per programar-los s'ha de tenir en compte els colors en els que apareixen els diferents programadors:
+En el cas que es trii una altra eina per programar-los s'ha de tenir en compte els colors en els que apareixen els diferents programadors, per saber que significa dadascun dels colors consulteu a la taula \ref{tab:mplab_colors2}.
 
-\input{5_laboratory_guide/mplab_colors.tex}
+\input{6_live_cd_guide/mplab_colors2.tex}
+
+\clearpage
 
 Ara només queda posar-li un nom al projecte (Figura \ref{live_cd_21}), i \emph{sobretot vigilar de canviar el directori del projecte} i treure'l del directori \emph{Debug} (Figura \ref{live_cd_22}). Si el deixesiu en aquest directori al fer qualsevol \emph{Clean} al programa Eclipse podríeu tenir problemes en el projecte creat al \MplabX.
 

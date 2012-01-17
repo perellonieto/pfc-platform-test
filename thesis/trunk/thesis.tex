@@ -38,6 +38,7 @@
 \usepackage{tabularx}
 \usepackage{graphicx}
 \usepackage{epsfig}
+\usepackage{boxedminipage}
 
 \usepackage{subfig}
 %\usepackage{subfigure}
@@ -115,7 +116,8 @@
     \renewcommand\lstlistingname{\textbf{Codi Bash}}
     \lstset{caption={#1}, 
     label={#2},
-    title={\colorbox{black!20}{\parbox{\dimexpr\linewidth-6pt\relax}{\centering \lstlistingname~\thelstlisting:\ \texttt{\detokenize{#1}}}}},
+    %title={\colorbox{black!20}{\parbox{\dimexpr\linewidth-6pt\relax}{\centering \lstlistingname~\thelstlisting:\ \texttt{\detokenize{#1}}}}},
+    title={\colorbox{black!10}{\parbox{\dimexpr\linewidth-6pt\relax}{\centering \lstlistingname~\thelstlisting:\ \texttt{#1}}}},
     language=bash, 
     basicstyle=\ttfamily,
 	backgroundcolor=\color{ultralightgray},  % choose the background color. You must add \usepackage{color}
@@ -141,7 +143,8 @@
     \renewcommand\lstlistingname{\textbf{Codi C}}
     \lstset{caption={#1}, 
     label={#2},
-    title={\colorbox{black!10}{\parbox{\dimexpr\linewidth-6pt\relax}{\centering \lstlistingname~\thelstlisting:\ \texttt{\detokenize{#1}}}}},
+    %title={\colorbox{black!10}{\parbox{\dimexpr\linewidth-6pt\relax}{\centering \lstlistingname~\thelstlisting:\ \texttt{\detokenize{#1}}}}},
+    title={\colorbox{black!10}{\parbox{\dimexpr\linewidth-6pt\relax}{\centering \lstlistingname~\thelstlisting:\ \texttt{#1}}}},
     language=[ANSI]C, 
     basicstyle=\ttfamily,
 	numbers=left,                   % where to put the line-numbers
@@ -171,7 +174,8 @@
     \renewcommand\lstlistingname{\textbf{Codi Python}}
     \lstset{caption={#1}, 
     label={#2},
-    title={\colorbox{black!10}{\parbox{\dimexpr\linewidth-6pt\relax}{\centering \lstlistingname~\thelstlisting:\ \texttt{\detokenize{#1}}}}},
+    %title={\colorbox{black!10}{\parbox{\dimexpr\linewidth-6pt\relax}{\centering \lstlistingname~\thelstlisting:\ \texttt{\detokenize{#1}}}}},
+    title={\colorbox{black!10}{\parbox{\dimexpr\linewidth-6pt\relax}{\centering \lstlistingname~\thelstlisting:\ \texttt{#1}}}},
     language=python, 
     basicstyle=\ttfamily,
 	numbers=left,                   % where to put the line-numbers
@@ -203,7 +207,8 @@
     \renewcommand\lstlistingname{\textbf{Codi XML}}
     \lstset{caption={#1}, 
     label={#2},
-    title={\colorbox{black!10}{\parbox{\dimexpr\linewidth-6pt\relax}{\centering \lstlistingname~\thelstlisting:\ \texttt{\detokenize{#1}}}}},
+    %title={\colorbox{black!10}{\parbox{\dimexpr\linewidth-6pt\relax}{\centering \lstlistingname~\thelstlisting:\ \texttt{\detokenize{#1}}}}},
+    title={\colorbox{black!10}{\parbox{\dimexpr\linewidth-6pt\relax}{\centering \lstlistingname~\thelstlisting:\ \texttt{#1}}}},
     language=XML, 
     basicstyle=\ttfamily,
 	numbers=left,                   % where to put the line-numbers
@@ -240,7 +245,7 @@
     \pdfinfo { /Title  (Design of a platform to test distributed control systems)
                /Creator (TeX)
                /Producer (pdfTeX)
-               /Author (Miquel Perello Nieto miquel.perello.nieto@fib.upc.edu)
+               /Author (Miquel Perelló Nieto miquel.perello.nieto@fib.upc.edu)
                /CreationDate (D:DDMMYYYYhhmmss)  %format D:YYYYMMDDhhmmss
                /ModDate (D:DDMMYYYYhhmm)
                /Subject (xyz)
@@ -260,7 +265,7 @@
 % The section below defines www links/email for author and institutions
 % They will appear on the title page of the PDF and can be clicked
 \ifpdf
-  \author{\href{mailto:miquel.perello.nieto@fib.upc.edu}{Miquel Perello Nieto}}
+  \author{\href{mailto:miquel.perello.nieto@fib.upc.edu}{Miquel Perelló Nieto}}
 %  \cityofbirth{born in XYZ} % uncomment this if your university requires this
 %  % If city of birth is required, also uncomment 2 sections in PhDthesisPSnPDF
 %  % Just search for the "city" and you'll find them.
@@ -319,7 +324,7 @@
 
 \newpage
 \vspace{10mm}
-1. Directors: Josep Maria Fuertes Armengol y Manel Velasco Garcia
+1. Directors: Josep M. Fuertes Armengol i Manel Velasco Garcia
 
 \vspace{10mm}
 2. President: Pere Marés Martí
@@ -474,7 +479,7 @@ Dia de lectura:
 %\include{0_frontmatter/abstract}
 
 %: Declaration of originality
-%\include{9_backmatter/declaration}
+\include{9_backmatter/declaration}
 
 
 

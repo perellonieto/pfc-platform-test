@@ -27,7 +27,7 @@ Per tant aquesta secció es fa una eina bàsica necessària per tothom que vulgu
 %====================================================================================%
 \section{Hardware}\label{cap:tec:hard}
 
-Com hem dit en la introducció d'aquest capítol, en aquesta secció es donarà una visió del material que s'ha utilitzat en l'elaboració del laboratori de Sistemes Distribuits de Control. Entre aquest material n'hi ha que esta ja preparat per el seu us directe com la placa \FLEX (secció \ref{cap:tec:hard:flex}) i el programador ICD2 (secció \ref{cap:tec:hard:icd}). O en canvi necessita ser ensamblat en un protoboard o crear una placa per poder utilitzar-los. En el nostre cas el microcontrolador dsPIC (secció \ref{cap:tec:hard:dspic}) ja forma part de la placa \FLEX, i per utilitzar el transceptor (secció \ref{cap:tec:hard:mcp2551}), si que s'ha hagut de crear una petita plaqueta que s'explicará en un altre capitol (secció \label{cap:dis:resum}).
+Com hem dit en la introducció d'aquest capítol, en aquesta secció es donarà una visió del material que s'ha utilitzat en l'elaboració del laboratori de Sistemes Distribuïts de Control. Entre aquest material n'hi ha que esta ja preparat per el seu us directe com la placa \FLEX (secció \ref{cap:tec:hard:flex}) i el programador ICD2 (secció \ref{cap:tec:hard:icd}). O en canvi necessita ser ensamblat en un protoboard o crear una placa per poder utilitzar-los. En el nostre cas el microcontrolador dsPIC (secció \ref{cap:tec:hard:dspic}) ja forma part de la placa \FLEX, i per utilitzar el transceptor (secció \ref{cap:tec:hard:mcp2551}), si que s'ha hagut de crear una petita plaqueta que s'explicarà en un altre capítol (secció \ref{cap:dis:resum}).
 
 %====================================================================================%
 % FLEX
@@ -60,7 +60,7 @@ El cor d'aquesta placa es composa d'un dsPIC33FJ256MC710 (veure secció \ref{cap
 %====================================================================================%
 \subsection{dsPIC33FJ256MC710}\label{cap:tec:hard:dspic}
 
-\figuremacroNW{dspic33fj256mc710}{Fotografia d'un dsPIC33FJ256MC710}{}{0.4}
+\figuremacroNW{dspic33fj256mc710}{Fotografia d'un dsPIC33FJ256MC710}{}{0.3}
 
 Aquest és un microcontrolador de la casa \Microchip Technology (fabricant de microcontroladors, memòries i semiconductors analògics, situat en Chandler, Arizona, EE.UU.), destinat a Sistemes Digitals de Control. Per aquesta raó aquest microcontrolador compta amb una multitud de perifèrics de comunicació, entre els quals es troba el CAN. Això fa que la casa Evidence l'hagi escollit per formar part del nucli de la placa de desenvolupament \FLEX (explicada en la secció \ref{cap:tec:hard:flex}), i que s'hagi adaptat el Sistema Operatiu en Temps Real Erika Enterprise perquè pugui ser instal·lat en ell.
 
@@ -97,11 +97,11 @@ Per tant en el nostre laboratori, cada un dels diferents dispositius (\Monitor, 
 
 Aquest aparell (figura \ref{icd2}) és un programador/debugador d'errors, fabricat per la casa \Microchip, que juntament amb el programa \MplabX pot realitzar aquestes funcions. Aquest compta amb una connexió per USB per connectar-lo al ordinador, i un cable amb dos extrems RJ-11 per connectar entre ell i el dispositiu a programar (figura \ref{RJ11}, connector típicament utilitzat en els cables telefònics a España).
 
-\figuremacroW{RJ11}{Connector RJ-11}{}{0.3}
-
 Mentre que fins aquest moment s'utilitzava el programador ICD2 actualment ha sortit al mercat el ICD3. Això en principi no és cap problema ja que l'antic programador segueix funcionant correctament, però així com el programa \MplabX en les primeres versions betes estava procurant donar suport al primer, a partir de la versió 0.17 ha deixat de ser així, obligant d'alguna manera a deixar enrere aquest programadors; els quals no són precisament barats.
 
+\figuremacroW{RJ11}{Connector RJ-11}{}{0.3}
 
+\FloatBarrier
 
 %====================================================================================%
 % Software
@@ -117,15 +117,14 @@ En aquesta secció s'explicarà quins són aquests programes, i es farà un resu
 %====================================================================================%
 \subsection{Eclipse}\label{cap:tec:soft:eclipse}
 
-\figuremacroNW{eclipse_2}{Logotip d'Eclipse}{}{0.4}
+\figuremacroNW{eclipse_2}{Logotip d'Eclipse}{}{0.3}
 
 Aquest software ens ofereix un entorn de desenvolupament integrat (també coneguts com IDE's) multiplataforma de codi obert. Aquesta plataforma ha estat típicament utilitzada per desenvolupar IDE's. Típicament és usat el IDE de Java \emph{Java Development toolkit} (JDT) el qual ve integrat per defecte amb el propi \Eclipse.
 
 Entre aquests IDE's desenvolupats per \Eclipse està el RT-Druid (figura \ref{rt_druid}) creat per la casa Evidence, amb el qual és possible programar de manera facil el Sistema Operatiu en Temps Real Erika, que és el codi base sobre el que treballem en el laboratori per programar les plaques \FLEX.
 
-\figuremacroW{rt_druid}{Logotip del pluguin d'\Eclipse RT-Druid}{}{0.4}
-
 A part d'utilitzar aquest IDE per programar els dispositius, també existeix el pluguin PyDev per \Eclipse, que també ens ofereix un IDE per programar en \Python, i gracies al qual hem pogut programar més facilment el codi del programa \DCSMonitor.
+\figuremacroW{rt_druid}{Logotip del pluguin d'\Eclipse RT-Druid}{}{0.4}
 
 \figuremacroW{pydev}{Logotip del pluguin d'\Eclipse PyDev}{}{0.4}
 
@@ -199,32 +198,32 @@ En aquesta secció es podrà veure un repas general sobre el tipus de protocols 
 %====================================================================================%
 \subsection{CAN}\label{cap:tec:prot:can}
 
-El protocol CAN (de l'Anglès Controller Area Network) va ser dissenyat per permetre la comunicació entre dispositius sense la necessitat d'un host (o amfitrió). Inicialment la seva aparició va esdevenir de la problemàtica que existia en els vehicles automòbils, en els quals el nombre de dispositius era cada cop més gran, fins arribar al punt de necessitar més de 2 km de cable, els quals representaven més de 100 Kg.
+El protocol CAN (de l'Anglès Controller Area Network) va ser dissenyat per permetre la comunicació entre dispositius sense la necessitat d'un host (o amfitrió). Inicialment la seva aparició va esdevenir de la problemàtica que existia en els vehicles automòbils, en els quals el nombre de dispositius era cada cop més gran, fins arribar al punt de necessitar més de 2 km de cable, els quals representaven més de 100 Kg (informació extreta de \cite{ComIndCAN}, \cite{CapaFisicaCAN}).
 
 Va ser la firma Alemana \emph{Robert Bosch GmbH} , qui va desenvolupar aquest protocol, basat en una topologia bus per la transmissió de missatges en entorns distribuïts, inicialment (com hem dit anteriorment) per l'entorn automobilístic, però finalment acollit per entorns marins, agrícoles, industrials, etc.
 
 Les característiques més importants de la comunicació CAN són les següents (especificació,  \cite{Bosch1991}):
 
 \begin{itemize}
-	\item Jerarquia de nodes multimaster:
-	\item Tècnica d'accés al medi CSMA/CD+CR (de l'anglès Carrier Sense, Multiple Access/Collision Detection + Collision Resolution):
-	\item Comunicació conduïda per events:
-	\item Broadcast:
-	\item Iniciativa de transmissió a càrrec de la font d'informació:
-	\item El nom del missatge genèricament dessigna la informació, no el node:
-	\item Resposta a petició remota:
-	\item Detecció i correcció d'error a nivell de missatge:
-	\item Capacitat de detecció d'errors a nivell del medi de comunicació:
-	\item Tolerància a fallades:
-	\item Confirmació:
-	\item Transferència de missatges consistent sobre tot el sistema:
-	\item Codificació de bit:
-	\item Sincronització de bit:
-	\item Sincronització entre nodes:
-	\item Distribució del sistema:
-	\item Velocitat de transmissió:
-	\item Característiques del driver de línia:
-	\item Múltiples proveïdors de xips:
+	\item Jerarquia de nodes multimaster.
+	\item Tècnica d'accés al medi CSMA/CD+CR (de l'anglès Carrier Sense, Multiple Access/Collision Detection + Collision Resolution).
+	\item Comunicació conduïda per events.
+	\item Broadcast.
+	\item Iniciativa de transmissió a càrrec de la font d'informació.
+	\item El nom del missatge genèricament dessigna la informació, no el node.
+	\item Resposta a petició remota.
+	\item Detecció i correcció d'error a nivell de missatge.
+	\item Capacitat de detecció d'errors a nivell del medi de comunicació.
+	\item Tolerància a fallades.
+	\item Confirmació.
+	\item Transferència de missatges consistent sobre tot el sistema.
+	\item Codificació de bit.
+	\item Sincronització de bit.
+	\item Sincronització entre nodes.
+	\item Distribució del sistema.
+	\item Velocitat de transmissió.
+	\item Característiques del driver de línia.
+	\item Múltiples proveïdors de xips.
 \end{itemize}
 
 %====================================================================================%
@@ -232,7 +231,7 @@ Les característiques més importants de la comunicació CAN són les següents 
 %====================================================================================%
 \subsection{Serie via RS232}\label{cap:tec:prot:rs232}
 
-En computació la comunicació serie és tota aquella transferència de dades en la que la informació va bit a bit una darrera una altra. Aquest tipus de comunicació és usada en multiples protocols de comunicació, com poden ser el USB, Ethernet, FireWire o per exemple CAN (vist anteriorment \ref{cap:tec:prot:can}). Però usualment, quan parlem del port serie de l'ordinador, ens referim a la norma RS232 (de l'anglès Recommended Standard 232).
+En computació la comunicació serie és tota aquella transferència de dades en la que la informació va bit a bit una darrera una altra. Aquest tipus de comunicació és usada en multiples protocols de comunicació, com poden ser el USB, Ethernet, FireWire o per exemple CAN (vist anteriorment \ref{cap:tec:prot:can}). Però usualment, quan parlem del port serie de l'ordinador, ens referim a la norma RS232 (de l'anglès Recommended Standard 232) (veure \cite{Wikipedia2012}).
 
 Aquesta norma determina les seves característiques físiques, la temporització dels senyals, les velocitats de transmissió, i la mida del connector i dels seu pinatge.
 
@@ -307,6 +306,7 @@ Per crear aquest tipus de xarxa és necessari finalitzar els cables amb resistè
 
 \figuremacroW{Bus_Topology}{Topologia en bus}{}{0.5}
 
+\FloatBarrier
 
 %====================================================================================%
 % Conclusions

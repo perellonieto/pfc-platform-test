@@ -270,12 +270,12 @@
     {{\@collegeordept} \par}
 	\vspace*{1ex}
     {{\@university} \par}
-	\vspace*{15mm}
+	\vspace*{10mm}
 		% afegit per mi
 	{{\Large Directors:} \par}
 	{{\Large \href{mailto:josep.m.fuertes@upc.edu}{Josep M. Fuertes Armengol}} \par}
 	{{\Large \href{mailto:manel.velasco@upc.edu}{Manel Velasco Garcia}} \par}
-	\vspace*{35mm}
+	\vspace*{25mm}
 	% final afegit per mi
 
     {{\submittedtext} \par}

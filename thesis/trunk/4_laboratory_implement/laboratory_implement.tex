@@ -19,15 +19,25 @@
 
 % ----------------------- contents from here ------------------------
 
-En aquest apartat aprofundirem en cóm s'ha dut a terme la programació de les diferents parts que conformen el laboratori que hem dissenyat anteriorment (capítol \ref{cap:dis}).
+En aquest apartat aprofundirem en cóm s'ha dut a terme la programació de les diferents parts que conformen el laboratori que hem dissenyat anteriorment (capítol \ref{cap:dis}), i podrem veure d'aquesta manera com podem modificar el codi per ampliar el laboratori amb una infinitud de opcions, modificant o afegint diferents dispositius, o missatges de comunicació.
 
-Hem dividit el capítol en dues seccións principals, la part de programació en \Python del programa \DCSMonitor (el programa que s'executa en l'ordinador), i la part de programació en \C en el RTOS Erika Enterprise que corre en els diferents dispositius del control (microcontroladors dsPIC33FJ256MC710, en la placa \FLEX).
+Per implementar el laboratori hem necessitat crear l'entorn necessari per compartir el bus CAN entre varis llaços de control, i tenir el programa \DCSMonitor connectat al dispositiu \Monitor via RS232, per tant existeix una configuració bàsica formada per dos llaços de control monitoritzats per un dispositiu \Monitor i aquest connectat al programa \DCSMonitor capaç de modificar el comportament d'aquest ultim. Es pot veure una fotografia de tot l'entorn preparat i configurat per tal de treballar amb aquest sistema, i amb el qual s'ha pogut dur a terme tota la fase de implementació (figura \ref{workspace}).
+
+\figuremacro{workspace}{Entorn de treball}{Tot el material necessari per implementar el laboratori amb dos llaços de control, un programador Mplab ICD2, un conversor de RS232 a USB, el programa \DCSMonitor en marxa al monitor esquerra i codi font al monitor de la dreta.}
+
+Hem dividit el capítol en dues seccions principals, la part de programació en \Python del programa \DCSMonitor (el programa que s'executa en l'ordinador) on podrem veure els passos que s'han seguit per crear la interfície visual (secció \ref{cap:imp:visual}), com hem pogut obrir el port RS232 i posteriorment enviar i rebre tot tipus de missatges (secció \ref{cap:imp:com:serie}), com hem integrat els plots del llaç de control que estiguéssim monitoritzant o  connectats (secció \ref{cap:imp:gen:graph}), com hem fet per exportar una gràfica generada en diferents formats (seccio \ref{cap:imp:exp:graph}), com hem realitzat l'actualització de les estadístiques en temps real (secció \ref{cap:imp:estat}), i finalment quins són els passos seguits per implementar els diferents idiomes, i per afegir-ne de nous (secció \ref{cap:imp:idi}). 
+
+I la part de programació en \C en el Sistema Operatiu en Temps Real Erika Enterprise que corre en els diferents dispositius del control (microcontroladors dsPIC33FJ256MC710, en la placa \FLEX), on es podrà veure com implementar noves tasques en el SO Erika (secció \ref{lab:imp:dspic:monitor:tasks}), com hem implementat la recepció i enviament dels diferents missatges per RS232 (secció \ref{cap:imp:com:serie}), i el més important en els sistemes distribuïts la comunicació mitjançant el bus CAN (secció \ref{lab:imp:dspic:can}); la creació de màscares i filtres, la recepció dels diferents missatges, l'enviament d'aquests, i la creació de una pila per mantenir un llistat de tots els llaços de control presents al bus.
+
+\FloatBarrier
 
 \section{\DCSMonitor}\label{cap:imp:dcs}
 
 Com hem vist anteriorment, el programa \DCSMonitor és l'encarregat de mostrar-nos en temps real el funcionament dels diferents controls als que estem connectats via RS232.
 Gracies a ell podem monitoritzar un bus CAN (si estem connectats a un dispositiu \Monitor), o podem comprovar que el control que estem executant sigui correcte (connectats directament a un dispositiu \SensorActuador).
 En aquest apartat s'explica com s'han programat totes les parts implicades del laboratori que formen part del programa \DCSMonitor, començant per l'aspecte visual, passant per les comunicacions i el mostreig dels plots, i acabant finalment per la integració amb varis idiomes.
+
+Cal indicar que per crear les gràfiques en temps real s'ha pres com a exemple el codi de Yassine Benabbas amb Llicencia Creative Commons present en la bibliografia \cite[Creér un graphe dynamique avec PyPlot]{yassine}.
 
 %====================================================================================%
 % Interficie
@@ -179,7 +189,7 @@ def connect_serial(self):
         return 1
 \end{code_python}
 
-Tot seguit es pot veure els canvis que s'efectuen durant la connexió del port serie, en la primera imatge abans de connectar al dispositiu \emph{/dev/ttyUSB0}, despres un cop ja s'ha establert la connexió, un cop hem desconnectat correctament el port, i la ultima imatge quan hi ha algun problema de connexió (figura \ref{fig:comparacio:barra}).
+Tot seguit es pot veure els canvis que s'efectuen durant la connexió del port serie, en la primera imatge abans de connectar al dispositiu \emph{/dev/ttyUSB0}, després un cop ja s'ha establert la connexió, un cop hem desconnectat correctament el port, i la ultima imatge quan hi ha algun problema de connexió (figura \ref{fig:comparacio:rs232}).
 
 \begin{figure}[ht!]
 	\subfloat[Pendent de connectar.]{\label{serie_pendent}
@@ -195,7 +205,7 @@ Tot seguit es pot veure els canvis que s'efectuen durant la connexió del port s
 		\includegraphics[width=0.25\linewidth]{serie_error}
 	}
 	\caption{Estat de connexió amb el \Supervisor via RS232.}
-    \label{fig:comparacio:barra}
+    \label{fig:comparacio:rs232}
 \end{figure}
 
 \FloatBarrier
@@ -209,7 +219,7 @@ Al connectar el programa \DCSMonitor amb un dispositiu \Monitor el que ens inter
 
 Per activar-ho s'ha creat un disparador que enllaça el botó \emph{Llistar} amb la funció \emph{toogled\_reload} (codi del disparador \ref{cap:imp:com:serie:send:devices:trig:code}).
 
-\begin{code_python}{Disparador de }{cap:imp:com:serie:send:devices:trig:code}
+\begin{code_python}{Disparador de botó llistar dispositius}{cap:imp:com:serie:send:devices:trig:code}
 QtCore.QObject.connect(self.pushButton_reload, QtCore.SIGNAL(_fromUtf8("clicked()")), self.toggled_reload)
 \end{code_python}
 
@@ -252,7 +262,7 @@ Aquesta és la acció principal sobre la que es bassa el programa, en el moment 
 
 Primer de tot creem el disparador que detectarà que s'ha premut el botó per monitoritzar (codi \ref{cap:imp:com:serie:send:monit:trig:code}), aquest cridarà la funció \emph{toogled\_monitor} (codi \ref{cap:imp:com:serie:send:monit:code}).
 
-\begin{code_python}{Disparador de }{cap:imp:com:serie:send:monit:trig:code}
+\begin{code_python}{Disparador de botó per monitoritzar}{cap:imp:com:serie:send:monit:trig:code}
 QtCore.QObject.connect(self.pushButton_monitor, QtCore.SIGNAL("clicked()"), self.toggled_monitor)
 \end{code_python}
 
@@ -325,7 +335,7 @@ def toggled_monitor(self):
 Igual que en els casos anteriors per enviar aquest missatge al dispositiu \Monitor ho farem a través d'un disparador (codi \ref{cap:imp:com:serie:send:sat:trig:code}). Peró així com en els anteriors casos s'havia de prémer un botó per activar-ho, en aquest cas hi ha una barra que en canviar de posició és la que agafarà el seu valor (veure figura {fig:comparacio:barra}) i cridarà a la funció \emph{percent\_changed} (codi de la funció \ref{cap:imp:com:serie:send:sat:code}).
 La barra que activa aquest enviament només està habilitada en el cas que el programa \DCSMonitor estigui en mode PC$->$Monitor.
 
-\begin{code_python}{Disparador de }{cap:imp:com:serie:send:sat:trig:code}
+\begin{code_python}{Disparador de barra de càrrega}{cap:imp:com:serie:send:sat:trig:code}
 QtCore.QObject.connect(self.slider_saturation, QtCore.SIGNAL(_fromUtf8("valueChanged(int)")), self.percent_changed)
 \end{code_python}
 
@@ -390,7 +400,7 @@ Aquesta funció és l'encarregada de comprovar que la temporització funciona co
 Un cop sap que realment es vol rebre informació, comprova que s'hagi dibuixat ja la informació que hi havia pendent, si ja s'ha dibuixat torna a rebre dades cridant a la funció \emph{recive\_data} (codi de la funció \ref{cap:imp:com:serie:rec:monitor:rx:code}). Això és així per crear una zona d'exclusió mútua (també anomenada Mutex), que evitarà que intentem dibuixar la gràfica de dades que estan a mig omplir.
 I finalment reactiva el temporitzador per tornar a executar la mateixa funció.
 
-\begin{code_python}{Codi per reactivar l'adquisició de dades'}{cap:imp:com:serie:rec:monitor:perio:code}
+\begin{code_python}{Codi per reactivar l'adquisició de dades}{cap:imp:com:serie:rec:monitor:perio:code}
 def get_periodical_data(self):
     """Updates the data"""
     if not self.pushButton_monitor.isChecked() and not self.pushButton_reload.isChecked():
@@ -632,11 +642,11 @@ Un cop finalitzat el programa, el resultat de la captura de imatges és el que e
 
 \begin{figure}[ht!]
 	\subfloat[Amb textos en anglès, totes els plots i en format PDF.]{\label{necs_di_graph}
-		\includegraphics[width=0.9\linewidth]{necs_di_graph}
+		\includegraphics[width=0.88\linewidth]{necs_di_graph}
 	}
 	\\
-	\subfloat[Amb el bus CAN saturat de missatges, amb textos en català, només amb plots de referència i segona integral i en format PDF.]{\label{di_saturat_ref_segona_cat}
-		\includegraphics[width=0.9\linewidth]{di_saturat_ref_segona_cat}
+	\subfloat[Amb el bus CAN carregat de missatges, amb textos en català, només amb plots de referència i segona integral i en format PDF.]{\label{di_saturat_ref_segona_cat}
+		\includegraphics[width=0.88\linewidth]{di_saturat_ref_segona_cat}
 	}
 
 	\caption[Diferents gràfiques generades amb el programa \DCSMonitor]{Diferents gràfiques generades amb el programa \DCSMonitor del control d'un doble integrador.}
@@ -811,9 +821,9 @@ Els valors que ens interessa saber en cada instant són:
 	\item Marca canviant per saber que les estadístiques s'estan actualitzant periòdicament.
 \end{itemize}
 
-Per fer que aquestes estadístiques s'actualitzin periòdicament, com hem vist en altres seccions primer de tot hem de crear un temporitzador, i tot seguit li assignarem un disparador que activará la funció \emph{update\_statistics} (codi del disparador, i activació de les estadístiques \ref{cap:imp:gen:graph:trig:code}).
+Per fer que aquestes estadístiques s'actualitzin periòdicament, com hem vist en altres seccions primer de tot hem de crear un temporitzador, i tot seguit li assignarem un disparador que activará la funció \emph{update\_statistics} (codi del disparador, i activació de les estadístiques \ref{cap:imp:est:trig:code}).
 
-\begin{code_python}{Temporitzador i disparador per actualitzar les estadístiques.}{cap:imp:gen:graph:trig:code}
+\begin{code_python}{Temporitzador i disparador per actualitzar les estadístiques.}{cap:imp:est:trig:code}
 timer_statistics = QtCore.QTimer()
 
 # Periodical tasks
@@ -824,7 +834,7 @@ self.timer_statistics.start(STAT_REFRESH)
 
 El que fa la funció \emph{update\_statistics} (codi \ref{lab:imp:estat:update:code}) és primer de tot comprovar que el port serie estigui degudament connectat, si no és així no modifica cap valor estadístic, en cas contrari comença a actualitzant el nombre de mostres de tots els plots, el nombre de bytes pendents al port serie, el nombre d'imatges per segon que estan apareixent a la gràfica (si aquesta està aturada, força un dibuix cada cop, per si hi ha algun problema), actualitza el valor canviant per indicar que aquesta funció està funcionant correctament, actualitza el nombre de llaços de control que hi ha al bus CAN i finalment torna a reactivar la funció al cap de mig segon.
 
-\begin{code_python}{Codi per generar actualitzar les estadístiques.}{lab:imp:estat:update:code}
+\begin{code_python}{Codi per generar i actualitzar les estadístiques.}{lab:imp:estat:update:code}
 def update_statistics(self):
     """Update value of labels in statistics"""
     if self.ser != 0:
@@ -854,16 +864,16 @@ Tot seguit es poden veure diferents captures del canvi que es produeix en les es
 
 \begin{figure}[ht!]
 	\subfloat[Pendent de començar.]{\label{estadistiques_pendents}
-		\includegraphics[width=0.25\linewidth]{estadistiques_pendents}
+		\includegraphics[width=0.24\linewidth]{estadistiques_pendents}
 	}
 	\subfloat[Connectat al dispositiu.]{\label{estadistiques_connect}
-		\includegraphics[width=0.25\linewidth]{estadistiques_connect}
+		\includegraphics[width=0.24\linewidth]{estadistiques_connect}
 	}
 	\subfloat[Monitoritzant.]{\label{estadistiques_monitoritzant}
-		\includegraphics[width=0.25\linewidth]{estadistiques_monitoritzant}
+		\includegraphics[width=0.24\linewidth]{estadistiques_monitoritzant}
 	}
 	\subfloat[Monitorització aturada.]{\label{estadistiques_desconnect}
-		\includegraphics[width=0.25\linewidth]{estadistiques_desconnect}
+		\includegraphics[width=0.24\linewidth]{estadistiques_desconnect}
 	}
 	\caption{Comparació dels valors estadístics.}
     \label{fig:comparacio_estadistiques}
@@ -1766,7 +1776,7 @@ if(C1RXFUL1bits.RXFUL4==1)
 
 I aquest és el codi de la tasca que emmagatzema els valors de sortida del doble integrador (codi \ref{lab:imp:dspic:supervisor:sensor:code}).
 
-\begin{code_c}{Captura del missatge d'estat del Sensor al Supervisor}{lab:imp:dspic:supervisor:sensor:code}
+\begin{code_c}{Tasca que emmagatzema els valors d'estat del Sensor}{lab:imp:dspic:supervisor:sensor:code}
 static float *p2_x0 = (float *)&rx_ecan1message4.data[0];
 static float *p2_x1 = (float *)&rx_ecan1message4.data[4];
 TASK(TaskSensor_supervision)
@@ -1775,22 +1785,6 @@ TASK(TaskSensor_supervision)
 	x1=*(p2_x1);//Get state x[1] from rx_ecan1_message4[4]..[7] data field
 	x[0] = x0;
 	x[1] = x1;
-}
-\end{code_c}
-
-\begin{code_c}{Captura del missatge d'estat del Sensor al Supervisor}{lab:imp:dspic:sensor:supervisor:code}
-//Filter 3(ID_SUPERVISOR): ID_SUPERVISOR
-if(C1RXFUL1bits.RXFUL4==1)
-{
-	/*Tells rxECAN1 the buffer to pass from DMA to RAM */
-	rx_ecan1message4.buffer=4;
-
-	C1RXFUL1bits.RXFUL4=0;
-	rxECAN1(&rx_ecan1message4);
-	C1INTFbits.RBIF = 0;
-
-	/* Custom code to address Sensor message */
-	ActivateTask(TaskSensor_supervision);
 }
 \end{code_c}
 
@@ -1835,7 +1829,7 @@ Perquè el dispositiu \Monitor sigui capaç de rebre tots els missatges CAN d'un
 
 Un cop tenim l'identificador bé, generem mitjançant una OR bit a bit tots els elements que formen l'identificador; els quals ja estan ben posicionats (Codi \ref{lab:imp:dspic:monitor:constants:filtres}). I creem els filtres per rebre els missatges d'aquest llaç.
 
-\begin{code_c}{}{lab:imp:dspic:monitor:monitoritzacio:filtres}
+\begin{code_c}{Creant filtres per monitoritzar un llaç de control}{lab:imp:dspic:monitor:monitoritzacio:filtres}
 id_link = (unsigned long) InBufferA[7]<<2;
 // Generating id's for a control plant
 ID_TO_ACTUATOR 		= CONTROL_MESSAGE 			| GENERAL_PRIORITY | id_link;

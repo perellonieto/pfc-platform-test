@@ -76,7 +76,7 @@ Un cop l'entorn està preparat la configuració queda com a la figura \ref{DCS_N
 
 \figuremacroW{DCS_NECS_SCA_diagonal}{Llaç de control}{}{0.5}
 
-
+\FloatBarrier
 
 %====================================================================================%
 % Nou laboratori
@@ -85,7 +85,7 @@ Un cop l'entorn està preparat la configuració queda com a la figura \ref{DCS_N
 
 Fins aquest moment els problemes a resoldre han estat pels temps de demora que hi havia entre lectures del \Sensor, accions de l'\Actuador i els càlculs que havia de fer el \Controlador.
 
-En aquest apartat ens interessa que tots els dispositius estiguin en un mateix bus CAN i comprovar el funcionament dels llaços en un entorn compartit, amb diferents tipus de prioritats i amb la possibilitat de saturar el bus en certes ocasions.
+En aquest apartat ens interessa que tots els dispositius estiguin en un mateix bus CAN i comprovar el funcionament dels llaços en un entorn compartit, amb diferents tipus de prioritats i amb la possibilitat de saturar el bus en certes ocasions (figura \ref{DCS_NECS_two_links}).
 
 A part d'aquesta connexió general al bus, també s'introduirà en la xarxa un dispositiu que anomenarem \Monitor, el qual tindrà la opció de monitoritzar tots els paquets de dades d'un cert llaç de control (un grup format per un \Sensor, un \Actuador i un \Controlador).
 
@@ -94,6 +94,9 @@ Tota la informació que el nou dispositiu \Monitor capturi, podrà ser enviada m
 A més el \Monitor tindrà la capacitat d'incrementar la carrega del bus en quant a nombre de missatges CAN que hi circulin, dificultant el correcte funcionament dels llaços, i podent comprovar en temps real la resposta d'aquests.
 
 Amb aquesta idea general i tenint en compte les relacions que hi haurà entre tots els elements que formen el laboratori es va dissenyar un esquema general en el que apareixen aquests elements i el tipus de comunicació que hi ha entre ells (figura \ref{esquema_general_v8}).
+
+\figuremacro{DCS_NECS_two_links}{Entorn del nou laboratori}{A l'esquerra un llaç de control format per un \Controlador (primer pis) i un \SensorActuador (segon pis). A la dreta un llaç de control format per un \Controlador (segon pis) i un \SensorActuador (tercer pis) i un dispositiu \Monitor (primer pis).}
+
 % El diagrama de comunicacions ocupa una pagina sencera, i està posicionat horitzontalment, amb aquest ifthenelse el diagrama sempre es mirarà desde la part exterior del llibre, rotant el diagrama 180 graus si cal.
 %\ifthenelse {\isodd{\thepage}}
 %{
@@ -160,7 +163,9 @@ Un cop remarcats aquests elements, només calia identificar aquells que havien d
 
 Abans de començar a dissenyar la interfície amb algun programa d'edició, es van fer alguns esbossos de com hauria de quedar la organització, i finalment es va decantar pel dibuix de la figura \ref{esquema_interficie}.
 
-\figuremacroWR{esquema_interficie}{Esquema de la interfície del programa \DCSMonitor}{}{0.6}{270}
+\begin{landscape}
+\figuremacroWR{esquema_interficie}{Esquema de la interfície del programa \DCSMonitor}{}{1}{270}
+\end{landscape}
 
 Ja amb l'esquema ben clar es van provar varis IDE's d'edició d'interfície, i un cop analitzades varies qüestions es va decidir utilitzar \QTCreator. Aquestes són algunes de les raons que em van fer decantar per aquest IDE:
 
