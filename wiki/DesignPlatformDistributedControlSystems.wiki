@@ -19,7 +19,7 @@ Aquesta plataforma comptarà amb tot lo necesari per ser arrencada desde LiveCD 
 ==Guia_live_cd==
 [http://code.google.com/p/pfc-platform-test/wiki/Guia_live_cd]
 ==Videos d'exemples==
-[http://code.google.com/p/pfc-platform-test/wiki/VideosExamples]
+[http://code.google.com/p/pfc-platform-test/wiki/VideoExamples]
 ==Bibliografia==
 
 Add your content here.  Format your content with:
