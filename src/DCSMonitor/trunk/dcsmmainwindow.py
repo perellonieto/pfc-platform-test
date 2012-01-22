@@ -2,26 +2,10 @@
 
 # Form implementation generated from reading ui file 'dcsmmainwindow.ui'
 #
-# Created: Tue Jan 10 19:45:33 2012
+# Created: Sun Jan 22 13:47:23 2012
 #      by: PyQt4 UI code generator 4.8.3
 #
 # WARNING! All changes made in this file will be lost!
-#******************************************************************************
-#  FILE          : dcsmmainwindow.py
-#  DESCRIPTION   : main program
-#  CPU TYPE      : 
-#  AUTHOR        : Miquel Perello Nieto
-#  PROJECT       : 
-#  COMPANY       : Automatic Control Department,
-#                 Technical University of Catalonia
-#
-#     REVISION HISTORY:
-#              VERSION: 1
-#               AUTHOR: Miquel Perello Nieto
-#                 DATE: December 2011
-#             COMMENTS: 
-# *****************************************************************************/
-
 
 from PyQt4 import QtCore, QtGui
 

@@ -115,6 +115,10 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MainWindow):
         
         self.setupUi(self)
         
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(_fromUtf8("./icon.svg")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.setWindowIcon(icon)
+        
         # connect the signals with the slots
         QtCore.QObject.connect(self.pushButton_connect, QtCore.SIGNAL("clicked()"), self.clicked_connect)
         QtCore.QObject.connect(self.pushButton_reload, QtCore.SIGNAL("clicked()"), self.update_graph)
