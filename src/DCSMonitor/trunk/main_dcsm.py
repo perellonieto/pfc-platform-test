@@ -663,6 +663,7 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MainWindow):
                 self.slider_saturation.setEnabled(1)
                 if self.actionPC_Monitor.isChecked():
                     self.pushButton_reload.setEnabled(1)
+                self.timer_statistics.start(STAT_REFRESH)
             else:
                 self.lineEdit_state.setPalette(QtGui.QPalette(QtGui.QColor("red")))
                 self.lineEdit_state.setText(QtGui.QApplication.translate("MainWindow", "Error connecting", None, QtGui.QApplication.UnicodeUTF8))
