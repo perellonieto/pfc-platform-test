@@ -247,11 +247,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>First Int.</source>
-        <translation>1ª Int.</translation>
+        <translation>1a Int.</translation>
     </message>
     <message>
         <source>Second Int.</source>
-        <translation>2ª Int.</translation>
+        <translation>2a Int.</translation>
     </message>
     <message>
         <source>Double Integrator</source>
