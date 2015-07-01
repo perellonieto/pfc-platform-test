@@ -1,0 +1,24 @@
+#There are links to video examples
+
+# Introducció #
+
+En aquesta secció es penjaran els enllaços a vídeos que es vagin creant, per mostrar el funcionament de les aplicacions que en el projecte es realitzin.
+
+# DCSMonitor #
+
+  * Versió 0.1
+> > http://youtu.be/82yUzO32-_Y
+  * Versió 0.5
+> > http://youtu.be/ulonlLP3Bys
+  * Versió 0.10
+> > http://youtu.be/WL8YffaXyt0
+
+
+
+# Live CD #
+
+  * Primer versió del live CD amb tot el sistema a punt en 10 minuts
+> > http://youtu.be/PD1wraeIPPQ
+
+  * Segona versió del live CD amb tot el sistema a punt en 6 minuts
+> > http://youtu.be/vE_-NILqxns

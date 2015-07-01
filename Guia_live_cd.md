@@ -1,0 +1,184 @@
+# Introducció #
+
+El laboratori que s'ha diseñat pot ser executat sense haber de preparar tot un entorn de compilació i muntatge gracies a aquest Live CD.
+
+> Tot l'entorn está preparat perque es pugui engegar el Live CD desde l'arranc del ordinador i ja es pugui treballar en ell.
+
+> Cal dir que la velocitat de resposta d'aquest entorn es algo inferior a la que podria donar un sistema instalat, pero aquest sistema ens dona una portabilitat i una velocitat en la preparació del entorn.
+
+> De totes maneres el mateix Live CD compta amb la opció de fer una instalació en el disc, compartint-lo amb un altre sistema operatiu si es necessari i podent arrancar desde qualsevol dels instalats.
+
+
+
+## Requisits mínims ##
+
+> Per tal d'iniciar el Live CD del laboratori, el nostre ordinador hauria de tenir els següents requisits mínims:
+    1. Procesador: Intel x86 o compatible, amb 200MHz
+    1. Memoria RAM: 256 MiB.
+    1. Unitat lectora de DVD.
+    1. BIOS: ha de ser capaç d'arrencar desde DVD.
+    1. Targeta gràfica: estándart, compatible amb SVGA.
+
+# Guia Pas a Pas #
+
+Aquests son els passos necessaris per crear un nou projecte a partir d'una plantilla del laboratori, compilar-la i gravar-la en el microcontrolador.
+
+## Entorn Eclipse ##
+
+**Vigilar que algunes imatges del proces encara fan referencia a un projecte antic, on es veu "NECS\_11sdcDI" hauria de posar "flex\_blink"**
+
+Primer de tot haurem d'obrir el programa Eclipse, que és un IDE de programació, en aquest cas porta un plugin RT-Druid de Evidence que ens permetrà programar el RTOS Erika.
+
+Un cop obert el programa crearem un nou projecte
+
+```
+File -> New -> Project...
+```
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_02.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_02.png)
+
+Seleccionarem el tipus de projecte que apareix a la llista:
+
+```
+Evidence -> RT-Druid Oil and C/C++ Project
+```
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_03.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_03.png)
+
+Ara li posarem un nom de projecte i deixarem les altres opcions per defecte (si volem podem canviar el directori on volem crear-lo, però en principi volem tenir tots els projectes junts).
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_04.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_04.png)
+
+En aquest punt es quan podem seleccionar una plantilla per començar el projecte, així no haurem de programar les coses bàsiques. Per tant fem el següent:
+
+Marquem la caixeta _"Create a project using one of these templates"_ i seleccionem _"pic30"_ (en el nostre cas, ja que estem programant un dsPIC33XXX.
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_05.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_05.png)
+
+I aquí dintre seleccionem un dels templates, en aquest cas:
+```
+pic30 -> FLEX -> EDF: Periodic task with period
+```
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_06.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_06.png)
+
+Un cop li donem a _Finish_ ja tindrem carregat l'entorn per programar.
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_07.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_07.png)
+
+En cas de tenir activada la opcio _"Build Automatically"_ es compilarà per primer cop sense haver de realitzar cap acció, però de totes maneres ens interessa desactivar-ho. Per tant mirem que _"Build Automatically"_ estigui desmarcat:
+
+```
+Project -> Build Automatically
+```
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_08.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_08.png)
+
+Amb tot això ja podríem modificar el codi i programar el que es necessiti. Un cop tinguem el codi desitjat per compilar-lo hauríem de **primer de tot Guardar el projecte** (si no guardem estarem compilant una versió anterior), y un cop guardat anem a:
+
+```
+Project -> Clean
+```
+
+Fent el clean ens assegurem que el codi que es compila sigui realment la versió que acabem de programar, i podem deixar les opcions que hi ha per defecte (que netejaran tots els projectes que tinguem oberts i els compilaran), o seleccionar _"Clean projects selected below"_ i _"Build only the selected projects"_ per tal de netejar i compilar només el projecte que seleccionem.
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_09.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_09.png)
+
+Un cop acabi de compilar ho indicarà a la Consola inferior amb el missatge _"Compilation terminated successfully!"_ aixó haurà creat un fitxer nou anomenat pic30.elf, que serà el que més endevant utilitzarem en Mplab per grabar al microcontrolador.
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_12.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_12.png)
+
+Podria ser que al compilar no trobés la ruta al compilador, per comprobar aixó anem a :
+
+```
+Window -> Preferences
+```
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_10.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_10.png)
+
+I comprobem que la ruta es correcte (vigileu que la versió de mplab pot ser diferent, pero de totes maneres en una instalació per defecte hauría de ser de la forma:
+
+```
+Gcc path /opt/microchip/mplabc30/X.XXy
+Asm path /opt/microchip/mplabx/asm30
+```
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_11.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse_u_11.png)
+
+
+
+
+## Entorn MplabX ##
+
+Un cop hem generat el fitxer _.elf_ procedim a obrir MplabX. Amb aquest programa podrem finalment grabar el pic.
+
+Així que obrim el programa i anem a crear un nou projecte:
+
+```
+File -> New Project...
+```
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_00.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_00.png)
+
+Un cop seleccionat, ens preguntarà quint tipus de projecte volem crear. En el nostre cas com ja hem precompilat en Eclipse li indiquem que utilitzi el nostre fitxer _.elf_
+
+```
+Categories : Microchip Embedded
+Projects:    Prebuilt (Hex, Loadable image) Project
+```
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_01.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_01.png)
+
+A la següent secció ens demanarà que li indiquem el path del fitxer, així que anem fins a ell i el seleccionem.
+Si hem seguit la guia fins aquest punt hauria de ser en el path següent:
+
+```
+/home/student/workspace/flex_blink/Debug/pic30.elf
+```
+
+(Aixo depen de on hagueu creat el vostre workspace i el nom que li hagueu donat al projecte)
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_02.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_02.png)
+
+Aqui seleccionem quin microcontrolador ens disposem a programar, en el nostre cas es:
+```
+Family: DSPIC33
+Device: dsPIC33FJ256MC710
+```
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_04.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_04.png)
+
+Ara s'ha d'indicar quin es el programador que es vol utilitzar, en el nostre cas programarem les plaques Flex amb el ICD3.
+La connexió de la placa Flex i el programador hauria de estar ara mateix així:
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/fotos/DSC_0224.jpg](http://pfc-platform-test.googlecode.com/svn/wiki/images/fotos/DSC_0224.jpg)
+
+En el cas que es trii una altra eina per programar-los s'ha de tenir en compte els colors en els que apareixen els diferents dispositius:
+
+Verd : Indica que aquest programador ha estat totalment testejat i certificat per l'us general. Per tant es possible seleccionar-lo.
+
+Groc : Idica que el programador ha estat minimament provat i només hauria de ser utilitzat per primeres proves. En aquest cas també ens permeten seleccionar-lo.
+
+Vermell : Indica que el programador no es actualment suportat. En aquest cas no podrem seleccionar-lo.
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_05.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_05.png)
+
+Ara només queda posar-li un nom al projecte, i **sobretot vigilar de cambiar el directori del projecte** i treure'l del directory Debug. Si el deixesiu en aquest directory al fer qualsevol Clean al programa Eclipse podrieu tenir problemes en el projecte creat al Mplab.
+
+Per tant us poso tal com apareix:
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_06.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_06.png)
+
+I de la forma que hauría de quedar per tal de que no hi hagi posteriors problemes.
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_07.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_07.png)
+
+Finalment apareixeran els detalls del projecte que estem a punt de crear.
+Acceptem i ens deixará el projecte en l'entorn de treball.
+Alhora de programar la placa, clicarem al botó (Make and Program Device) adal a la dreta.
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_08.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/mplabx/mplabx_u_08.png)
+
+Un cop programat hauría de començar a parpellejar el primer led taronja començant per l'esquerra (després dels tres leds verds que indiquen alimentació):
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/fotos/DSC_0231.jpg](http://pfc-platform-test.googlecode.com/svn/wiki/images/fotos/DSC_0231.jpg)

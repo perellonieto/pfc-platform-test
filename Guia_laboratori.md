@@ -1,0 +1,192 @@
+# Introducció #
+
+
+
+## Preparant entorn de desenvolupament ##
+> Per tal de programar les plaques Flex per la realització del laboratori es necessita tenir l'entorn de desenvolupament preparat amb els següents programes:
+
+  1. Eclipse (EE\_160) : entorn de programació, reanomenat Erika Enterprise (EE) RT-Druid.
+  1. Mplab (mplabx\_ide\_beta\_7) : entorn per descarregar els binaris al dsPIC.
+  1. Matlab (matlab 7.8) : entorn per la comunicació entre el PC i el dsPIC.
+  1. Python (Python 2.7) : interpret de programes en python.
+    1. PySerial : modul per comunicació serie.
+    1. Matplotlib : modul per la interpretació de les dades rebudes del dsPIC.
+
+> Tots aquests programes són de lliure distribució (excepte el Matlab), i aquests es poden aconseguir de les seves pagines oficials:
+
+Eclipse
+> http://erika.tuxfamily.org/erika-for-multiple-devices.html
+Mplabx
+> http://ww1.microchip.com/downloads/mplab/X_Beta/installer.html
+Python
+> http://www.python.org/download/
+PySerial
+> http://pypi.python.org/pypi/pyserial
+Matplotlib
+> http://matplotlib.sourceforge.net/users/installing.html
+
+
+## Instalació de les Llibreries Python ##
+```
+$sudo apt-get install gnuplot
+$sudo apt-get install python-matplotlib
+$sudo apt-get install python-scitools
+```
+
+## Instalació de Mplab ##
+
+Per poder instal·lar MplabX es necessari tenir instal·lat Java, en molts casos ja ve preinstal·lat (com en el nostre cas si treballem amb Ubuntu), però en cas de necessitar-lo instal·lar visiteu la seva pagina oficial des de on es pot descarregar:
+> http://www.java.com/es/
+
+En Ubuntu el podeu instalar directament desde els repositoris amb la comanda:
+```
+sudo apt-get install default-jre
+```
+
+Un cop tingueu instal·lat Java, accediu a la pagina de Mplab X de Michrochip i seleccioneu:
+
+  * MPLAB IDE X Beta
+  * MPLAB C30 Lite Compiler for dsPIC DSCs and PIC24 MCUs
+
+> http://ww1.microchip.com/downloads/mplab/X_Beta/installer.html
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_00.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_00.png)
+
+
+Un cop tinguem descarregats els dos fitxers els hem de donar permis d'execució així que obriu una terminal.
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_01.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_01.png)
+
+Accediu al directori on s'hagin descarregat els fitxers:
+```
+cd ~/Downloads/
+```
+
+podeu comprovar que els fitxers estan en aquest directori
+```
+ls
+```
+
+I ara doneu-los permis d'execució:
+```
+chmod u+x mplab*.run
+```
+
+Un cop tenen permis d'execució executem primer el mplabx-ide:
+```
+$sudo ./mplabx-ide-beta7.12-linux-installer.run
+```
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_02.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_02.png)
+
+Tot seguit només haurem d'acceptar totes les condicions d'us i indicar-li el directori d'instal·lació, el qual podem deixar per defecte a `/opt/microchip/mplabx`.
+
+Deixo les 5 imatges del proces.
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_03.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_03.png)
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_04.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_04.png)
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_05.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_05.png)
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_06.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_06.png)
+
+Ens dirà que hem de reiniciar perque els canvis tinguin efecte. Pero de totes maneres no reiniciarem fins que haguem instalat el següent paquet.
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_07.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_07.png)
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_08.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_08.png)
+
+Un cop hem acabat d'instal·lar el IDE de Mplab X procedim a instal·lar el paquet per programar els dsPIC:
+```
+$sudo ./mplabc30-v3.30c-linux-installer.run
+```
+
+I igual que en el cas anterior només haurem de acceptar les condicions i deixar el lidrectori d'instalació per defecte `/opt/microchip/mplabc30/v3.30c`
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_09.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_09.png)
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_10.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_10.png)
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_11.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_11.png)
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_12.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/mplabx/mplabx_12.png)
+
+## Instalació d'Eclipse ##
+
+En aquest cas instal·lem seguint les instruccions que ens indica a la seva pàgina oficial:
+http://www.eclipse.org/
+En linux el trobem en els repositoris. Així que en Ubuntu faríem el següent :
+
+```
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install eclipse
+```
+
+## Instal·lació del pluguin RT-Druid per Eclipse ##
+
+Un cop tinguem Eclipse instal·lat hauríem d'afegir a aquest el paquet corresponent a RT-Druid, per fer això obrirem l'Eclipse i farem els següents passos:
+
+Anem a Help->Install new Software...
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_00.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_00.png)
+
+Afegirm una entrada nova amb Add...
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_01.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_01.png)
+
+En el camp Name poseu un nom significatiu per vosaltres com RT-Druid
+
+En el camp Location introduir l'adreça següent:
+http://download.tuxfamily.org/erika/webdownload/rtdruid_160_nb/
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_02.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_02.png)
+
+Tot seguit haurien d'apareixer els paquets que ha trobat en l'adreça que li hem indicat, els marquem tots i proseguim.
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_03.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_03.png)
+
+Aquí ens farà un desglos de tot el que anem a instalar:
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_04.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_04.png)
+
+Acceptem els termes de la llicencia.
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_05.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_05.png)
+
+I començarà la instalació.
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_06.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_06.png)
+
+Vigileu que en algun moment la instal·lació s'aturarà i a la part de darrera de la finestra amb la barra de progrés podreu veure que ha saltat un avís referent a la confiança del lloc de descarrega d'alguns paquets.
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_07.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_07.png)
+
+Seleccioneu RT-druid i continueu.
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_08.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_08.png)
+
+Finalment ens avisará que hauriem de reiniciar eclipse perque els canvis tinguin efecte, així que digueuli que sí volem reiniciar.
+
+> ![http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_09.png](http://pfc-platform-test.googlecode.com/svn/wiki/images/instalant/rt_druid/rt_druid_09.png)
+
+Finalment per tal que el mateix Eclipse sigui capaç de compilar el codi i generar el fitxer .elf, li hem d'indicar la ruta d'on tenim instal·lat el compilador.
+Aixó li podem indicar accedint a:
+
+```
+Window -> Preferences
+```
+
+thttp://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse\_u\_10.png
+
+I comprovem que la ruta es correcte (vigileu que la versió de mplab pot ser diferent, però de totes maneres en una instal·lació per defecte hauria de ser de la forma:
+
+```
+Gcc path /opt/microchip/mplabc30/X.XXy
+Asm path /opt/microchip/mplabx/asm30
+```
+
+thttp://pfc-platform-test.googlecode.com/svn/wiki/images/utilitzant/eclipse/eclipse\_u\_11.png
+
+Ara ja hauríem de tenir tot l'entorn preparat per programar els microcontroladors.
